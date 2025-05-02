@@ -1,0 +1,35 @@
+2025-05-02 16:10:30,800 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-02 16:10:30,803 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 16:11:05,077 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-02 16:11:05,079 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 16:15:14,538 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-02 16:15:14,539 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 16:24:57,642 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-02 16:24:57,644 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 16:34:26,012 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-02 16:34:26,013 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 16:34:28,702 - app.core.excel.processor - INFO - 搜索目录 D:\My Documents\python\orc-order-v2\output 中的Excel文件
+2025-05-02 16:34:28,702 - app.core.excel.processor - INFO - 找到最新的Excel文件: D:\My Documents\python\orc-order-v2\output\微信图片_20250227193150(1).xlsx
+2025-05-02 16:34:28,703 - app.core.excel.processor - INFO - 开始处理Excel文件: D:\My Documents\python\orc-order-v2\output\微信图片_20250227193150(1).xlsx
+2025-05-02 16:34:29,373 - app.core.excel.processor - INFO - 成功读取Excel文件: D:\My Documents\python\orc-order-v2\output\微信图片_20250227193150(1).xlsx, 共 11 行
+2025-05-02 16:34:29,373 - app.core.excel.processor - INFO - 列名映射结果: {'barcode': '条码', 'specification': '规格', 'quantity': '数量', 'unit': '单位', 'price': '单价'}
+2025-05-02 16:34:29,380 - app.core.excel.processor - INFO - 提取到 8 个商品信息
+2025-05-02 16:34:29,399 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\output\采购单_微信图片_20250227193150(1)_20250502163429.xls
+2025-05-02 16:55:26,479 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-02 16:55:26,480 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 17:08:58,654 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-02 17:08:58,655 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 17:10:09,222 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-02 17:10:09,223 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 17:10:09,225 - app.core.excel.processor - INFO - 开始处理Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250227193150(1).xlsx
+2025-05-02 17:10:09,803 - app.core.excel.processor - INFO - 成功读取Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250227193150(1).xlsx, 共 11 行
+2025-05-02 17:10:09,803 - app.core.excel.processor - INFO - 列名映射结果: {'barcode': '条码', 'specification': '规格', 'quantity': '数量', 'unit': '单位', 'price': '单价'}
+2025-05-02 17:10:09,808 - app.core.excel.processor - INFO - 提取到 8 个商品信息
+2025-05-02 17:10:09,823 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\output\采购单_微信图片_20250227193150(1)_20250502171009.xls
+2025-05-02 17:16:24,476 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-02 17:16:24,477 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 17:16:24,478 - app.core.excel.processor - INFO - 开始处理Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250227193150(1).xlsx
+2025-05-02 17:16:25,022 - app.core.excel.processor - INFO - 成功读取Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250227193150(1).xlsx, 共 11 行
+2025-05-02 17:16:25,022 - app.core.excel.processor - INFO - 列名映射结果: {'barcode': '条码', 'specification': '规格', 'quantity': '数量', 'unit': '单位', 'price': '单价'}
+2025-05-02 17:16:25,025 - app.core.excel.processor - INFO - 提取到 8 个商品信息
+2025-05-02 17:16:25,035 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250227193150(1)_20250502171625.xls

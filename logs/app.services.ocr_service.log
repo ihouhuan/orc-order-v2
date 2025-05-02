@@ -1,0 +1,27 @@
+2025-05-02 16:10:30,792 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-02 16:10:30,795 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-02 16:10:30,808 - app.services.ocr_service - INFO - OCRService开始批量处理图片, batch_size=None, max_workers=None
+2025-05-02 16:11:05,074 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-02 16:11:05,076 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-02 16:11:05,084 - app.services.ocr_service - INFO - OCRService开始批量处理图片, batch_size=None, max_workers=None
+2025-05-02 16:15:14,534 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-02 16:15:14,537 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-02 16:15:14,543 - app.services.ocr_service - INFO - OCRService开始批量处理图片, batch_size=None, max_workers=None
+2025-05-02 16:24:57,640 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-02 16:24:57,641 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-02 16:24:57,651 - app.services.ocr_service - INFO - OCRService开始批量处理图片, batch_size=None, max_workers=None
+2025-05-02 16:34:26,008 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-02 16:34:26,011 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-02 16:34:26,015 - app.services.ocr_service - INFO - OCRService开始批量处理图片, batch_size=None, max_workers=None
+2025-05-02 16:55:26,474 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-02 16:55:26,479 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-02 16:55:26,481 - app.services.ocr_service - INFO - OCRService开始处理图片: D:\My Documents\python\orc-order-v2\data\input\微信图片_20250227193150(1).jpg
+2025-05-02 16:55:29,254 - app.services.ocr_service - INFO - OCRService处理图片成功: D:\My Documents\python\orc-order-v2\data\input\微信图片_20250227193150(1).jpg -> D:\My Documents\python\orc-order-v2\output\微信图片_20250227193150(1).xlsx
+2025-05-02 17:08:58,648 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-02 17:08:58,653 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-02 17:08:58,657 - app.services.ocr_service - INFO - OCRService开始处理图片: D:\My Documents\python\orc-order-v2\data\input\微信图片_20250227193150(1).jpg
+2025-05-02 17:09:01,348 - app.services.ocr_service - INFO - OCRService处理图片成功: D:\My Documents\python\orc-order-v2\data\input\微信图片_20250227193150(1).jpg -> D:\My Documents\python\orc-order-v2\output\微信图片_20250227193150(1).xlsx
+2025-05-02 17:10:09,219 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-02 17:10:09,222 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-02 17:16:24,474 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-02 17:16:24,476 - app.services.ocr_service - INFO - OCRService初始化完成

@@ -1,0 +1,28 @@
+2025-05-02 16:10:30,803 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 16:10:30,805 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 16:11:05,080 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 16:11:05,082 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 16:15:14,540 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 16:15:14,541 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 16:24:57,646 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 16:24:57,648 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 16:34:26,013 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 16:34:26,014 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 16:34:29,402 - app.core.excel.merger - INFO - 搜索目录 D:\My Documents\python\orc-order-v2\output 中的采购单Excel文件
+2025-05-02 16:34:29,403 - app.core.excel.merger - INFO - 找到 1 个采购单Excel文件
+2025-05-02 16:34:29,403 - app.core.excel.merger - INFO - 搜索目录 D:\My Documents\python\orc-order-v2\output 中的采购单Excel文件
+2025-05-02 16:34:29,404 - app.core.excel.merger - INFO - 找到 1 个采购单Excel文件
+2025-05-02 16:34:29,408 - app.core.excel.merger - INFO - 成功读取采购单文件: D:\My Documents\python\orc-order-v2\output\采购单_微信图片_20250227193150(1)_20250502163429.xls
+2025-05-02 16:34:29,410 - app.core.excel.merger - INFO - 列名映射结果: {'条码': '条码（必填）', '采购量': '采购量（必填）', '采购单价': '采购单价（必填）', '赠送量': '赠送量'}
+2025-05-02 16:34:29,410 - app.core.excel.merger - INFO - 开始合并 1 个采购单文件
+2025-05-02 16:34:29,411 - app.core.excel.merger - WARNING - 数据帧 0 缺少必要的列: ['条码', '采购量', '采购单价']
+2025-05-02 16:34:29,411 - app.core.excel.merger - WARNING - 没有有效的数据帧用于合并
+2025-05-02 16:34:29,411 - app.core.excel.merger - ERROR - 合并采购单失败
+2025-05-02 16:55:26,480 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 16:55:26,481 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 17:08:58,655 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 17:08:58,656 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 17:10:09,223 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 17:10:09,224 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 17:16:24,477 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 17:16:24,478 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls

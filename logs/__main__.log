@@ -1,0 +1,25 @@
+2025-05-02 16:10:30,807 - __main__ - INFO - 批量处理模式
+2025-05-02 16:10:30,814 - __main__ - WARNING - 没有找到需要处理的文件
+2025-05-02 16:11:05,083 - __main__ - INFO - 批量处理模式
+2025-05-02 16:11:05,090 - __main__ - INFO - 批量处理完成，总计: 1，成功: 0
+2025-05-02 16:15:14,543 - __main__ - INFO - 批量处理模式
+2025-05-02 16:15:17,347 - __main__ - INFO - 批量处理完成，总计: 1，成功: 0
+2025-05-02 16:24:57,651 - __main__ - INFO - 批量处理模式
+2025-05-02 16:25:00,387 - __main__ - INFO - 批量处理完成，总计: 1，成功: 0
+2025-05-02 16:34:26,014 - __main__ - INFO - === 流程步骤 1: OCR识别 ===
+2025-05-02 16:34:26,014 - __main__ - INFO - 批量处理所有图片
+2025-05-02 16:34:28,701 - __main__ - INFO - OCR处理完成，总计: 1，成功: 1
+2025-05-02 16:34:28,702 - __main__ - INFO - === 流程步骤 2: Excel处理 ===
+2025-05-02 16:34:28,703 - __main__ - INFO - 处理最新的Excel文件: D:\My Documents\python\orc-order-v2\output\微信图片_20250227193150(1).xlsx
+2025-05-02 16:34:29,401 - __main__ - INFO - Excel处理成功，输出文件: D:\My Documents\python\orc-order-v2\output\采购单_微信图片_20250227193150(1)_20250502163429.xls
+2025-05-02 16:34:29,402 - __main__ - INFO - === 流程步骤 3: 订单合并 ===
+2025-05-02 16:34:29,403 - __main__ - INFO - 合并所有采购单文件: 1 个
+2025-05-02 16:34:29,411 - __main__ - ERROR - 订单合并失败
+2025-05-02 16:55:26,481 - __main__ - INFO - 处理单个图片: D:\My Documents\python\orc-order-v2\data\input\微信图片_20250227193150(1).jpg
+2025-05-02 16:55:29,254 - __main__ - INFO - OCR处理成功，输出文件: D:\My Documents\python\orc-order-v2\output\微信图片_20250227193150(1).xlsx
+2025-05-02 17:08:58,657 - __main__ - INFO - 处理单个图片: D:\My Documents\python\orc-order-v2\data\input\微信图片_20250227193150(1).jpg
+2025-05-02 17:09:01,349 - __main__ - INFO - OCR处理成功，输出文件: D:\My Documents\python\orc-order-v2\output\微信图片_20250227193150(1).xlsx
+2025-05-02 17:10:09,224 - __main__ - INFO - 处理Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250227193150(1).xlsx
+2025-05-02 17:10:09,825 - __main__ - INFO - Excel处理成功，输出文件: D:\My Documents\python\orc-order-v2\output\采购单_微信图片_20250227193150(1)_20250502171009.xls
+2025-05-02 17:16:24,478 - __main__ - INFO - 处理Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250227193150(1).xlsx
+2025-05-02 17:16:25,037 - __main__ - INFO - Excel处理成功，输出文件: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250227193150(1)_20250502171625.xls

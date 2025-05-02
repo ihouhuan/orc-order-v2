@@ -1,0 +1,53 @@
+2025-05-02 16:10:30,794 - app.core.ocr.table_ocr - INFO - OCR处理器初始化完成，输入目录: D:\My Documents\python\orc-order-v2\input, 输出目录: D:\My Documents\python\orc-order-v2\output
+2025-05-02 16:10:30,809 - app.core.ocr.table_ocr - INFO - 找到 0 个图片文件，其中 0 个未处理
+2025-05-02 16:10:30,810 - app.core.ocr.table_ocr - WARNING - 没有需要处理的图片
+2025-05-02 16:11:05,075 - app.core.ocr.table_ocr - INFO - OCR处理器初始化完成，输入目录: D:\My Documents\python\orc-order-v2\input, 输出目录: D:\My Documents\python\orc-order-v2\output
+2025-05-02 16:11:05,085 - app.core.ocr.table_ocr - INFO - 找到 1 个图片文件，其中 1 个未处理
+2025-05-02 16:11:05,086 - app.core.ocr.table_ocr - INFO - 处理批次 1/1, 大小: 1
+2025-05-02 16:11:05,088 - app.core.ocr.table_ocr - WARNING - 文件大小超过限制 (4.0MB): D:\My Documents\python\orc-order-v2\input\微信图片_20250227193150.jpg
+2025-05-02 16:11:05,089 - app.core.ocr.table_ocr - INFO - 批次处理完成, 成功: 0/1
+2025-05-02 16:11:05,089 - app.core.ocr.table_ocr - INFO - 所有图片处理完成, 总计: 1, 成功: 0
+2025-05-02 16:15:14,536 - app.core.ocr.table_ocr - INFO - OCR处理器初始化完成，输入目录: D:\My Documents\python\orc-order-v2\input, 输出目录: D:\My Documents\python\orc-order-v2\output
+2025-05-02 16:15:14,547 - app.core.ocr.table_ocr - INFO - 找到 1 个图片文件，其中 1 个未处理
+2025-05-02 16:15:14,548 - app.core.ocr.table_ocr - INFO - 处理批次 1/1, 大小: 1
+2025-05-02 16:15:14,550 - app.core.ocr.table_ocr - INFO - 开始处理图片: D:\My Documents\python\orc-order-v2\input\微信图片_20250227193150(1).jpg
+2025-05-02 16:15:17,344 - app.core.ocr.table_ocr - ERROR - 无法获取请求ID: D:\My Documents\python\orc-order-v2\input\微信图片_20250227193150(1).jpg
+2025-05-02 16:15:17,345 - app.core.ocr.table_ocr - INFO - 批次处理完成, 成功: 0/1
+2025-05-02 16:15:17,346 - app.core.ocr.table_ocr - INFO - 所有图片处理完成, 总计: 1, 成功: 0
+2025-05-02 16:24:57,641 - app.core.ocr.table_ocr - INFO - OCR处理器初始化完成，输入目录: D:\My Documents\python\orc-order-v2\input, 输出目录: D:\My Documents\python\orc-order-v2\output
+2025-05-02 16:24:57,653 - app.core.ocr.table_ocr - INFO - 找到 1 个图片文件，其中 1 个未处理
+2025-05-02 16:24:57,653 - app.core.ocr.table_ocr - INFO - 处理批次 1/1, 大小: 1
+2025-05-02 16:24:57,655 - app.core.ocr.table_ocr - INFO - 开始处理图片: D:\My Documents\python\orc-order-v2\input\微信图片_20250227193150(1).jpg
+2025-05-02 16:25:00,385 - app.core.ocr.table_ocr - ERROR - 获取Excel结果失败: D:\My Documents\python\orc-order-v2\input\微信图片_20250227193150(1).jpg
+2025-05-02 16:25:00,386 - app.core.ocr.table_ocr - INFO - 批次处理完成, 成功: 0/1
+2025-05-02 16:25:00,387 - app.core.ocr.table_ocr - INFO - 所有图片处理完成, 总计: 1, 成功: 0
+2025-05-02 16:34:26,010 - app.core.ocr.table_ocr - INFO - 使用输入目录: D:\My Documents\python\orc-order-v2\input
+2025-05-02 16:34:26,011 - app.core.ocr.table_ocr - INFO - 使用输出目录: D:\My Documents\python\orc-order-v2\output
+2025-05-02 16:34:26,011 - app.core.ocr.table_ocr - INFO - 使用临时目录: D:\My Documents\python\orc-order-v2\temp
+2025-05-02 16:34:26,011 - app.core.ocr.table_ocr - INFO - OCR处理器初始化完成，输入目录: D:\My Documents\python\orc-order-v2\input, 输出目录: D:\My Documents\python\orc-order-v2\output
+2025-05-02 16:34:26,015 - app.core.ocr.table_ocr - INFO - 找到 1 个图片文件，其中 1 个未处理
+2025-05-02 16:34:26,015 - app.core.ocr.table_ocr - INFO - 处理批次 1/1, 大小: 1
+2025-05-02 16:34:26,016 - app.core.ocr.table_ocr - INFO - 开始处理图片: D:\My Documents\python\orc-order-v2\input\微信图片_20250227193150(1).jpg
+2025-05-02 16:34:28,698 - app.core.ocr.table_ocr - INFO - 图片处理成功: D:\My Documents\python\orc-order-v2\input\微信图片_20250227193150(1).jpg, 输出文件: D:\My Documents\python\orc-order-v2\output\微信图片_20250227193150(1).xlsx
+2025-05-02 16:34:28,701 - app.core.ocr.table_ocr - INFO - 批次处理完成, 成功: 1/1
+2025-05-02 16:34:28,701 - app.core.ocr.table_ocr - INFO - 所有图片处理完成, 总计: 1, 成功: 1
+2025-05-02 16:55:26,477 - app.core.ocr.table_ocr - INFO - 使用输入目录: D:\My Documents\python\orc-order-v2\input
+2025-05-02 16:55:26,478 - app.core.ocr.table_ocr - INFO - 使用输出目录: D:\My Documents\python\orc-order-v2\output
+2025-05-02 16:55:26,478 - app.core.ocr.table_ocr - INFO - 使用临时目录: D:\My Documents\python\orc-order-v2\temp
+2025-05-02 16:55:26,479 - app.core.ocr.table_ocr - INFO - OCR处理器初始化完成，输入目录: D:\My Documents\python\orc-order-v2\input, 输出目录: D:\My Documents\python\orc-order-v2\output
+2025-05-02 16:55:26,481 - app.core.ocr.table_ocr - INFO - 开始处理图片: D:\My Documents\python\orc-order-v2\data\input\微信图片_20250227193150(1).jpg
+2025-05-02 16:55:29,252 - app.core.ocr.table_ocr - INFO - 图片处理成功: D:\My Documents\python\orc-order-v2\data\input\微信图片_20250227193150(1).jpg, 输出文件: D:\My Documents\python\orc-order-v2\output\微信图片_20250227193150(1).xlsx
+2025-05-02 17:08:58,652 - app.core.ocr.table_ocr - INFO - 使用输入目录: D:\My Documents\python\orc-order-v2\input
+2025-05-02 17:08:58,653 - app.core.ocr.table_ocr - INFO - 使用输出目录: D:\My Documents\python\orc-order-v2\output
+2025-05-02 17:08:58,653 - app.core.ocr.table_ocr - INFO - 使用临时目录: D:\My Documents\python\orc-order-v2\temp
+2025-05-02 17:08:58,653 - app.core.ocr.table_ocr - INFO - OCR处理器初始化完成，输入目录: D:\My Documents\python\orc-order-v2\input, 输出目录: D:\My Documents\python\orc-order-v2\output
+2025-05-02 17:08:58,657 - app.core.ocr.table_ocr - INFO - 开始处理图片: D:\My Documents\python\orc-order-v2\data\input\微信图片_20250227193150(1).jpg
+2025-05-02 17:09:01,343 - app.core.ocr.table_ocr - INFO - 图片处理成功: D:\My Documents\python\orc-order-v2\data\input\微信图片_20250227193150(1).jpg, 输出文件: D:\My Documents\python\orc-order-v2\output\微信图片_20250227193150(1).xlsx
+2025-05-02 17:10:09,220 - app.core.ocr.table_ocr - INFO - 使用输入目录: D:\My Documents\python\orc-order-v2\input
+2025-05-02 17:10:09,221 - app.core.ocr.table_ocr - INFO - 使用输出目录: D:\My Documents\python\orc-order-v2\output
+2025-05-02 17:10:09,221 - app.core.ocr.table_ocr - INFO - 使用临时目录: D:\My Documents\python\orc-order-v2\temp
+2025-05-02 17:10:09,222 - app.core.ocr.table_ocr - INFO - OCR处理器初始化完成，输入目录: D:\My Documents\python\orc-order-v2\input, 输出目录: D:\My Documents\python\orc-order-v2\output
+2025-05-02 17:16:24,475 - app.core.ocr.table_ocr - INFO - 使用输入目录: D:\My Documents\python\orc-order-v2\data\input
+2025-05-02 17:16:24,475 - app.core.ocr.table_ocr - INFO - 使用输出目录: D:\My Documents\python\orc-order-v2\data\output
+2025-05-02 17:16:24,475 - app.core.ocr.table_ocr - INFO - 使用临时目录: D:\My Documents\python\orc-order-v2\data\temp
+2025-05-02 17:16:24,475 - app.core.ocr.table_ocr - INFO - OCR处理器初始化完成，输入目录: D:\My Documents\python\orc-order-v2\data\input, 输出目录: D:\My Documents\python\orc-order-v2\data\output
