@@ -30,9 +30,12 @@ class LogRedirector:
     def __init__(self, text_widget):
         self.text_widget = text_widget
         self.buffer = ""
+        self.terminal = sys.__stdout__  # 保存原始的stdout引用
         
     def write(self, string):
         self.buffer += string
+        # 同时输出到终端
+        self.terminal.write(string)
         # 在UI线程中更新文本控件
         self.text_widget.after(0, self.update_text_widget)
         
@@ -45,7 +48,7 @@ class LogRedirector:
         self.buffer = ""
         
     def flush(self):
-        pass
+        self.terminal.flush()  # 确保终端也被刷新
 
 def run_command_with_logging(command, log_widget):
     """运行命令并将输出重定向到日志窗口"""
@@ -59,6 +62,13 @@ def run_command_with_logging(command, log_widget):
         log_widget.insert(tk.END, "=" * 50 + "\n\n")
         log_widget.configure(state=tk.DISABLED)
         
+        # 获取原始的stdout和stderr
+        old_stdout = sys.stdout
+        old_stderr = sys.stderr
+        
+        # 创建日志重定向器
+        log_redirector = LogRedirector(log_widget)
+        
         # 设置环境变量，强制OCR模块输出到data目录
         env = os.environ.copy()
         env["OCR_OUTPUT_DIR"] = os.path.abspath("data/output")
@@ -66,6 +76,13 @@ def run_command_with_logging(command, log_widget):
         env["OCR_LOG_LEVEL"] = "DEBUG"  # 设置更详细的日志级别
         
         try:
+            # 重定向stdout和stderr到日志重定向器
+            sys.stdout = log_redirector
+            sys.stderr = log_redirector
+            
+            # 打印一条消息，确认重定向已生效
+            print("日志重定向已启动，现在同时输出到终端和GUI")
+            
             # 运行命令并捕获输出
             process = subprocess.Popen(
                 command, 
@@ -79,7 +96,7 @@ def run_command_with_logging(command, log_widget):
             
             # 读取并显示输出
             for line in process.stdout:
-                log_widget.after(0, lambda l=line: add_to_log(log_widget, l))
+                print(line.rstrip())  # 直接打印到已重定向的stdout
                 
             # 等待进程结束
             process.wait()
@@ -88,12 +105,10 @@ def run_command_with_logging(command, log_widget):
             end_time = datetime.datetime.now()
             duration = end_time - start_time
             
-            log_widget.after(0, lambda: add_to_log(
-                log_widget, 
-                f"\n{'=' * 50}\n执行完毕！返回码: {process.returncode}\n"
-                f"结束时间: {end_time.strftime('%Y-%m-%d %H:%M:%S')}\n"
-                f"耗时: {duration.total_seconds():.2f} 秒\n"
-            ))
+            print(f"\n{'=' * 50}")
+            print(f"执行完毕！返回码: {process.returncode}")
+            print(f"结束时间: {end_time.strftime('%Y-%m-%d %H:%M:%S')}")
+            print(f"耗时: {duration.total_seconds():.2f} 秒")
             
             # 如果处理成功，显示成功信息
             if process.returncode == 0:
@@ -102,8 +117,12 @@ def run_command_with_logging(command, log_widget):
                 log_widget.after(0, lambda: messagebox.showerror("操作失败", f"处理失败，返回码：{process.returncode}"))
                 
         except Exception as e:
-            log_widget.after(0, lambda: add_to_log(log_widget, f"\n执行出错: {str(e)}\n"))
+            print(f"\n执行出错: {str(e)}")
             log_widget.after(0, lambda: messagebox.showerror("执行错误", f"执行命令时出错: {str(e)}"))
+        finally:
+            # 恢复原始stdout和stderr
+            sys.stdout = old_stdout
+            sys.stderr = old_stderr
     
     # 在新线程中运行，避免UI阻塞
     Thread(target=run_in_thread).start()
@@ -417,7 +436,7 @@ def main():
     # 创建窗口
     root = tk.Tk()
     root.title("OCR订单处理系统 v2.0")
-    root.geometry("800x600")  # 增加窗口宽度以容纳日志
+    root.geometry("1200x600")  # 增加窗口宽度以容纳日志
     
     # 创建主区域分割
     main_pane = tk.PanedWindow(root, orient=tk.HORIZONTAL)
@@ -428,7 +447,7 @@ def main():
     main_pane.add(left_frame)
     
     # 标题
-    tk.Label(left_frame, text="OCR订单处理系统", font=("Arial", 16)).pack(pady=10)
+    tk.Label(left_frame, text="益选-OCR订单处理系统", font=("Arial", 16)).pack(pady=10)
     
     # 功能按钮区域
     buttons_frame = tk.Frame(left_frame)

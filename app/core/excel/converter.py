@@ -301,8 +301,8 @@ class UnitConverter:
         if unit in ['提', '盒']:
             # 如果是三级规格，按件处理
             if level3 is not None:
-                # 计算包装数量
-                packaging_count = level2 * level3
+                # 计算包装数量 - 只乘以最后一级数量
+                packaging_count = level3
                 
                 # 数量×包装数量
                 new_quantity = quantity * packaging_count

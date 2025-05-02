@@ -171,14 +171,40 @@ class ExcelProcessor:
         possible_barcode_columns = [
             '条码', '条形码', '商品条码', '商品条形码', 
             '商品编码', '商品编号', '条形码', '条码（必填）', 
-            'barcode', 'Barcode', '编码', '条形码'
+            'barcode', 'Barcode', '编码', '条形码', '电脑条码',
+            '条码ID', '产品条码', 'BarCode'
         ]
         
         found_columns = []
+        
+        # 检查精确匹配
         for col in df.columns:
             col_str = str(col).strip()
             if col_str in possible_barcode_columns:
                 found_columns.append(col)
+                logger.info(f"找到精确匹配的条码列: {col_str}")
+        
+        # 如果找不到精确匹配，尝试部分匹配
+        if not found_columns:
+            for col in df.columns:
+                col_str = str(col).strip().lower()
+                for keyword in ['条码', '条形码', 'barcode', '编码']:
+                    if keyword.lower() in col_str:
+                        found_columns.append(col)
+                        logger.info(f"找到部分匹配的条码列: {col} (包含关键词: {keyword})")
+                        break
+        
+        # 如果仍然找不到，尝试使用数据特征识别
+        if not found_columns and len(df) > 0:
+            for col in df.columns:
+                # 检查此列数据是否符合条码特征
+                sample_values = df[col].dropna().astype(str).tolist()[:10]  # 取前10个非空值
+                
+                if sample_values and all(len(val) >= 8 and len(val) <= 14 for val in sample_values):
+                    # 大多数条码长度在8-14之间
+                    if all(val.isdigit() for val in sample_values):
+                        found_columns.append(col)
+                        logger.info(f"基于数据特征识别的可能条码列: {col}")
         
         return found_columns
     
@@ -192,6 +218,10 @@ class ExcelProcessor:
         Returns:
             商品信息列表
         """
+        # 清理数据：移除全空行
+        df = df.dropna(how='all')
+        logger.info(f"移除空行后，有效数据行数: {len(df)}")
+        
         # 提取有用的列
         barcode_cols = self.extract_barcode(df)
         
@@ -202,15 +232,18 @@ class ExcelProcessor:
             
         # 定义列名映射
         column_mapping = {
-            'name': ['商品名称', '名称', '品名', '商品', '商品名', '商品或服务名称', '品项名'],
-            'specification': ['规格', '规格型号', '型号', '商品规格'],
-            'quantity': ['数量', '采购数量', '购买数量', '采购数量', '订单数量', '数量（必填）'],
-            'unit': ['单位', '采购单位', '计量单位', '单位（必填）'],
-            'price': ['单价', '价格', '采购单价', '销售价', '进货价', '单价（必填）']
+            'name': ['商品名称', '名称', '品名', '商品', '商品名', '商品或服务名称', '品项名', '产品名称', '品项'],
+            'specification': ['规格', '规格型号', '型号', '商品规格', '产品规格', '包装规格'],
+            'quantity': ['数量', '采购数量', '购买数量', '采购数量', '订单数量', '数量（必填）', '入库数', '入库数量'],
+            'unit': ['单位', '采购单位', '计量单位', '单位（必填）', '单位名称', '计价单位'],
+            'price': ['单价', '价格', '采购单价', '销售价', '进货价', '单价（必填）', '采购价', '参考价', '入库单价']
         }
         
         # 映射列名到标准名称
         mapped_columns = {'barcode': barcode_cols[0]}  # 使用第一个找到的条码列
+        
+        # 记录列名映射详情
+        logger.info(f"使用条码列: {mapped_columns['barcode']}")
         
         for target, possible_names in column_mapping.items():
             for col in df.columns:
@@ -218,20 +251,34 @@ class ExcelProcessor:
                 for name in possible_names:
                     if col_str == name:
                         mapped_columns[target] = col
+                        logger.info(f"找到{target}列: {col}")
                         break
                 if target in mapped_columns:
                     break
+            
+            # 如果没有找到精确匹配，尝试部分匹配
+            if target not in mapped_columns:
+                for col in df.columns:
+                    col_str = str(col).strip().lower()
+                    for name in possible_names:
+                        if name.lower() in col_str:
+                            mapped_columns[target] = col
+                            logger.info(f"找到{target}列(部分匹配): {col}")
+                            break
+                    if target in mapped_columns:
+                        break
         
         logger.info(f"列名映射结果: {mapped_columns}")
         
         # 提取商品信息
         products = []
         
-        for _, row in df.iterrows():
+        for idx, row in df.iterrows():
             barcode = row.get(mapped_columns['barcode'])
             
             # 跳过空行或无效条码
             if pd.isna(barcode) or not self.validate_barcode(barcode):
+                logger.debug(f"跳过第{idx+1}行: 条码为空或无效 [{barcode}]")
                 continue
                 
             # 创建商品信息字典
@@ -244,9 +291,12 @@ class ExcelProcessor:
                 'price': extract_number(str(row.get(mapped_columns.get('price', ''), 0))) or 0
             }
             
+            logger.info(f"第{idx+1}行: 提取商品信息 条码={product['barcode']}, 名称={product['name']}, 规格={product['specification']}, 数量={product['quantity']}, 单位={product['unit']}, 单价={product['price']}")
+            
             # 如果商品名称为空但商品条码不为空，则使用条码作为名称
             if not product['name'] and product['barcode']:
                 product['name'] = f"商品 ({product['barcode']})"
+                logger.info(f"商品名称为空，使用条码作为名称: {product['name']}")
             
             # 推断规格
             if not product['specification'] and product['name']:
@@ -257,7 +307,7 @@ class ExcelProcessor:
             
             # 单位处理：如果单位为空但数量包含单位信息
             quantity_str = str(row.get(mapped_columns.get('quantity', ''), ''))
-            if not product['unit'] and '数量' in mapped_columns:
+            if not product['unit'] and 'quantity' in mapped_columns:
                 num, unit = self.unit_converter.extract_unit_from_quantity(quantity_str)
                 if unit:
                     product['unit'] = unit
@@ -398,6 +448,77 @@ class ExcelProcessor:
             logger.error(f"填充模板时出错: {e}")
             return False
     
+    def _find_header_row(self, df: pd.DataFrame) -> Optional[int]:
+        """
+        自动识别表头行
+        
+        通过多种规则识别表头：
+        1. 检查行是否包含典型的表头关键词（条码、商品名称、数量等）
+        2. 检查是否是第一个非空行
+        3. 检查行是否有较多的字符串类型单元格（表头通常是字符串）
+        
+        Args:
+            df: 数据帧
+            
+        Returns:
+            表头行索引，如果未找到则返回None
+        """
+        # 定义可能的表头关键词
+        header_keywords = [
+            '条码', '条形码', '商品条码', '商品名称', '名称', '数量', '单位', '单价', 
+            '规格', '商品编码', '采购数量', '采购单位', '商品', '品名'
+        ]
+        
+        # 存储每行的匹配分数
+        row_scores = []
+        
+        # 遍历前10行（通常表头不会太靠后）
+        max_rows_to_check = min(10, len(df))
+        for row in range(max_rows_to_check):
+            row_data = df.iloc[row]
+            score = 0
+            
+            # 检查1: 关键词匹配
+            for cell in row_data:
+                if isinstance(cell, str):
+                    cell_clean = str(cell).strip().lower()
+                    for keyword in header_keywords:
+                        if keyword.lower() in cell_clean:
+                            score += 5  # 每匹配一个关键词加5分
+            
+            # 检查2: 非空单元格比例
+            non_empty_cells = row_data.count()
+            if non_empty_cells / len(row_data) > 0.5:  # 如果超过一半的单元格有内容
+                score += 2
+            
+            # 检查3: 字符串类型单元格比例
+            string_cells = sum(1 for cell in row_data if isinstance(cell, str))
+            if string_cells / len(row_data) > 0.5:  # 如果超过一半的单元格是字符串
+                score += 3
+                
+            row_scores.append((row, score))
+            
+            # 日志记录每行的评分情况
+            logger.debug(f"第{row+1}行评分: {score}，内容: {row_data.values}")
+        
+        # 按评分排序
+        row_scores.sort(key=lambda x: x[1], reverse=True)
+        
+        # 如果最高分达到一定阈值，认为是表头
+        if row_scores and row_scores[0][1] >= 5:
+            best_row = row_scores[0][0]
+            logger.info(f"找到可能的表头行: 第{best_row+1}行，评分: {row_scores[0][1]}")
+            return best_row
+        
+        # 如果没有找到明确的表头，尝试找第一个非空行
+        for row in range(len(df)):
+            if df.iloc[row].notna().sum() > 3:  # 至少有3个非空单元格
+                logger.info(f"未找到明确表头，使用第一个有效行: 第{row+1}行")
+                return row
+                
+        logger.warning("无法识别表头行")
+        return None
+    
     def process_specific_file(self, file_path: str) -> Optional[str]:
         """
         处理指定的Excel文件
@@ -415,9 +536,21 @@ class ExcelProcessor:
             return None
         
         try:
-            # 读取Excel文件
-            df = pd.read_excel(file_path)
+            # 读取Excel文件时不立即指定表头
+            df = pd.read_excel(file_path, header=None)
             logger.info(f"成功读取Excel文件: {file_path}, 共 {len(df)} 行")
+            
+            # 自动识别表头行
+            header_row = self._find_header_row(df)
+            if header_row is None:
+                logger.error("无法识别表头行")
+                return None
+                
+            logger.info(f"识别到表头在第 {header_row+1} 行")
+            
+            # 重新读取Excel，正确指定表头行
+            df = pd.read_excel(file_path, header=header_row)
+            logger.info(f"使用表头行重新读取数据，共 {len(df)} 行有效数据")
             
             # 提取商品信息
             products = self.extract_product_info(df)
