@@ -251,8 +251,18 @@ def run_pipeline(ocr_service: OCRService, order_service: OrderService, args) -> 
     # 获取所有采购单文件
     file_paths = order_service.get_purchase_orders()
     if not file_paths:
-        logger.warning("未找到采购单文件")
-        return False
+        logger.warning("未找到采购单文件，跳过合并步骤")
+        logger.info("=== 完整流程处理成功（未执行合并步骤）===")
+        # 非错误状态，继续执行
+        return True
+        
+    # 有文件需要合并
+    logger.info(f"发现 {len(file_paths)} 个采购单文件")
+    
+    if len(file_paths) == 1:
+        logger.warning(f"只有1个采购单文件 {file_paths[0]}，无需合并")
+        logger.info("=== 完整流程处理成功（只有一个文件，跳过合并）===")
+        return True
         
     logger.info(f"合并所有采购单文件: {len(file_paths)} 个")
     merge_result = order_service.merge_orders()

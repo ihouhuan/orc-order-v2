@@ -116,6 +116,13 @@ class UnitConverter:
         if not text or not isinstance(text, str):
             return None
         
+        # 处理XX入白膜格式，如"550纯净水24入白膜"
+        match = re.search(r'.*?(\d+)入白膜', text)
+        if match:
+            result = f"1*{match.group(1)}"
+            logger.info(f"提取规格(入白膜): {text} -> {result}")
+            return result
+            
         # 尝试所有模式
         for pattern, replacement in self.spec_patterns:
             match = re.search(pattern, text)
@@ -149,6 +156,7 @@ class UnitConverter:
         3. "xx纸箱" -> 1*xx (如"15纸箱" -> 1*15)
         4. "xx白膜" -> 1*xx (如"12白膜" -> 1*12)
         5. "xxL" 容量单位特殊处理
+        6. "xx(g|ml|毫升|克)*数字" -> 1*数字 (如"450g*15" -> 1*15)
         
         Args:
             name: 商品名称
@@ -161,6 +169,23 @@ class UnitConverter:
         
         # 记录原始商品名称，用于日志
         original_name = name
+        
+        # 新增模式: 处理重量/容量*数字格式，如"450g*15", "450ml*15"
+        # 忽略重量/容量值，只提取后面的数量作为规格
+        weight_volume_pattern = r'.*?\d+(?:g|ml|毫升|克)[*xX×](\d+)'
+        match = re.search(weight_volume_pattern, name)
+        if match:
+            inferred_spec = f"1*{match.group(1)}"
+            logger.info(f"从名称推断规格(重量/容量*数量): {original_name} -> {inferred_spec}")
+            return inferred_spec
+        
+        # 特殊模式1.1: "xx入白膜" 格式，如"550纯净水24入白膜" -> "1*24"
+        pattern1_1 = r'.*?(\d+)入白膜'
+        match = re.search(pattern1_1, name)
+        if match:
+            inferred_spec = f"1*{match.group(1)}"
+            logger.info(f"从名称推断规格(入白膜): {original_name} -> {inferred_spec}")
+            return inferred_spec
         
         # 特殊模式1: "xx入纸箱" 格式，如"445水溶C血橙15入纸箱" -> "1*15"
         pattern1 = r'.*?(\d+)入纸箱'
@@ -223,43 +248,51 @@ class UnitConverter:
         if not spec or not isinstance(spec, str):
             return 1, 1, None
             
-        # 处理三级包装，如1*5*12
-        three_level_match = re.match(r'(\d+)[*xX×](\d+)[*xX×](\d+)', spec)
-        if three_level_match:
-            try:
-                level1 = int(three_level_match.group(1))
-                level2 = int(three_level_match.group(2))
-                level3 = int(three_level_match.group(3))
-                logger.info(f"解析三级规格: {spec} -> {level1}*{level2}*{level3}")
-                return level1, level2, level3
-            except ValueError:
-                pass
+        try:
+            # 清理规格字符串，确保格式统一
+            spec = re.sub(r'\s+', '', spec)  # 移除所有空白
+            spec = re.sub(r'[xX×]', '*', spec)  # 统一分隔符为*
+            
+            # 处理三级包装，如1*5*12
+            three_level_match = re.match(r'(\d+)[*](\d+)[*](\d+)', spec)
+            if three_level_match:
+                try:
+                    level1 = int(three_level_match.group(1))
+                    level2 = int(three_level_match.group(2))
+                    level3 = int(three_level_match.group(3))
+                    logger.info(f"解析三级规格: {spec} -> {level1}*{level2}*{level3}")
+                    return level1, level2, level3
+                except ValueError:
+                    pass
+                    
+            # 处理二级包装，如1*12
+            two_level_match = re.match(r'(\d+)[*](\d+)', spec)
+            if two_level_match:
+                try:
+                    level1 = int(two_level_match.group(1))
+                    level2 = int(two_level_match.group(2))
+                    logger.info(f"解析二级规格: {spec} -> {level1}*{level2}")
+                    return level1, level2, None
+                except ValueError:
+                    pass
                 
-        # 处理二级包装，如1*12
-        two_level_match = re.match(r'(\d+)[*xX×](\d+)', spec)
-        if two_level_match:
-            try:
-                level1 = int(two_level_match.group(1))
-                level2 = int(two_level_match.group(2))
-                logger.info(f"解析二级规格: {spec} -> {level1}*{level2}")
-                return level1, level2, None
-            except ValueError:
-                pass
-                
-        # 特殊处理L/升为单位的规格，如12.5L*1
-        volume_match = re.match(r'([\d\.]+)[L升][*xX×](\d+)', spec)
-        if volume_match:
-            try:
-                volume = float(volume_match.group(1))
-                quantity = int(volume_match.group(2))
-                logger.info(f"解析容量规格: {spec} -> {volume}L*{quantity}")
-                return 1, quantity, None
-            except ValueError:
-                pass
-        
-        # 默认值
-        logger.warning(f"无法解析规格: {spec}，使用默认值1*1")
-        return 1, 1, None
+            # 特殊处理L/升为单位的规格，如12.5L*1
+            volume_match = re.match(r'([\d\.]+)[L升][*xX×](\d+)', spec)
+            if volume_match:
+                try:
+                    volume = float(volume_match.group(1))
+                    quantity = int(volume_match.group(2))
+                    logger.info(f"解析容量规格: {spec} -> {volume}L*{quantity}")
+                    return 1, quantity, None
+                except ValueError:
+                    pass
+            
+            # 默认值
+            logger.warning(f"无法解析规格: {spec}，使用默认值1*1")
+            return 1, 1, None
+        except Exception as e:
+            logger.error(f"解析规格时出错: {e}")
+            return 1, 1, None
         
     def process_unit_conversion(self, product: Dict) -> Dict:
         """

@@ -127,6 +127,12 @@ def parse_specification(spec_str: str) -> Optional[int]:
         # 清理规格字符串
         spec_str = clean_string(spec_str)
         
+        # 匹配重量/容量格式，如"450g*15"、"450ml*15"
+        match = re.search(r'\d+(?:g|ml|毫升|克)[*xX×](\d+)', spec_str)
+        if match:
+            # 返回后面的数量
+            return int(match.group(1))
+        
         # 匹配1*5*10 格式的三级规格
         match = re.search(r'(\d+)[\*xX×](\d+)[\*xX×](\d+)', spec_str)
         if match:

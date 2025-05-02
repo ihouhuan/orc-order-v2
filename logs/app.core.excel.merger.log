@@ -86,3 +86,99 @@
 2025-05-02 19:53:47,785 - app.core.excel.merger - WARNING - 数据帧 0 缺少必要的列: ['条码', '采购量', '采购单价']
 2025-05-02 19:53:47,785 - app.core.excel.merger - WARNING - 没有有效的数据帧用于合并
 2025-05-02 19:53:47,785 - app.core.excel.merger - ERROR - 合并采购单失败
+2025-05-02 20:52:59,673 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 20:52:59,674 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 20:53:07,428 - app.core.excel.merger - INFO - 搜索目录 D:\My Documents\python\orc-order-v2\data\output 中的采购单Excel文件
+2025-05-02 20:53:07,430 - app.core.excel.merger - INFO - 找到 1 个采购单Excel文件
+2025-05-02 20:53:07,433 - app.core.excel.merger - INFO - 搜索目录 D:\My Documents\python\orc-order-v2\data\output 中的采购单Excel文件
+2025-05-02 20:53:07,434 - app.core.excel.merger - INFO - 找到 1 个采购单Excel文件
+2025-05-02 20:53:07,465 - app.core.excel.merger - INFO - 成功读取采购单文件: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250502205251.xls
+2025-05-02 20:53:07,467 - app.core.excel.merger - INFO - 列名映射结果: {'条码': '条码（必填）', '采购量': '采购量（必填）', '采购单价': '采购单价（必填）', '赠送量': '赠送量'}
+2025-05-02 20:53:07,469 - app.core.excel.merger - INFO - 开始合并 1 个采购单文件
+2025-05-02 20:53:07,469 - app.core.excel.merger - WARNING - 数据帧 0 缺少必要的列: ['条码', '采购量', '采购单价']
+2025-05-02 20:53:07,470 - app.core.excel.merger - WARNING - 没有有效的数据帧用于合并
+2025-05-02 20:53:07,470 - app.core.excel.merger - ERROR - 合并采购单失败
+2025-05-02 21:02:57,317 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 21:02:57,317 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 21:04:06,634 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 21:04:06,635 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 21:07:29,006 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 21:07:29,007 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 21:10:08,470 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 21:10:08,471 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 21:11:03,185 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 21:11:03,186 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 21:15:10,777 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 21:15:10,778 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 21:16:38,296 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 21:16:38,296 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 21:21:20,679 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 21:21:20,680 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 21:22:23,297 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 21:22:23,298 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 21:22:31,697 - app.core.excel.merger - INFO - 搜索目录 D:\My Documents\python\orc-order-v2\data\output 中的采购单Excel文件
+2025-05-02 21:22:31,702 - app.core.excel.merger - INFO - 找到 1 个采购单Excel文件
+2025-05-02 21:22:31,715 - app.core.excel.merger - INFO - 搜索目录 D:\My Documents\python\orc-order-v2\data\output 中的采购单Excel文件
+2025-05-02 21:22:31,724 - app.core.excel.merger - INFO - 找到 1 个采购单Excel文件
+2025-05-02 21:22:31,735 - app.core.excel.merger - INFO - 成功读取采购单文件: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250502212111.xls
+2025-05-02 21:22:31,737 - app.core.excel.merger - INFO - 列名映射结果: {'条码': '条码（必填）', '采购量': '采购量（必填）', '采购单价': '采购单价（必填）', '赠送量': '赠送量'}
+2025-05-02 21:22:31,738 - app.core.excel.merger - INFO - 开始合并 1 个采购单文件
+2025-05-02 21:22:31,739 - app.core.excel.merger - WARNING - 数据帧 0 缺少必要的列: ['条码', '采购量', '采购单价']
+2025-05-02 21:22:31,740 - app.core.excel.merger - WARNING - 没有有效的数据帧用于合并
+2025-05-02 21:22:31,741 - app.core.excel.merger - ERROR - 合并采购单失败
+2025-05-02 21:45:07,598 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 21:45:07,599 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 21:45:21,947 - app.core.excel.merger - INFO - 搜索目录 D:\My Documents\python\orc-order-v2\data\output 中的采购单Excel文件
+2025-05-02 21:45:21,948 - app.core.excel.merger - INFO - 找到 1 个采购单Excel文件
+2025-05-02 21:45:21,948 - app.core.excel.merger - INFO - 搜索目录 D:\My Documents\python\orc-order-v2\data\output 中的采购单Excel文件
+2025-05-02 21:45:21,949 - app.core.excel.merger - INFO - 找到 1 个采购单Excel文件
+2025-05-02 21:45:21,954 - app.core.excel.merger - INFO - 成功读取采购单文件: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250502214456.xls
+2025-05-02 21:45:21,956 - app.core.excel.merger - INFO - 列名映射结果: {'条码': '条码（必填）', '采购量': '采购量（必填）', '采购单价': '采购单价（必填）', '赠送量': '赠送量'}
+2025-05-02 21:45:21,956 - app.core.excel.merger - INFO - 开始合并 1 个采购单文件
+2025-05-02 21:45:21,956 - app.core.excel.merger - WARNING - 数据帧 0 缺少必要的列: ['条码', '采购量', '采购单价']
+2025-05-02 21:45:24,735 - app.core.excel.merger - WARNING - 没有有效的数据帧用于合并
+2025-05-02 21:45:24,736 - app.core.excel.merger - ERROR - 合并采购单失败
+2025-05-02 21:54:51,328 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 21:54:51,329 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 21:55:07,664 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 21:55:07,664 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 21:56:33,285 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 21:56:33,286 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 21:58:02,455 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 21:58:02,455 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 22:07:10,381 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 22:07:10,382 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 22:10:02,823 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 22:10:02,824 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 22:11:55,061 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 22:11:55,061 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 22:12:08,754 - app.core.excel.merger - INFO - 搜索目录 D:\My Documents\python\orc-order-v2\data\output 中的采购单Excel文件
+2025-05-02 22:12:08,755 - app.core.excel.merger - INFO - 找到 1 个采购单Excel文件
+2025-05-02 22:12:08,755 - app.core.excel.merger - INFO - 搜索目录 D:\My Documents\python\orc-order-v2\data\output 中的采购单Excel文件
+2025-05-02 22:12:08,755 - app.core.excel.merger - INFO - 找到 1 个采购单Excel文件
+2025-05-02 22:12:08,758 - app.core.excel.merger - INFO - 成功读取采购单文件: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250502214456.xls
+2025-05-02 22:12:08,760 - app.core.excel.merger - INFO - 列名映射结果: {'条码': '条码（必填）', '采购量': '采购量（必填）', '采购单价': '采购单价（必填）', '赠送量': '赠送量'}
+2025-05-02 22:12:11,605 - app.core.excel.merger - INFO - 开始合并 1 个采购单文件
+2025-05-02 22:12:11,605 - app.core.excel.merger - WARNING - 数据帧 0 缺少必要的列: ['条码', '采购量', '采购单价']
+2025-05-02 22:12:11,606 - app.core.excel.merger - WARNING - 没有有效的数据帧用于合并
+2025-05-02 22:12:11,606 - app.core.excel.merger - ERROR - 合并采购单失败
+2025-05-02 22:26:11,621 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 22:26:11,621 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 22:26:42,570 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 22:26:42,570 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 22:29:10,831 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 22:29:10,831 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 22:29:26,875 - app.core.excel.merger - INFO - 搜索目录 D:\My Documents\python\orc-order-v2\data\output 中的采购单Excel文件
+2025-05-02 22:29:26,876 - app.core.excel.merger - INFO - 找到 1 个采购单Excel文件
+2025-05-02 22:29:26,876 - app.core.excel.merger - INFO - 搜索目录 D:\My Documents\python\orc-order-v2\data\output 中的采购单Excel文件
+2025-05-02 22:29:26,877 - app.core.excel.merger - INFO - 找到 1 个采购单Excel文件
+2025-05-02 22:29:26,883 - app.core.excel.merger - INFO - 成功读取采购单文件: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250502214456.xls
+2025-05-02 22:29:26,884 - app.core.excel.merger - INFO - 列名映射结果: {'条码': '条码（必填）', '采购量': '采购量（必填）', '采购单价': '采购单价（必填）', '赠送量': '赠送量'}
+2025-05-02 22:29:29,917 - app.core.excel.merger - INFO - 开始合并 1 个采购单文件
+2025-05-02 22:29:29,917 - app.core.excel.merger - WARNING - 数据帧 0 缺少必要的列: ['条码', '采购量', '采购单价']
+2025-05-02 22:29:29,918 - app.core.excel.merger - WARNING - 没有有效的数据帧用于合并
+2025-05-02 22:29:29,918 - app.core.excel.merger - ERROR - 合并采购单失败
+2025-05-02 22:40:41,146 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-02 22:40:41,147 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-02 22:40:56,995 - app.core.excel.merger - INFO - 搜索目录 D:\My Documents\python\orc-order-v2\data\output 中的采购单Excel文件
+2025-05-02 22:40:56,996 - app.core.excel.merger - INFO - 找到 1 个采购单Excel文件

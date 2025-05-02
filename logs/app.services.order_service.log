@@ -78,3 +78,65 @@
 2025-05-02 19:53:27,942 - app.services.order_service - INFO - OrderService初始化完成
 2025-05-02 19:53:29,684 - app.services.order_service - INFO - OrderService开始处理指定Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250502191502.xlsx
 2025-05-02 19:53:47,771 - app.services.order_service - INFO - OrderService开始合并所有采购单
+2025-05-02 20:52:59,673 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 20:52:59,674 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 20:53:02,565 - app.services.order_service - INFO - OrderService开始处理指定Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250502205251.xlsx
+2025-05-02 20:53:07,431 - app.services.order_service - INFO - OrderService开始合并所有采购单
+2025-05-02 21:02:57,316 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 21:02:57,317 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 21:02:57,320 - app.services.order_service - INFO - OrderService开始处理指定Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250502205251.xlsx
+2025-05-02 21:04:06,633 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 21:04:06,635 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 21:04:06,636 - app.services.order_service - INFO - OrderService开始处理指定Excel文件: D:/My Documents/python/orc-order-v2/data/output/微信图片_20250502205251.xlsx
+2025-05-02 21:07:29,004 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 21:07:29,007 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 21:07:29,007 - app.services.order_service - INFO - OrderService开始处理指定Excel文件: D:/My Documents/python/orc-order-v2/data/output/微信图片_20250502205251.xlsx
+2025-05-02 21:10:08,467 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 21:10:08,471 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 21:10:08,472 - app.services.order_service - INFO - OrderService开始处理指定Excel文件: data/output/微信图片_20250502205251.xlsx
+2025-05-02 21:11:03,183 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 21:11:03,186 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 21:11:03,186 - app.services.order_service - INFO - OrderService开始处理指定Excel文件: D:/My Documents/python/orc-order-v2/data/output/微信图片_20250502205251.xlsx
+2025-05-02 21:15:10,775 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 21:15:10,778 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 21:15:10,779 - app.services.order_service - INFO - OrderService开始处理指定Excel文件: data/output/微信图片_20250502205251.xlsx
+2025-05-02 21:16:38,295 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 21:16:38,297 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 21:16:38,297 - app.services.order_service - INFO - OrderService开始处理指定Excel文件: D:/My Documents/python/orc-order-v2/data/output/微信图片_20250502205251.xlsx
+2025-05-02 21:21:20,678 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 21:21:20,680 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 21:22:23,296 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 21:22:23,299 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 21:22:26,470 - app.services.order_service - INFO - OrderService开始处理指定Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250502212111.xlsx
+2025-05-02 21:22:31,715 - app.services.order_service - INFO - OrderService开始合并所有采购单
+2025-05-02 21:45:07,597 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 21:45:07,599 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 21:45:10,631 - app.services.order_service - INFO - OrderService开始处理指定Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250502214456.xlsx
+2025-05-02 21:45:21,948 - app.services.order_service - INFO - OrderService开始合并所有采购单
+2025-05-02 21:54:51,326 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 21:54:51,329 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 21:55:07,662 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 21:55:07,665 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 21:56:33,284 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 21:56:33,286 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 21:58:02,453 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 21:58:02,455 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 22:07:10,380 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 22:07:10,382 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 22:10:02,822 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 22:10:02,824 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 22:11:55,059 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 22:11:55,061 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 22:11:57,705 - app.services.order_service - INFO - OrderService开始处理指定Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250502214456.xlsx
+2025-05-02 22:12:08,755 - app.services.order_service - INFO - OrderService开始合并所有采购单
+2025-05-02 22:26:11,620 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 22:26:11,621 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 22:26:42,568 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 22:26:42,571 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 22:29:10,829 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 22:29:10,831 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 22:29:14,322 - app.services.order_service - INFO - OrderService开始处理指定Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250502214456.xlsx
+2025-05-02 22:29:26,876 - app.services.order_service - INFO - OrderService开始合并所有采购单
+2025-05-02 22:40:41,144 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 22:40:41,147 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 22:40:43,849 - app.services.order_service - INFO - OrderService开始处理指定Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250502214456.xlsx
