@@ -29,3 +29,11 @@
 2025-05-02 17:40:08,402 - __main__ - INFO - Excel处理成功，输出文件: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250227193150(1).xls
 2025-05-02 17:42:15,227 - __main__ - INFO - 处理Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250227193150(1).xlsx
 2025-05-02 17:42:15,838 - __main__ - INFO - Excel处理成功，输出文件: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250227193150(1).xls
+2025-05-02 17:57:41,817 - __main__ - INFO - 处理Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250227193150(1).xlsx
+2025-05-02 17:57:42,390 - __main__ - INFO - Excel处理成功，输出文件: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250227193150(1).xls
+2025-05-02 18:00:56,509 - __main__ - INFO - 处理Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250227193150(1).xlsx
+2025-05-02 18:00:57,127 - __main__ - ERROR - Excel处理失败
+2025-05-02 18:01:27,765 - __main__ - INFO - 处理Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250227193150(1).xlsx
+2025-05-02 18:01:28,275 - __main__ - ERROR - Excel处理失败
+2025-05-02 18:01:40,472 - __main__ - INFO - 处理Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250227193150(1).xlsx
+2025-05-02 18:01:41,097 - __main__ - ERROR - Excel处理失败
