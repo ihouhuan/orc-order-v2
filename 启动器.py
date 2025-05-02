@@ -435,7 +435,7 @@ def main():
     
     # 创建窗口
     root = tk.Tk()
-    root.title("OCR订单处理系统 v2.0")
+    root.title("OCR订单处理系统 v1.0")
     root.geometry("1200x600")  # 增加窗口宽度以容纳日志
     
     # 创建主区域分割
@@ -447,7 +447,7 @@ def main():
     main_pane.add(left_frame)
     
     # 标题
-    tk.Label(left_frame, text="益选-OCR订单处理系统", font=("Arial", 16)).pack(pady=10)
+    tk.Label(left_frame, text="OCR订单处理系统", font=("Arial", 16)).pack(pady=10)
     
     # 功能按钮区域
     buttons_frame = tk.Frame(left_frame)
@@ -466,7 +466,7 @@ def main():
     log_text.configure(state=tk.DISABLED)  # 设置为只读
     
     # 日志初始内容
-    add_to_log(log_text, "OCR订单处理系统启动器 v2.0\n")
+    add_to_log(log_text, "OCR订单处理系统启动器 v1.0\n")
     add_to_log(log_text, f"当前工作目录: {os.getcwd()}\n")
     add_to_log(log_text, "系统已准备就绪，请选择要执行的操作。\n")
     
@@ -558,7 +558,7 @@ def main():
     ).pack(pady=5)
     
     # 底部说明
-    tk.Label(left_frame, text="© 2025 OCR订单处理系统", font=("Arial", 10)).pack(side=tk.BOTTOM, pady=10)
+    tk.Label(left_frame, text="© 2025 OCR订单处理系统 v1.0", font=("Arial", 10)).pack(side=tk.BOTTOM, pady=10)
     
     # 启动主循环
     root.mainloop()

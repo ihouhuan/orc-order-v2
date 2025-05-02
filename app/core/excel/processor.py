@@ -568,6 +568,14 @@ class ExcelProcessor:
                 # 记录已处理文件
                 self.processed_files[file_path] = output_file
                 self._save_processed_files()
+                
+                # 自动打开输出目录
+                try:
+                    os.startfile(os.path.abspath(self.output_dir))
+                    logger.info(f"已自动打开输出目录: {self.output_dir}")
+                except Exception as e:
+                    logger.warning(f"无法自动打开输出目录: {e}")
+                
                 return output_file
             
             return None
