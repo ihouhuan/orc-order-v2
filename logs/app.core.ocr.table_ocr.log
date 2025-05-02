@@ -51,3 +51,15 @@
 2025-05-02 17:16:24,475 - app.core.ocr.table_ocr - INFO - 使用输出目录: D:\My Documents\python\orc-order-v2\data\output
 2025-05-02 17:16:24,475 - app.core.ocr.table_ocr - INFO - 使用临时目录: D:\My Documents\python\orc-order-v2\data\temp
 2025-05-02 17:16:24,475 - app.core.ocr.table_ocr - INFO - OCR处理器初始化完成，输入目录: D:\My Documents\python\orc-order-v2\data\input, 输出目录: D:\My Documents\python\orc-order-v2\data\output
+2025-05-02 17:32:36,460 - app.core.ocr.table_ocr - INFO - 使用输入目录: D:\My Documents\python\orc-order-v2\data\input
+2025-05-02 17:32:36,460 - app.core.ocr.table_ocr - INFO - 使用输出目录: D:\My Documents\python\orc-order-v2\data\output
+2025-05-02 17:32:36,460 - app.core.ocr.table_ocr - INFO - 使用临时目录: D:\My Documents\python\orc-order-v2\data\temp
+2025-05-02 17:32:36,461 - app.core.ocr.table_ocr - INFO - OCR处理器初始化完成，输入目录: D:\My Documents\python\orc-order-v2\data\input, 输出目录: D:\My Documents\python\orc-order-v2\data\output
+2025-05-02 17:40:07,685 - app.core.ocr.table_ocr - INFO - 使用输入目录: D:\My Documents\python\orc-order-v2\data\input
+2025-05-02 17:40:07,685 - app.core.ocr.table_ocr - INFO - 使用输出目录: D:\My Documents\python\orc-order-v2\data\output
+2025-05-02 17:40:07,685 - app.core.ocr.table_ocr - INFO - 使用临时目录: D:\My Documents\python\orc-order-v2\data\temp
+2025-05-02 17:40:07,686 - app.core.ocr.table_ocr - INFO - OCR处理器初始化完成，输入目录: D:\My Documents\python\orc-order-v2\data\input, 输出目录: D:\My Documents\python\orc-order-v2\data\output
+2025-05-02 17:42:15,224 - app.core.ocr.table_ocr - INFO - 使用输入目录: D:\My Documents\python\orc-order-v2\data\input
+2025-05-02 17:42:15,224 - app.core.ocr.table_ocr - INFO - 使用输出目录: D:\My Documents\python\orc-order-v2\data\output
+2025-05-02 17:42:15,224 - app.core.ocr.table_ocr - INFO - 使用临时目录: D:\My Documents\python\orc-order-v2\data\temp
+2025-05-02 17:42:15,225 - app.core.ocr.table_ocr - INFO - OCR处理器初始化完成，输入目录: D:\My Documents\python\orc-order-v2\data\input, 输出目录: D:\My Documents\python\orc-order-v2\data\output

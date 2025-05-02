@@ -283,6 +283,132 @@ def organize_project_files(log_widget):
         add_to_log(log_widget, "没有需要整理的文件\n")
         messagebox.showinfo("整理完成", "没有需要整理的文件。")
 
+def clean_data_files(log_widget):
+    """清理data目录中的文件"""
+    # 确保目录存在
+    ensure_directories()
+    
+    add_to_log(log_widget, "开始清理文件...\n")
+    
+    # 获取需要清理的目录
+    input_dir = os.path.abspath("data/input")
+    output_dir = os.path.abspath("data/output")
+    
+    # 统计文件信息
+    input_files = [f for f in os.listdir(input_dir) if os.path.isfile(os.path.join(input_dir, f))]
+    output_files = [f for f in os.listdir(output_dir) if os.path.isfile(os.path.join(output_dir, f))]
+    
+    # 显示统计信息
+    add_to_log(log_widget, f"输入目录 ({input_dir}) 共有 {len(input_files)} 个文件\n")
+    add_to_log(log_widget, f"输出目录 ({output_dir}) 共有 {len(output_files)} 个文件\n")
+    
+    # 显示确认对话框
+    if not input_files and not output_files:
+        messagebox.showinfo("清理文件", "没有需要清理的文件")
+        return
+    
+    confirm_message = "确定要清理以下文件吗？\n\n"
+    confirm_message += f"- 输入目录: {len(input_files)} 个文件\n"
+    confirm_message += f"- 输出目录: {len(output_files)} 个文件\n"
+    confirm_message += "\n此操作不可撤销！"
+    
+    if not messagebox.askyesno("确认清理", confirm_message):
+        add_to_log(log_widget, "清理操作已取消\n")
+        return
+    
+    # 清理输入目录的文件
+    files_deleted = 0
+    
+    # 先提示用户选择要清理的目录
+    options = []
+    if input_files:
+        options.append(("输入目录(data/input)", input_dir))
+    if output_files:
+        options.append(("输出目录(data/output)", output_dir))
+    
+    # 创建临时的选择对话框
+    dialog = tk.Toplevel()
+    dialog.title("选择要清理的目录")
+    dialog.geometry("300x200")
+    dialog.transient(log_widget.winfo_toplevel())  # 设置为主窗口的子窗口
+    dialog.grab_set()  # 模态对话框
+    
+    tk.Label(dialog, text="请选择要清理的目录:", font=("Arial", 12)).pack(pady=10)
+    
+    # 选择变量
+    choices = {}
+    for name, path in options:
+        var = tk.BooleanVar(value=True)  # 默认选中
+        choices[path] = var
+        tk.Checkbutton(dialog, text=name, variable=var, font=("Arial", 10)).pack(anchor=tk.W, padx=20, pady=5)
+    
+    # 删除前备份选项
+    backup_var = tk.BooleanVar(value=False)
+    tk.Checkbutton(dialog, text="删除前备份文件", variable=backup_var, font=("Arial", 10)).pack(anchor=tk.W, padx=20, pady=5)
+    
+    result = {"confirmed": False, "choices": {}, "backup": False}
+    
+    def on_confirm():
+        result["confirmed"] = True
+        result["choices"] = {path: var.get() for path, var in choices.items()}
+        result["backup"] = backup_var.get()
+        dialog.destroy()
+    
+    def on_cancel():
+        dialog.destroy()
+    
+    # 按钮
+    button_frame = tk.Frame(dialog)
+    button_frame.pack(pady=10)
+    tk.Button(button_frame, text="确认", command=on_confirm, width=10).pack(side=tk.LEFT, padx=10)
+    tk.Button(button_frame, text="取消", command=on_cancel, width=10).pack(side=tk.LEFT, padx=10)
+    
+    # 等待对话框关闭
+    dialog.wait_window()
+    
+    if not result["confirmed"]:
+        add_to_log(log_widget, "清理操作已取消\n")
+        return
+    
+    # 备份文件
+    if result["backup"]:
+        backup_dir = os.path.join("data", "backup", datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
+        os.makedirs(backup_dir, exist_ok=True)
+        add_to_log(log_widget, f"创建备份目录: {backup_dir}\n")
+        
+        for dir_path, selected in result["choices"].items():
+            if selected:
+                dir_name = os.path.basename(dir_path)
+                backup_subdir = os.path.join(backup_dir, dir_name)
+                os.makedirs(backup_subdir, exist_ok=True)
+                
+                files = [f for f in os.listdir(dir_path) if os.path.isfile(os.path.join(dir_path, f))]
+                for file in files:
+                    src = os.path.join(dir_path, file)
+                    dst = os.path.join(backup_subdir, file)
+                    try:
+                        shutil.copy2(src, dst)
+                        add_to_log(log_widget, f"已备份: {src} -> {dst}\n")
+                    except Exception as e:
+                        add_to_log(log_widget, f"备份失败: {src}, 错误: {e}\n")
+    
+    # 删除所选目录的文件
+    for dir_path, selected in result["choices"].items():
+        if selected:
+            files = [f for f in os.listdir(dir_path) if os.path.isfile(os.path.join(dir_path, f))]
+            for file in files:
+                file_path = os.path.join(dir_path, file)
+                try:
+                    os.remove(file_path)
+                    add_to_log(log_widget, f"已删除: {file_path}\n")
+                    files_deleted += 1
+                except Exception as e:
+                    add_to_log(log_widget, f"删除失败: {file_path}, 错误: {e}\n")
+    
+    # 显示结果
+    add_to_log(log_widget, f"清理完成，共删除 {files_deleted} 个文件\n")
+    messagebox.showinfo("清理完成", f"共删除 {files_deleted} 个文件")
+
 def main():
     """主函数"""
     # 确保必要的目录结构存在并转移旧目录内容
@@ -377,6 +503,15 @@ def main():
         width=20,
         height=2,
         command=lambda: organize_project_files(log_text)
+    ).pack(pady=5)
+    
+    # 清理文件按钮
+    tk.Button(
+        buttons_frame, 
+        text="清理文件", 
+        width=20,
+        height=2,
+        command=lambda: clean_data_files(log_text)
     ).pack(pady=5)
     
     # 打开输入目录

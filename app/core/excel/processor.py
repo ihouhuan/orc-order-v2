@@ -294,33 +294,100 @@ class ExcelProcessor:
             output_workbook = xlcopy(template_workbook)
             output_sheet = output_workbook.get_sheet(0)
             
-            # 填充商品信息
-            start_row = 1  # 从第2行开始填充数据（索引从0开始）
+            # 先对产品按条码分组，区分正常商品和赠品
+            barcode_groups = {}
             
-            for i, product in enumerate(products):
-                row = start_row + i
+            # 遍历所有产品，按条码分组
+            logger.info(f"开始处理{len(products)} 个产品信息")
+            for product in products:
+                barcode = product.get('barcode', '')
+                if not barcode:
+                    logger.warning(f"跳过无条码商品")
+                    continue
                 
-                # 序号
-                output_sheet.write(row, 0, i + 1)
-                # 商品编码（条码）
-                output_sheet.write(row, 1, product['barcode'])
-                # 商品名称
-                output_sheet.write(row, 2, product['name'])
-                # 规格
-                output_sheet.write(row, 3, product['specification'])
-                # 单位
-                output_sheet.write(row, 4, product['unit'])
-                # 单价
-                output_sheet.write(row, 5, product['price'])
-                # 采购数量
-                output_sheet.write(row, 6, product['quantity'])
-                # 采购金额（单价 × 数量）
-                amount = product['price'] * product['quantity']
-                output_sheet.write(row, 7, amount)
-                # 税率
-                output_sheet.write(row, 8, 0)
-                # 赠送量（默认为0）
-                output_sheet.write(row, 9, 0)
+                # 获取数量和单价
+                quantity = product.get('quantity', 0)
+                price = product.get('price', 0)
+                
+                # 判断是否为赠品（价格为0）
+                is_gift = price == 0
+                
+                logger.info(f"处理商品: 条码={barcode}, 数量={quantity}, 单价={price}, 是否赠品={is_gift}")
+                
+                if barcode not in barcode_groups:
+                    barcode_groups[barcode] = {
+                        'normal': None,  # 正常商品信息
+                        'gift_quantity': 0  # 赠品数量
+                    }
+                
+                if is_gift:
+                    # 是赠品，累加赠品数量
+                    barcode_groups[barcode]['gift_quantity'] += quantity
+                    logger.info(f"发现赠品：条码{barcode}, 数量={quantity}")
+                else:
+                    # 是正常商品
+                    if barcode_groups[barcode]['normal'] is None:
+                        barcode_groups[barcode]['normal'] = {
+                            'product': product,
+                            'quantity': quantity,
+                            'price': price
+                        }
+                        logger.info(f"发现正常商品：条码{barcode}, 数量={quantity}, 单价={price}")
+                    else:
+                        # 如果有多个正常商品记录，累加数量
+                        barcode_groups[barcode]['normal']['quantity'] += quantity
+                        logger.info(f"累加正常商品数量：条码{barcode}, 新增={quantity}, 累计={barcode_groups[barcode]['normal']['quantity']}")
+                        
+                        # 如果单价不同，取平均值
+                        if price != barcode_groups[barcode]['normal']['price']:
+                            avg_price = (barcode_groups[barcode]['normal']['price'] + price) / 2
+                            barcode_groups[barcode]['normal']['price'] = avg_price
+                            logger.info(f"调整单价(取平均值)：条码{barcode}, 原价={barcode_groups[barcode]['normal']['price']}, 新价={price}, 平均={avg_price}")
+            
+            # 输出调试信息
+            logger.info(f"分组后共{len(barcode_groups)} 个不同条码的商品")
+            for barcode, group in barcode_groups.items():
+                if group['normal'] is not None:
+                    logger.info(f"条码 {barcode} 处理结果：正常商品数量{group['normal']['quantity']}，单价{group['normal']['price']}，赠品数量{group['gift_quantity']}")
+                else:
+                    logger.info(f"条码 {barcode} 处理结果：只有赠品，数量={group['gift_quantity']}")
+            
+            # 准备填充数据
+            row_index = 1  # 从第2行开始填充（索引从0开始）
+            
+            for barcode, group in barcode_groups.items():
+                # 1. 列B(1): 条码（必填）
+                output_sheet.write(row_index, 1, barcode)
+                
+                if group['normal'] is not None:
+                    # 有正常商品
+                    product = group['normal']['product']
+                    
+                    # 2. 列C(2): 采购量（必填） 使用正常商品的采购量
+                    normal_quantity = group['normal']['quantity']
+                    output_sheet.write(row_index, 2, normal_quantity)
+                    
+                    # 3. 列D(3): 赠送量 - 添加赠品数量
+                    if group['gift_quantity'] > 0:
+                        output_sheet.write(row_index, 3, group['gift_quantity'])
+                        logger.info(f"条码 {barcode} 填充：采购量={normal_quantity}，赠品数量{group['gift_quantity']}")
+                    
+                    # 4. 列E(4): 采购单价（必填）
+                    purchase_price = group['normal']['price']
+                    style = xlwt.XFStyle()
+                    style.num_format_str = '0.0000'
+                    output_sheet.write(row_index, 4, round(purchase_price, 4), style)
+                else:
+                    # 只有赠品，没有正常商品
+                    # 采购量填0，赠送量填赠品数量
+                    output_sheet.write(row_index, 2, 0)  # 采购量为0
+                    output_sheet.write(row_index, 3, group['gift_quantity'])  # 赠送量
+                    output_sheet.write(row_index, 4, 0)  # 单价为0
+                    
+                    logger.info(f"条码 {barcode} 填充：仅有赠品，采购量=0，赠品数量={group['gift_quantity']}")
+                
+                # 移到下一行
+                row_index += 1
             
             # 保存文件
             output_workbook.save(output_file_path)
