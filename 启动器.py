@@ -428,6 +428,35 @@ def clean_data_files(log_widget):
     add_to_log(log_widget, f"清理完成，共删除 {files_deleted} 个文件\n")
     messagebox.showinfo("清理完成", f"共删除 {files_deleted} 个文件")
 
+def clean_cache(log_widget):
+    """清除缓存，重置处理记录"""
+    add_to_log(log_widget, "开始清除缓存...\n")
+    
+    cache_files = [
+        "data/processed_files.json",  # OCR处理记录
+        "data/output/processed_files.json"  # Excel处理记录
+    ]
+    
+    for cache_file in cache_files:
+        try:
+            if os.path.exists(cache_file):
+                # 创建备份
+                backup_file = f"{cache_file}.bak"
+                shutil.copy2(cache_file, backup_file)
+                
+                # 清空或删除缓存文件
+                with open(cache_file, 'w') as f:
+                    f.write('{}')  # 写入空的JSON对象
+                
+                add_to_log(log_widget, f"已清除缓存文件: {cache_file}，并创建备份: {backup_file}\n")
+            else:
+                add_to_log(log_widget, f"缓存文件不存在: {cache_file}\n")
+        except Exception as e:
+            add_to_log(log_widget, f"清除缓存文件时出错: {cache_file}, 错误: {e}\n")
+    
+    add_to_log(log_widget, "缓存清除完成，系统将重新处理所有文件\n")
+    messagebox.showinfo("缓存清除", "缓存已清除，系统将重新处理所有文件。")
+
 def main():
     """主函数"""
     # 确保必要的目录结构存在并转移旧目录内容
@@ -435,8 +464,8 @@ def main():
     
     # 创建窗口
     root = tk.Tk()
-    root.title("OCR订单处理系统 v1.0")
-    root.geometry("1200x600")  # 增加窗口宽度以容纳日志
+    root.title("益选-OCR订单处理系统 v1.0")
+    root.geometry("1200x800")  # 增加窗口宽度以容纳日志
     
     # 创建主区域分割
     main_pane = tk.PanedWindow(root, orient=tk.HORIZONTAL)
@@ -447,7 +476,7 @@ def main():
     main_pane.add(left_frame)
     
     # 标题
-    tk.Label(left_frame, text="OCR订单处理系统", font=("Arial", 16)).pack(pady=10)
+    tk.Label(left_frame, text="益选-OCR订单处理系统", font=("Arial", 16)).pack(pady=10)
     
     # 功能按钮区域
     buttons_frame = tk.Frame(left_frame)
@@ -466,7 +495,7 @@ def main():
     log_text.configure(state=tk.DISABLED)  # 设置为只读
     
     # 日志初始内容
-    add_to_log(log_text, "OCR订单处理系统启动器 v1.0\n")
+    add_to_log(log_text, "益选-OCR订单处理系统启动器 v1.0\n")
     add_to_log(log_text, f"当前工作目录: {os.getcwd()}\n")
     add_to_log(log_text, "系统已准备就绪，请选择要执行的操作。\n")
     
@@ -515,6 +544,15 @@ def main():
         command=lambda: run_command_with_logging(["python", "run.py", "pipeline"], log_text)
     ).pack(pady=5)
     
+    # 清除缓存按钮
+    tk.Button(
+        buttons_frame, 
+        text="清除处理缓存", 
+        width=20,
+        height=2,
+        command=lambda: clean_cache(log_text)
+    ).pack(pady=5)
+    
     # 整理文件按钮
     tk.Button(
         buttons_frame, 
@@ -558,7 +596,7 @@ def main():
     ).pack(pady=5)
     
     # 底部说明
-    tk.Label(left_frame, text="© 2025 OCR订单处理系统 v1.0", font=("Arial", 10)).pack(side=tk.BOTTOM, pady=10)
+    tk.Label(left_frame, text="© 2025 益选-OCR订单处理系统 v1.0", font=("Arial", 10)).pack(side=tk.BOTTOM, pady=10)
     
     # 启动主循环
     root.mainloop()

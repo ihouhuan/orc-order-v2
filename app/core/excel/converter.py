@@ -27,6 +27,11 @@ class UnitConverter:
                 'multiplier': 10,  # 数量乘以10
                 'target_unit': '瓶',  # 目标单位
                 'description': '特殊处理：数量*10，单位转换为瓶'
+            },
+            '6921168593804': {
+                'multiplier': 30,  # 数量乘以30
+                'target_unit': '瓶',  # 目标单位
+                'description': 'NFC产品特殊处理：每箱30瓶'
             }
             # 可以添加更多特殊条码的配置
         }
@@ -53,6 +58,13 @@ class UnitConverter:
         """
         从数量字符串中提取单位
         
+        支持的格式:
+        1. "2箱" -> (2, "箱")
+        2. "3件" -> (3, "件")
+        3. "1.5提" -> (1.5, "提")
+        4. "数量: 5盒" -> (5, "盒")
+        5. "× 2瓶" -> (2, "瓶")
+        
         Args:
             quantity_str: 数量字符串，如"2箱"、"5件"
             
@@ -62,13 +74,29 @@ class UnitConverter:
         if not quantity_str or not isinstance(quantity_str, str):
             return None, None
         
-        # 匹配数字+单位格式
-        match = re.match(r'^([\d\.]+)\s*([^\d\s\.]+)$', quantity_str.strip())
-        if match:
+        # 清理字符串，移除前后空白和一些常见前缀
+        cleaned_str = quantity_str.strip()
+        for prefix in ['数量:', '数量：', '×', 'x', 'X', '*']:
+            cleaned_str = cleaned_str.replace(prefix, '').strip()
+        
+        # 匹配数字+单位格式 (基本格式)
+        basic_match = re.match(r'^([\d\.]+)\s*([^\d\s\.]+)$', cleaned_str)
+        if basic_match:
             try:
-                num = float(match.group(1))
-                unit = match.group(2)
-                logger.info(f"从数量提取单位: {quantity_str} -> 数量={num}, 单位={unit}")
+                num = float(basic_match.group(1))
+                unit = basic_match.group(2)
+                logger.info(f"从数量提取单位(基本格式): {quantity_str} -> 数量={num}, 单位={unit}")
+                return num, unit
+            except ValueError:
+                pass
+        
+        # 匹配更复杂的格式，如包含其他文本的情况
+        complex_match = re.search(r'([\d\.]+)\s*([箱|件|瓶|提|盒|袋|桶|包|kg|g|升|毫升|L|ml|个])', cleaned_str)
+        if complex_match:
+            try:
+                num = float(complex_match.group(1))
+                unit = complex_match.group(2)
+                logger.info(f"从数量提取单位(复杂格式): {quantity_str} -> 数量={num}, 单位={unit}")
                 return num, unit
             except ValueError:
                 pass
@@ -115,6 +143,13 @@ class UnitConverter:
         """
         从商品名称中推断规格
         
+        规则:
+        1. "xx入纸箱" -> 1*xx (如"15入纸箱" -> 1*15)
+        2. 直接包含规格 "1*15" -> 1*15
+        3. "xx纸箱" -> 1*xx (如"15纸箱" -> 1*15)
+        4. "xx白膜" -> 1*xx (如"12白膜" -> 1*12)
+        5. "xxL" 容量单位特殊处理
+        
         Args:
             name: 商品名称
             
@@ -124,34 +159,53 @@ class UnitConverter:
         if not name or not isinstance(name, str):
             return None
         
-        # 特殊模式的名称处理
-        # 如"445水溶C血橙15入纸箱" -> "1*15"
-        pattern1 = r'.*(\d+)入'
-        match = re.match(pattern1, name)
+        # 记录原始商品名称，用于日志
+        original_name = name
+        
+        # 特殊模式1: "xx入纸箱" 格式，如"445水溶C血橙15入纸箱" -> "1*15"
+        pattern1 = r'.*?(\d+)入纸箱'
+        match = re.search(pattern1, name)
         if match:
             inferred_spec = f"1*{match.group(1)}"
-            logger.info(f"从名称推断规格(入): {name} -> {inferred_spec}")
+            logger.info(f"从名称推断规格(入纸箱): {original_name} -> {inferred_spec}")
             return inferred_spec
         
-        # 如"500-东方树叶-绿茶1*15-纸箱装" -> "1*15"
-        pattern2 = r'.*(\d+)[*xX×](\d+).*'
-        match = re.match(pattern2, name)
+        # 特殊模式2: 直接包含规格，如"500-东方树叶-乌龙茶1*15-纸箱装" -> "1*15"
+        pattern2 = r'.*?(\d+)[*xX×](\d+).*'
+        match = re.search(pattern2, name)
         if match:
             inferred_spec = f"{match.group(1)}*{match.group(2)}"
-            logger.info(f"从名称推断规格(直接): {name} -> {inferred_spec}")
+            logger.info(f"从名称推断规格(直接格式): {original_name} -> {inferred_spec}")
             return inferred_spec
         
-        # 如"12.9L桶装水" -> "12.9L*1"
-        pattern3 = r'.*?([\d\.]+)L.*'
-        match = re.match(pattern3, name)
+        # 特殊模式3: "xx纸箱" 格式，如"500茶π蜜桃乌龙15纸箱" -> "1*15"
+        pattern3 = r'.*?(\d+)纸箱'
+        match = re.search(pattern3, name)
+        if match:
+            inferred_spec = f"1*{match.group(1)}"
+            logger.info(f"从名称推断规格(纸箱): {original_name} -> {inferred_spec}")
+            return inferred_spec
+        
+        # 特殊模式4: "xx白膜" 格式，如"1.5L水12白膜" 或 "550水24白膜" -> "1*12" 或 "1*24"
+        pattern4 = r'.*?(\d+)白膜'
+        match = re.search(pattern4, name)
+        if match:
+            inferred_spec = f"1*{match.group(1)}"
+            logger.info(f"从名称推断规格(白膜): {original_name} -> {inferred_spec}")
+            return inferred_spec
+        
+        # 特殊模式5: 容量单位如"12.9L桶装水" -> "12.9L*1"
+        pattern5 = r'.*?([\d\.]+)L.*'
+        match = re.search(pattern5, name)
         if match:
             inferred_spec = f"{match.group(1)}L*1"
-            logger.info(f"从名称推断规格(L): {name} -> {inferred_spec}")
+            logger.info(f"从名称推断规格(容量): {original_name} -> {inferred_spec}")
             return inferred_spec
         
-        # 从名称中提取规格
+        # 尝试通用模式匹配
         spec = self.extract_specification(name)
         if spec:
+            logger.info(f"从名称推断规格(通用模式): {original_name} -> {spec}")
             return spec
             
         return None

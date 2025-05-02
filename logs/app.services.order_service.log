@@ -59,3 +59,22 @@
 2025-05-02 18:41:16,741 - app.services.order_service - INFO - 初始化OrderService
 2025-05-02 18:41:16,743 - app.services.order_service - INFO - OrderService初始化完成
 2025-05-02 18:41:16,744 - app.services.order_service - INFO - OrderService开始处理指定Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250227193150(1).xlsx
+2025-05-02 19:15:17,470 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 19:15:17,472 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 19:15:43,268 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 19:15:43,269 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 19:15:43,270 - app.services.order_service - INFO - OrderService开始处理指定Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250502191502.xlsx
+2025-05-02 19:33:54,962 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 19:33:54,964 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 19:35:48,762 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 19:35:48,764 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 19:36:15,984 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 19:36:15,986 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 19:42:19,205 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 19:42:19,207 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 19:42:21,167 - app.services.order_service - INFO - OrderService开始处理指定Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250502191502.xlsx
+2025-05-02 19:42:36,441 - app.services.order_service - INFO - OrderService开始合并所有采购单
+2025-05-02 19:53:27,940 - app.services.order_service - INFO - 初始化OrderService
+2025-05-02 19:53:27,942 - app.services.order_service - INFO - OrderService初始化完成
+2025-05-02 19:53:29,684 - app.services.order_service - INFO - OrderService开始处理指定Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250502191502.xlsx
+2025-05-02 19:53:47,771 - app.services.order_service - INFO - OrderService开始合并所有采购单

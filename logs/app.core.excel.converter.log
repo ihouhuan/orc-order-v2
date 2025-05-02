@@ -143,3 +143,188 @@
 2025-05-02 18:41:17,314 - app.core.excel.converter - INFO - 从名称推断规格(入): 450ml轻乳茶大红袍乌龙12入纸箱 -> 1*2
 2025-05-02 18:41:17,315 - app.core.excel.converter - INFO - 解析二级规格: 1*2 -> 1*2
 2025-05-02 18:41:17,315 - app.core.excel.converter - INFO - 提/盒单位(二级规格)处理: 保持原样 数量: 1.0, 单价: 65.0, 单位: 提
+2025-05-02 19:15:43,873 - app.core.excel.converter - INFO - 从名称推断规格(入): 450果园30%橙子15入纸箱 -> 1*5
+2025-05-02 19:15:43,874 - app.core.excel.converter - INFO - 从数量提取单位: 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:15:43,874 - app.core.excel.converter - INFO - 解析二级规格: 1*5 -> 1*5
+2025-05-02 19:15:43,874 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 5.0, 单价: 0 -> 0, 单位: 箱 -> 瓶
+2025-05-02 19:15:43,875 - app.core.excel.converter - INFO - 从名称推断规格(入): 450果园30%葡萄15入纸箱 -> 1*5
+2025-05-02 19:15:43,876 - app.core.excel.converter - INFO - 从数量提取单位: 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:15:43,876 - app.core.excel.converter - INFO - 解析二级规格: 1*5 -> 1*5
+2025-05-02 19:15:43,876 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 5.0, 单价: 56.0 -> 11.2, 单位: 箱 -> 瓶
+2025-05-02 19:15:43,876 - app.core.excel.converter - INFO - 从名称推断规格(入): 450果园30%楂苹梅15入纸箱 -> 1*5
+2025-05-02 19:15:43,876 - app.core.excel.converter - INFO - 从数量提取单位: 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:15:43,877 - app.core.excel.converter - INFO - 解析二级规格: 1*5 -> 1*5
+2025-05-02 19:15:43,877 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 5.0, 单价: 56.0 -> 11.2, 单位: 箱 -> 瓶
+2025-05-02 19:15:43,877 - app.core.excel.converter - INFO - 从名称推断规格(直接): 500-东方树叶-青柑普洱1*15-纸
+箱装-开盖活动装 -> 1*15
+2025-05-02 19:15:43,944 - app.core.excel.converter - INFO - 从数量提取单位: 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:15:43,944 - app.core.excel.converter - INFO - 解析二级规格: 1*15 -> 1*15
+2025-05-02 19:15:43,944 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 15.0, 单价: 55.0 -> 3.6666666666666665, 单位: 箱 -> 瓶
+2025-05-02 19:15:43,945 - app.core.excel.converter - INFO - 从名称推断规格(直接): 500-东方树叶-乌龙茶1*15-纸箱
+装-开盖活动装 -> 1*15
+2025-05-02 19:15:43,945 - app.core.excel.converter - INFO - 从数量提取单位: 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:15:43,946 - app.core.excel.converter - INFO - 解析二级规格: 1*15 -> 1*15
+2025-05-02 19:15:43,946 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 15.0, 单价: 0 -> 0, 单位: 箱 -> 瓶
+2025-05-02 19:15:43,946 - app.core.excel.converter - INFO - 从名称推断规格(入): 900树叶茉莉花茶12入纸箱 -> 1*2
+2025-05-02 19:15:43,946 - app.core.excel.converter - INFO - 从数量提取单位: 5箱 -> 数量=5.0, 单位=箱
+2025-05-02 19:15:43,946 - app.core.excel.converter - INFO - 解析二级规格: 1*2 -> 1*2
+2025-05-02 19:15:43,947 - app.core.excel.converter - INFO - 箱单位处理: 数量: 5.0 -> 10.0, 单价: 62.0 -> 31.0, 单位: 箱 -> 瓶
+2025-05-02 19:15:43,947 - app.core.excel.converter - INFO - 从名称推断规格(入): 900树叶青柑普洱12入纸箱 -> 1*2
+2025-05-02 19:15:43,947 - app.core.excel.converter - INFO - 从数量提取单位: 2箱 -> 数量=2.0, 单位=箱
+2025-05-02 19:15:43,948 - app.core.excel.converter - INFO - 解析二级规格: 1*2 -> 1*2
+2025-05-02 19:15:43,948 - app.core.excel.converter - INFO - 箱单位处理: 数量: 2.0 -> 4.0, 单价: 62.0 -> 31.0, 单位: 箱 -> 瓶
+2025-05-02 19:15:43,949 - app.core.excel.converter - INFO - 从数量提取单位: 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:15:43,950 - app.core.excel.converter - INFO - 从名称推断规格(直接): 300NFC橙3*10纸箱 -> 3*10
+2025-05-02 19:15:43,950 - app.core.excel.converter - INFO - 从数量提取单位: 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:15:43,950 - app.core.excel.converter - INFO - 解析二级规格: 3*10 -> 3*10
+2025-05-02 19:15:43,950 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 10.0, 单价: 180.0 -> 18.0, 单位: 箱 -> 瓶
+2025-05-02 19:15:47,199 - app.core.excel.converter - INFO - 从数量提取单位: 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:15:47,200 - app.core.excel.converter - INFO - 从名称推断规格(L): 1.5L水12白膜 -> 1.5L*1
+2025-05-02 19:15:47,200 - app.core.excel.converter - INFO - 从数量提取单位: 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:15:47,201 - app.core.excel.converter - INFO - 解析容量规格: 1.5L*1 -> 1.5L*1
+2025-05-02 19:15:47,201 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 1.0, 单价: 28.0 -> 28.0, 单位: 箱 -> 瓶
+2025-05-02 19:15:47,202 - app.core.excel.converter - INFO - 从名称推断规格(L): 2L水8白膜 -> 2L*1
+2025-05-02 19:15:47,202 - app.core.excel.converter - INFO - 从数量提取单位: 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:15:47,202 - app.core.excel.converter - INFO - 解析容量规格: 2L*1 -> 2.0L*1
+2025-05-02 19:15:47,202 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 1.0, 单价: 23.0 -> 23.0, 单位: 箱 -> 瓶
+2025-05-02 19:15:47,202 - app.core.excel.converter - INFO - 从名称推断规格(入): 6L水4入纸箱 -> 1*4
+2025-05-02 19:15:47,202 - app.core.excel.converter - INFO - 从数量提取单位: 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:15:47,203 - app.core.excel.converter - INFO - 解析二级规格: 1*4 -> 1*4
+2025-05-02 19:15:47,203 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 4.0, 单价: 33.0 -> 8.25, 单位: 箱 -> 瓶
+2025-05-02 19:15:47,203 - app.core.excel.converter - INFO - 从名称推断规格(L): 12.9L桶装水 -> 12.9L*1
+2025-05-02 19:15:47,203 - app.core.excel.converter - INFO - 从数量提取单位: 2桶 -> 数量=2.0, 单位=桶
+2025-05-02 19:15:47,203 - app.core.excel.converter - INFO - 解析容量规格: 12.9L*1 -> 12.9L*1
+2025-05-02 19:15:47,203 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 2.0, 单价: 16.0, 单位: 桶
+2025-05-02 19:15:47,204 - app.core.excel.converter - INFO - 从数量提取单位: 2箱 -> 数量=2.0, 单位=箱
+2025-05-02 19:15:47,204 - app.core.excel.converter - INFO - 从数量提取单位: 5箱 -> 数量=5.0, 单位=箱
+2025-05-02 19:42:21,807 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:42:21,808 - app.core.excel.converter - INFO - 从名称推断规格(入纸箱): 450果园30%橙子15入纸箱 -> 1*15
+2025-05-02 19:42:21,810 - app.core.excel.converter - INFO - 解析二级规格: 1*15 -> 1*15
+2025-05-02 19:42:21,810 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 15.0, 单价: 0 -> 0, 单位: 箱 -> 瓶
+2025-05-02 19:42:21,812 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:42:21,812 - app.core.excel.converter - INFO - 从名称推断规格(入纸箱): 450果园30%葡萄15入纸箱 -> 1*15
+2025-05-02 19:42:21,813 - app.core.excel.converter - INFO - 解析二级规格: 1*15 -> 1*15
+2025-05-02 19:42:21,813 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 15.0, 单价: 56.0 -> 3.7333333333333334, 单位: 箱 -> 瓶
+2025-05-02 19:42:21,814 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:42:21,814 - app.core.excel.converter - INFO - 从名称推断规格(入纸箱): 450果园30%楂苹梅15入纸箱 -> 1*15
+2025-05-02 19:42:21,815 - app.core.excel.converter - INFO - 解析二级规格: 1*15 -> 1*15
+2025-05-02 19:42:21,816 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 15.0, 单价: 56.0 -> 3.7333333333333334, 单位: 箱 -> 瓶
+2025-05-02 19:42:21,816 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:42:21,895 - app.core.excel.converter - INFO - 从名称推断规格(直接格式): 500-东方树叶-青柑普洱1*15-纸
+箱装-开盖活动装 -> 1*15
+2025-05-02 19:42:21,896 - app.core.excel.converter - INFO - 解析二级规格: 1*15 -> 1*15
+2025-05-02 19:42:21,896 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 15.0, 单价: 55.0 -> 3.6666666666666665, 单位: 箱 -> 瓶
+2025-05-02 19:42:21,897 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:42:21,898 - app.core.excel.converter - INFO - 从名称推断规格(直接格式): 500-东方树叶-乌龙茶1*15-纸箱
+装-开盖活动装 -> 1*15
+2025-05-02 19:42:21,898 - app.core.excel.converter - INFO - 解析二级规格: 1*15 -> 1*15
+2025-05-02 19:42:21,898 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 15.0, 单价: 0 -> 0, 单位: 箱 -> 瓶
+2025-05-02 19:42:21,899 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 5箱 -> 数量=5.0, 单位=箱
+2025-05-02 19:42:21,899 - app.core.excel.converter - INFO - 从名称推断规格(入纸箱): 900树叶茉莉花茶12入纸箱 -> 1*12
+2025-05-02 19:42:21,899 - app.core.excel.converter - INFO - 解析二级规格: 1*12 -> 1*12
+2025-05-02 19:42:21,900 - app.core.excel.converter - INFO - 箱单位处理: 数量: 5.0 -> 60.0, 单价: 62.0 -> 5.166666666666667, 单位: 箱 -> 瓶
+2025-05-02 19:42:21,900 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 2箱 -> 数量=2.0, 单位=箱
+2025-05-02 19:42:21,900 - app.core.excel.converter - INFO - 从名称推断规格(入纸箱): 900树叶青柑普洱12入纸箱 -> 1*12
+2025-05-02 19:42:21,901 - app.core.excel.converter - INFO - 解析二级规格: 1*12 -> 1*12
+2025-05-02 19:42:21,901 - app.core.excel.converter - INFO - 箱单位处理: 数量: 2.0 -> 24.0, 单价: 62.0 -> 5.166666666666667, 单位: 箱 -> 瓶
+2025-05-02 19:42:21,901 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:42:21,902 - app.core.excel.converter - INFO - 从名称推断规格(纸箱): 500茶π蜜桃乌龙15纸箱 -> 1*15
+2025-05-02 19:42:21,902 - app.core.excel.converter - INFO - 解析二级规格: 1*15 -> 1*15
+2025-05-02 19:42:21,902 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 15.0, 单价: 56.0 -> 3.7333333333333334, 单位: 箱 -> 瓶
+2025-05-02 19:42:21,902 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:42:26,109 - app.core.excel.converter - INFO - 从名称推断规格(直接格式): 300NFC橙3*10纸箱 -> 3*10
+2025-05-02 19:42:26,109 - app.core.excel.converter - INFO - 解析二级规格: 3*10 -> 3*10
+2025-05-02 19:42:26,109 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 10.0, 单价: 180.0 -> 18.0, 单位: 箱 -> 瓶
+2025-05-02 19:42:26,110 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:42:26,110 - app.core.excel.converter - INFO - 从名称推断规格(纸箱): 380水24纸箱 -> 1*24
+2025-05-02 19:42:26,110 - app.core.excel.converter - INFO - 解析二级规格: 1*24 -> 1*24
+2025-05-02 19:42:26,111 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 24.0, 单价: 26.0 -> 1.0833333333333333, 单位: 箱 -> 瓶
+2025-05-02 19:42:26,111 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:42:26,112 - app.core.excel.converter - INFO - 从名称推断规格(白膜): 1.5L水12白膜 -> 1*12
+2025-05-02 19:42:26,112 - app.core.excel.converter - INFO - 解析二级规格: 1*12 -> 1*12
+2025-05-02 19:42:26,112 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 12.0, 单价: 28.0 -> 2.3333333333333335, 单位: 箱 -> 瓶
+2025-05-02 19:42:26,112 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:42:26,112 - app.core.excel.converter - INFO - 从名称推断规格(白膜): 2L水8白膜 -> 1*8
+2025-05-02 19:42:26,112 - app.core.excel.converter - INFO - 解析二级规格: 1*8 -> 1*8
+2025-05-02 19:42:26,112 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 8.0, 单价: 23.0 -> 2.875, 单位: 箱 -> 瓶
+2025-05-02 19:42:26,113 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:42:26,113 - app.core.excel.converter - INFO - 从名称推断规格(入纸箱): 6L水4入纸箱 -> 1*4
+2025-05-02 19:42:26,113 - app.core.excel.converter - INFO - 解析二级规格: 1*4 -> 1*4
+2025-05-02 19:42:26,113 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 4.0, 单价: 33.0 -> 8.25, 单位: 箱 -> 瓶
+2025-05-02 19:42:26,114 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 2桶 -> 数量=2.0, 单位=桶
+2025-05-02 19:42:26,114 - app.core.excel.converter - INFO - 从名称推断规格(容量): 12.9L桶装水 -> 12.9L*1
+2025-05-02 19:42:29,206 - app.core.excel.converter - INFO - 解析容量规格: 12.9L*1 -> 12.9L*1
+2025-05-02 19:42:29,206 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 2.0, 单价: 16.0, 单位: 桶
+2025-05-02 19:42:29,207 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 2箱 -> 数量=2.0, 单位=箱
+2025-05-02 19:42:29,207 - app.core.excel.converter - INFO - 从名称推断规格(白膜): 550水24白膜 -> 1*24
+2025-05-02 19:42:29,207 - app.core.excel.converter - INFO - 解析二级规格: 1*24 -> 1*24
+2025-05-02 19:42:29,208 - app.core.excel.converter - INFO - 箱单位处理: 数量: 2.0 -> 48.0, 单价: 0 -> 0, 单位: 箱 -> 瓶
+2025-05-02 19:42:29,208 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 5箱 -> 数量=5.0, 单位=箱
+2025-05-02 19:42:29,208 - app.core.excel.converter - INFO - 从名称推断规格(白膜): 550水24白膜 -> 1*24
+2025-05-02 19:42:29,208 - app.core.excel.converter - INFO - 解析二级规格: 1*24 -> 1*24
+2025-05-02 19:42:29,209 - app.core.excel.converter - INFO - 箱单位处理: 数量: 5.0 -> 120.0, 单价: 0 -> 0, 单位: 箱 -> 瓶
+2025-05-02 19:53:30,448 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:53:30,449 - app.core.excel.converter - INFO - 从名称推断规格(入纸箱): 450果园30%橙子15入纸箱 -> 1*15
+2025-05-02 19:53:30,450 - app.core.excel.converter - INFO - 解析二级规格: 1*15 -> 1*15
+2025-05-02 19:53:30,450 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 15.0, 单价: 0 -> 0, 单位: 箱 -> 瓶
+2025-05-02 19:53:30,451 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:53:30,451 - app.core.excel.converter - INFO - 从名称推断规格(入纸箱): 450果园30%葡萄15入纸箱 -> 1*15
+2025-05-02 19:53:30,451 - app.core.excel.converter - INFO - 解析二级规格: 1*15 -> 1*15
+2025-05-02 19:53:30,451 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 15.0, 单价: 56.0 -> 3.7333333333333334, 单位: 箱 -> 瓶
+2025-05-02 19:53:30,452 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:53:30,452 - app.core.excel.converter - INFO - 从名称推断规格(入纸箱): 450果园30%楂苹梅15入纸箱 -> 1*15
+2025-05-02 19:53:30,452 - app.core.excel.converter - INFO - 解析二级规格: 1*15 -> 1*15
+2025-05-02 19:53:30,452 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 15.0, 单价: 56.0 -> 3.7333333333333334, 单位: 箱 -> 瓶
+2025-05-02 19:53:30,452 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:53:30,525 - app.core.excel.converter - INFO - 从名称推断规格(直接格式): 500-东方树叶-青柑普洱1*15-纸
+箱装-开盖活动装 -> 1*15
+2025-05-02 19:53:30,525 - app.core.excel.converter - INFO - 解析二级规格: 1*15 -> 1*15
+2025-05-02 19:53:30,526 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 15.0, 单价: 55.0 -> 3.6666666666666665, 单位: 箱 -> 瓶
+2025-05-02 19:53:30,526 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:53:30,527 - app.core.excel.converter - INFO - 从名称推断规格(直接格式): 500-东方树叶-乌龙茶1*15-纸箱
+装-开盖活动装 -> 1*15
+2025-05-02 19:53:30,527 - app.core.excel.converter - INFO - 解析二级规格: 1*15 -> 1*15
+2025-05-02 19:53:30,527 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 15.0, 单价: 0 -> 0, 单位: 箱 -> 瓶
+2025-05-02 19:53:30,528 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 5箱 -> 数量=5.0, 单位=箱
+2025-05-02 19:53:30,528 - app.core.excel.converter - INFO - 从名称推断规格(入纸箱): 900树叶茉莉花茶12入纸箱 -> 1*12
+2025-05-02 19:53:30,529 - app.core.excel.converter - INFO - 解析二级规格: 1*12 -> 1*12
+2025-05-02 19:53:30,529 - app.core.excel.converter - INFO - 箱单位处理: 数量: 5.0 -> 60.0, 单价: 62.0 -> 5.166666666666667, 单位: 箱 -> 瓶
+2025-05-02 19:53:30,530 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 2箱 -> 数量=2.0, 单位=箱
+2025-05-02 19:53:30,530 - app.core.excel.converter - INFO - 从名称推断规格(入纸箱): 900树叶青柑普洱12入纸箱 -> 1*12
+2025-05-02 19:53:30,530 - app.core.excel.converter - INFO - 解析二级规格: 1*12 -> 1*12
+2025-05-02 19:53:30,530 - app.core.excel.converter - INFO - 箱单位处理: 数量: 2.0 -> 24.0, 单价: 62.0 -> 5.166666666666667, 单位: 箱 -> 瓶
+2025-05-02 19:53:30,531 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:53:30,531 - app.core.excel.converter - INFO - 从名称推断规格(纸箱): 500茶π蜜桃乌龙15纸箱 -> 1*15
+2025-05-02 19:53:30,531 - app.core.excel.converter - INFO - 解析二级规格: 1*15 -> 1*15
+2025-05-02 19:53:30,531 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 15.0, 单价: 56.0 -> 3.7333333333333334, 单位: 箱 -> 瓶
+2025-05-02 19:53:30,532 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:53:35,279 - app.core.excel.converter - INFO - 从名称推断规格(直接格式): 300NFC橙3*10纸箱 -> 3*10
+2025-05-02 19:53:35,279 - app.core.excel.converter - INFO - 特殊条码处理: 6921168593804, 数量: 1.0 -> 30.0, 单价: 180.0 -> 6.0, 单位: 箱 -> 瓶
+2025-05-02 19:53:35,280 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:53:35,280 - app.core.excel.converter - INFO - 从名称推断规格(纸箱): 380水24纸箱 -> 1*24
+2025-05-02 19:53:35,280 - app.core.excel.converter - INFO - 解析二级规格: 1*24 -> 1*24
+2025-05-02 19:53:35,281 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 24.0, 单价: 26.0 -> 1.0833333333333333, 单位: 箱 -> 瓶
+2025-05-02 19:53:35,281 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:53:35,282 - app.core.excel.converter - INFO - 从名称推断规格(白膜): 1.5L水12白膜 -> 1*12
+2025-05-02 19:53:35,282 - app.core.excel.converter - INFO - 解析二级规格: 1*12 -> 1*12
+2025-05-02 19:53:35,282 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 12.0, 单价: 28.0 -> 2.3333333333333335, 单位: 箱 -> 瓶
+2025-05-02 19:53:35,283 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:53:35,283 - app.core.excel.converter - INFO - 从名称推断规格(白膜): 2L水8白膜 -> 1*8
+2025-05-02 19:53:35,284 - app.core.excel.converter - INFO - 解析二级规格: 1*8 -> 1*8
+2025-05-02 19:53:35,284 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 8.0, 单价: 23.0 -> 2.875, 单位: 箱 -> 瓶
+2025-05-02 19:53:35,285 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 1箱 -> 数量=1.0, 单位=箱
+2025-05-02 19:53:35,285 - app.core.excel.converter - INFO - 从名称推断规格(入纸箱): 6L水4入纸箱 -> 1*4
+2025-05-02 19:53:35,285 - app.core.excel.converter - INFO - 解析二级规格: 1*4 -> 1*4
+2025-05-02 19:53:35,285 - app.core.excel.converter - INFO - 箱单位处理: 数量: 1.0 -> 4.0, 单价: 33.0 -> 8.25, 单位: 箱 -> 瓶
+2025-05-02 19:53:35,286 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 2桶 -> 数量=2.0, 单位=桶
+2025-05-02 19:53:35,287 - app.core.excel.converter - INFO - 从名称推断规格(容量): 12.9L桶装水 -> 12.9L*1
+2025-05-02 19:53:39,726 - app.core.excel.converter - INFO - 解析容量规格: 12.9L*1 -> 12.9L*1
+2025-05-02 19:53:39,727 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 2.0, 单价: 16.0, 单位: 桶
+2025-05-02 19:53:39,728 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 2箱 -> 数量=2.0, 单位=箱
+2025-05-02 19:53:39,728 - app.core.excel.converter - INFO - 从名称推断规格(白膜): 550水24白膜 -> 1*24
+2025-05-02 19:53:39,729 - app.core.excel.converter - INFO - 解析二级规格: 1*24 -> 1*24
+2025-05-02 19:53:39,729 - app.core.excel.converter - INFO - 箱单位处理: 数量: 2.0 -> 48.0, 单价: 0 -> 0, 单位: 箱 -> 瓶
+2025-05-02 19:53:39,729 - app.core.excel.converter - INFO - 从数量提取单位(基本格式): 5箱 -> 数量=5.0, 单位=箱
+2025-05-02 19:53:39,729 - app.core.excel.converter - INFO - 从名称推断规格(白膜): 550水24白膜 -> 1*24
+2025-05-02 19:53:39,730 - app.core.excel.converter - INFO - 解析二级规格: 1*24 -> 1*24
+2025-05-02 19:53:39,730 - app.core.excel.converter - INFO - 箱单位处理: 数量: 5.0 -> 120.0, 单价: 0 -> 0, 单位: 箱 -> 瓶

@@ -270,6 +270,10 @@ class ExcelProcessor:
         
         logger.info(f"列名映射结果: {mapped_columns}")
         
+        # 检查是否有规格列
+        has_specification_column = 'specification' in mapped_columns
+        logger.info(f"是否存在规格列: {has_specification_column}")
+        
         # 提取商品信息
         products = []
         
@@ -298,13 +302,6 @@ class ExcelProcessor:
                 product['name'] = f"商品 ({product['barcode']})"
                 logger.info(f"商品名称为空，使用条码作为名称: {product['name']}")
             
-            # 推断规格
-            if not product['specification'] and product['name']:
-                inferred_spec = self.unit_converter.infer_specification_from_name(product['name'])
-                if inferred_spec:
-                    product['specification'] = inferred_spec
-                    logger.info(f"从商品名称推断规格: {product['name']} -> {inferred_spec}")
-            
             # 单位处理：如果单位为空但数量包含单位信息
             quantity_str = str(row.get(mapped_columns.get('quantity', ''), ''))
             if not product['unit'] and 'quantity' in mapped_columns:
@@ -315,6 +312,13 @@ class ExcelProcessor:
                     # 如果数量被提取出来，更新数量
                     if num is not None:
                         product['quantity'] = num
+            
+            # 推断规格：如果规格为空或不存在规格列，尝试从商品名称推断
+            if (not product['specification'] or not has_specification_column) and product['name']:
+                inferred_spec = self.unit_converter.infer_specification_from_name(product['name'])
+                if inferred_spec:
+                    product['specification'] = inferred_spec
+                    logger.info(f"从商品名称推断规格: {product['name']} -> {inferred_spec}")
             
             # 应用单位转换规则
             product = self.unit_converter.process_unit_conversion(product)
