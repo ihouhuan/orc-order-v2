@@ -131,3 +131,49 @@
 2025-05-02 22:40:41,142 - app.services.ocr_service - INFO - 初始化OCRService
 2025-05-02 22:40:41,144 - app.services.ocr_service - INFO - OCRService初始化完成
 2025-05-02 22:40:41,147 - app.services.ocr_service - INFO - OCRService开始批量处理图片, batch_size=None, max_workers=None
+2025-05-03 12:54:57,227 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-03 12:54:57,231 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-03 12:54:57,236 - app.services.ocr_service - INFO - OCRService开始批量处理图片, batch_size=None, max_workers=None
+2025-05-03 14:44:17,313 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-03 14:44:17,318 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-03 14:44:17,320 - app.services.ocr_service - INFO - OCRService开始批量处理图片, batch_size=None, max_workers=None
+2025-05-03 14:45:44,517 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-03 14:45:44,520 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-03 14:45:44,522 - app.services.ocr_service - INFO - OCRService开始批量处理图片, batch_size=None, max_workers=None
+2025-05-03 14:45:58,804 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-03 14:45:58,806 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-03 14:53:52,349 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-03 14:53:52,351 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-03 14:53:52,354 - app.services.ocr_service - INFO - OCRService开始批量处理图片, batch_size=None, max_workers=None
+2025-05-03 15:43:36,728 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-03 15:43:36,731 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-05 18:55:02,295 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-05 18:55:02,298 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-05 18:55:02,304 - app.services.ocr_service - INFO - OCRService开始批量处理图片, batch_size=None, max_workers=None
+2025-05-05 18:59:17,848 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-05 18:59:17,850 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-05 18:59:17,853 - app.services.ocr_service - INFO - OCRService开始批量处理图片, batch_size=None, max_workers=None
+2025-05-05 19:00:26,070 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-05 19:00:26,073 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-05 19:02:32,157 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-05 19:02:32,165 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-05 19:02:54,869 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-05 19:02:54,871 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-05 19:15:12,549 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-05 19:15:12,551 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-05 19:18:54,489 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-05 19:18:54,499 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-05 19:19:59,311 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-05 19:19:59,312 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-05 19:22:18,523 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-05 19:22:18,525 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-05 19:22:37,215 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-05 19:22:37,218 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-05 19:28:36,762 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-05 19:28:36,765 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-05 19:29:16,899 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-05 19:29:16,904 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-05 19:30:06,149 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-05 19:30:06,152 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-05 19:30:28,304 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-05 19:30:28,306 - app.services.ocr_service - INFO - OCRService初始化完成

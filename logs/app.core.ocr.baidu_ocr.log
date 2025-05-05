@@ -45,3 +45,10 @@
 2025-05-02 22:26:49,226 - app.core.ocr.baidu_ocr - ERROR - 无法获取访问令牌，无法进行表格识别
 2025-05-02 22:29:11,192 - app.core.ocr.baidu_ocr - INFO - 成功获取访问令牌
 2025-05-02 22:40:41,390 - app.core.ocr.baidu_ocr - INFO - 成功获取访问令牌
+2025-05-03 12:54:57,596 - app.core.ocr.baidu_ocr - INFO - 成功获取访问令牌
+2025-05-03 14:44:17,623 - app.core.ocr.baidu_ocr - INFO - 成功获取访问令牌
+2025-05-03 14:45:44,807 - app.core.ocr.baidu_ocr - INFO - 成功获取访问令牌
+2025-05-03 14:53:52,624 - app.core.ocr.baidu_ocr - INFO - 成功获取访问令牌
+2025-05-05 18:55:02,724 - app.core.ocr.baidu_ocr - INFO - 成功获取访问令牌
+2025-05-05 18:59:18,198 - app.core.ocr.baidu_ocr - INFO - 成功获取访问令牌
+2025-05-05 18:59:18,237 - app.core.ocr.baidu_ocr - INFO - 成功获取访问令牌

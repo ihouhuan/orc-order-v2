@@ -32,6 +32,13 @@ class UnitConverter:
                 'multiplier': 30,  # 数量乘以30
                 'target_unit': '瓶',  # 目标单位
                 'description': 'NFC产品特殊处理：每箱30瓶'
+            },
+            '6901826888138': {
+                'multiplier': 30,  # 数量乘以30
+                'target_unit': '瓶',  # 目标单位
+                'fixed_price': 112/30,  # 固定单价为112/30
+                'specification': '1*30',  # 固定规格
+                'description': '特殊处理: 规格1*30，数量*30，单价=112/30'
             }
             # 可以添加更多特殊条码的配置
         }
@@ -253,6 +260,8 @@ class UnitConverter:
             spec = re.sub(r'\s+', '', spec)  # 移除所有空白
             spec = re.sub(r'[xX×]', '*', spec)  # 统一分隔符为*
             
+            logger.debug(f"解析规格: {spec}")
+            
             # 处理三级包装，如1*5*12
             three_level_match = re.match(r'(\d+)[*](\d+)[*](\d+)', spec)
             if three_level_match:
@@ -333,6 +342,20 @@ class UnitConverter:
             
             # 如果有单价，单价除以倍数
             new_price = price / multiplier if price else 0
+            
+            # 如果有固定单价，优先使用
+            if 'fixed_price' in special_config:
+                new_price = special_config['fixed_price']
+                logger.info(f"特殊条码({barcode})使用固定单价: {new_price}")
+            
+            # 如果有固定规格，设置规格
+            if 'specification' in special_config:
+                result['specification'] = special_config['specification']
+                # 解析规格以获取包装数量
+                package_quantity = self.parse_specification(special_config['specification'])
+                if package_quantity:
+                    result['package_quantity'] = package_quantity
+                logger.info(f"特殊条码({barcode})使用固定规格: {special_config['specification']}, 包装数量={package_quantity}")
             
             logger.info(f"特殊条码处理: {barcode}, 数量: {quantity} -> {new_quantity}, 单价: {price} -> {new_price}, 单位: {unit} -> {target_unit}")
             

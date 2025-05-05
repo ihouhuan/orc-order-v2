@@ -255,11 +255,21 @@ class ExcelProcessor:
                     'barcode': barcode,
                     'name': str(row[column_mapping['name']]) if column_mapping.get('name') else '',
                     'quantity': quantity_value,
-                    'price': float(row[column_mapping['price']]) if column_mapping.get('price') and not pd.isna(row[column_mapping['price']]) else 0,
+                    'price': 0,
                     'unit': str(row[column_mapping['unit']]) if column_mapping.get('unit') and not pd.isna(row[column_mapping['unit']]) else '',
                     'specification': '',
                     'package_quantity': None
                 }
+                
+                # 处理价格字段 - 清理可能的换行符和空格
+                if column_mapping.get('price') and not pd.isna(row[column_mapping['price']]):
+                    price_str = str(row[column_mapping['price']])
+                    # 清理换行符、空格并替换逗号
+                    price_str = price_str.replace('\n', '').replace(' ', '').replace(',', '.')
+                    try:
+                        product['price'] = float(price_str)
+                    except ValueError:
+                        logger.warning(f"价格转换失败，原始值: '{price_str}'，使用默认值0")
                 
                 # 清理单位
                 if product['unit'] == 'nan' or product['unit'] == 'None':

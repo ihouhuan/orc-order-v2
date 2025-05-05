@@ -1799,3 +1799,1023 @@ ValueError: could not convert string to float: '1件'
 2025-05-02 22:40:56,990 - app.core.excel.processor - INFO - 条码 6921168594054 填充：采购量=5.0，赠品数量1.0
 2025-05-02 22:40:56,993 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250502214456.xls
 2025-05-02 22:40:56,995 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250502214456.xls
+2025-05-03 12:54:57,232 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-03 12:54:57,233 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-03 12:55:00,228 - app.core.excel.processor - INFO - 搜索目录 D:\My Documents\python\orc-order-v2\data\output 中的Excel文件
+2025-05-03 12:55:00,229 - app.core.excel.processor - INFO - 找到最新的Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250502214456.xlsx
+2025-05-03 12:55:00,230 - app.core.excel.processor - INFO - 开始处理Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250502214456.xlsx
+2025-05-03 12:55:01,063 - app.core.excel.processor - INFO - 成功读取Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250502214456.xlsx, 共 15 行
+2025-05-03 12:55:01,070 - app.core.excel.processor - INFO - 找到可能的表头行: 第1行，评分: 35
+2025-05-03 12:55:01,071 - app.core.excel.processor - INFO - 识别到表头在第 1 行
+2025-05-03 12:55:01,088 - app.core.excel.processor - INFO - 使用表头行重新读取数据，共 14 行有效数据
+2025-05-03 12:55:01,088 - app.core.excel.processor - INFO - 找到精确匹配的条码列: 条形码
+2025-05-03 12:55:01,088 - app.core.excel.processor - INFO - 使用条码列: 条形码
+2025-05-03 12:55:01,088 - app.core.excel.processor - INFO - 找到name列: 商品名称
+2025-05-03 12:55:01,088 - app.core.excel.processor - INFO - 找到quantity列: 订单数量
+2025-05-03 12:55:01,088 - app.core.excel.processor - INFO - 找到price列: 销售价
+2025-05-03 12:55:01,088 - app.core.excel.processor - INFO - 列名映射结果: {'barcode': '条形码', 'name': '商品名称', 'quantity': '订单数量', 'price': '销售价'}
+2025-05-03 12:55:01,091 - app.core.excel.processor - INFO - 是否存在规格列: False
+2025-05-03 12:55:01,091 - app.core.excel.processor - INFO - 第1行: 提取商品信息 条码=6921168560509, 名称=550纯净水24入白膜, 规格=, 数量=3.0, 单位=, 单价=0.0
+2025-05-03 12:55:01,092 - app.core.excel.processor - INFO - 从数量提取单位: 3箱 -> 箱
+2025-05-03 12:55:01,093 - app.core.excel.processor - INFO - 从商品名称推断规格: 550纯净水24入白膜 -> 1*24, 包装数量=24
+2025-05-03 12:55:01,093 - app.core.excel.processor - INFO - 从商品名称推断规格: 550纯净水24入白膜 -> 1*24, 包装数量=24
+2025-05-03 12:55:01,094 - app.core.excel.processor - INFO - 第2行: 提取商品信息 条码=6921168532001, 名称=450果园30%橙子15入纸箱, 规格=, 数量=1.0, 单位=, 单价=0.0
+2025-05-03 12:55:01,094 - app.core.excel.processor - INFO - 从数量提取单位: 1箱 -> 箱
+2025-05-03 12:55:01,095 - app.core.excel.processor - INFO - 从商品名称推断规格: 450果园30%橙子15入纸箱 -> 1*15, 包装数量=15
+2025-05-03 12:55:01,095 - app.core.excel.processor - INFO - 从商品名称推断规格: 450果园30%橙子15入纸箱 -> 1*15, 包装数量=15
+2025-05-03 12:55:01,095 - app.core.excel.processor - INFO - 第3行: 提取商品信息 条码=6921168560189, 名称=445水溶C血橙15入纸箱, 规格=, 数量=2.0, 单位=, 单价=56.0
+2025-05-03 12:55:01,096 - app.core.excel.processor - INFO - 从数量提取单位: 2箱 -> 箱
+2025-05-03 12:55:01,096 - app.core.excel.processor - INFO - 从商品名称推断规格: 445水溶C血橙15入纸箱 -> 1*15, 包装数量=15
+2025-05-03 12:55:01,096 - app.core.excel.processor - INFO - 从商品名称推断规格: 445水溶C血橙15入纸箱 -> 1*15, 包装数量=15
+2025-05-03 12:55:01,264 - app.core.excel.processor - INFO - 第4行: 提取商品信息 条码=6921168500956, 名称=445水溶C柠檬15纸箱, 规格=, 数量=2.0, 单位=, 单价=56.0
+2025-05-03 12:55:01,264 - app.core.excel.processor - INFO - 从数量提取单位: 2箱 -> 箱
+2025-05-03 12:55:01,265 - app.core.excel.processor - INFO - 从商品名称推断规格: 445水溶C柠檬15纸箱 -> 1*15, 包装数量=15
+2025-05-03 12:55:01,265 - app.core.excel.processor - INFO - 从商品名称推断规格: 445水溶C柠檬15纸箱 -> 1*15, 包装数量=15
+2025-05-03 12:55:01,266 - app.core.excel.processor - INFO - 第5行: 提取商品信息 条码=6921168559244, 名称=445水溶C青皮桔15纸箱, 规格=, 数量=3.0, 单位=, 单价=56.0
+2025-05-03 12:55:01,266 - app.core.excel.processor - INFO - 从数量提取单位: 3箱 -> 箱
+2025-05-03 12:55:01,267 - app.core.excel.processor - INFO - 从商品名称推断规格: 445水溶C青皮桔15纸箱 -> 1*15, 包装数量=15
+2025-05-03 12:55:01,267 - app.core.excel.processor - INFO - 从商品名称推断规格: 445水溶C青皮桔15纸箱 -> 1*15, 包装数量=15
+2025-05-03 12:55:01,268 - app.core.excel.processor - INFO - 第6行: 提取商品信息 条码=6921168500970, 名称=445水溶C西柚15纸箱, 规格=, 数量=1.0, 单位=, 单价=56.0
+2025-05-03 12:55:01,268 - app.core.excel.processor - INFO - 从数量提取单位: 1箱 -> 箱
+2025-05-03 12:55:01,269 - app.core.excel.processor - INFO - 从商品名称推断规格: 445水溶C西柚15纸箱 -> 1*15, 包装数量=15
+2025-05-03 12:55:01,269 - app.core.excel.processor - INFO - 从商品名称推断规格: 445水溶C西柚15纸箱 -> 1*15, 包装数量=15
+2025-05-03 12:55:01,270 - app.core.excel.processor - INFO - 第7行: 提取商品信息 条码=6921168558049, 名称=500树叶茉莉花茶15纸箱, 规格=, 数量=3.0, 单位=, 单价=55.0
+2025-05-03 12:55:01,270 - app.core.excel.processor - INFO - 从数量提取单位: 3箱 -> 箱
+2025-05-03 12:55:01,270 - app.core.excel.processor - INFO - 从商品名称推断规格: 500树叶茉莉花茶15纸箱 -> 1*15, 包装数量=15
+2025-05-03 12:55:01,270 - app.core.excel.processor - INFO - 从商品名称推断规格: 500树叶茉莉花茶15纸箱 -> 1*15, 包装数量=15
+2025-05-03 12:55:01,271 - app.core.excel.processor - INFO - 第8行: 提取商品信息 条码=6921168558032, 名称=500树叶乌龙茶15纸箱, 规格=, 数量=1.0, 单位=, 单价=55.0
+2025-05-03 12:55:01,271 - app.core.excel.processor - INFO - 从数量提取单位: 1箱 -> 箱
+2025-05-03 12:55:06,817 - app.core.excel.processor - INFO - 从商品名称推断规格: 500树叶乌龙茶15纸箱 -> 1*15, 包装数量=15
+2025-05-03 12:55:06,817 - app.core.excel.processor - INFO - 从商品名称推断规格: 500树叶乌龙茶15纸箱 -> 1*15, 包装数量=15
+2025-05-03 12:55:06,818 - app.core.excel.processor - INFO - 第9行: 提取商品信息 条码=6921168558018, 名称=500树叶绿茶15纸箱, 规格=, 数量=2.0, 单位=, 单价=55.0
+2025-05-03 12:55:06,818 - app.core.excel.processor - INFO - 从数量提取单位: 2箱 -> 箱
+2025-05-03 12:55:06,819 - app.core.excel.processor - INFO - 从商品名称推断规格: 500树叶绿茶15纸箱 -> 1*15, 包装数量=15
+2025-05-03 12:55:06,819 - app.core.excel.processor - INFO - 从商品名称推断规格: 500树叶绿茶15纸箱 -> 1*15, 包装数量=15
+2025-05-03 12:55:06,819 - app.core.excel.processor - INFO - 第10行: 提取商品信息 条码=6921168598649, 名称=900树叶青柑普洱12入纸箱, 规格=, 数量=1.0, 单位=, 单价=62.0
+2025-05-03 12:55:06,820 - app.core.excel.processor - INFO - 从数量提取单位: 1箱 -> 箱
+2025-05-03 12:55:06,820 - app.core.excel.processor - INFO - 从商品名称推断规格: 900树叶青柑普洱12入纸箱 -> 1*12, 包装数量=12
+2025-05-03 12:55:06,820 - app.core.excel.processor - INFO - 从商品名称推断规格: 900树叶青柑普洱12入纸箱 -> 1*12, 包装数量=12
+2025-05-03 12:55:06,821 - app.core.excel.processor - INFO - 第11行: 提取商品信息 条码=6921168595006, 名称=410苏打天然水柠檬15纸箱, 规格=, 数量=1.0, 单位=, 单价=43.0
+2025-05-03 12:55:06,821 - app.core.excel.processor - INFO - 从数量提取单位: 1箱 -> 箱
+2025-05-03 12:55:06,821 - app.core.excel.processor - INFO - 从商品名称推断规格: 410苏打天然水柠檬15纸箱 -> 1*15, 包装数量=15
+2025-05-03 12:55:06,821 - app.core.excel.processor - INFO - 从商品名称推断规格: 410苏打天然水柠檬15纸箱 -> 1*15, 包装数量=15
+2025-05-03 12:55:06,822 - app.core.excel.processor - INFO - 第12行: 提取商品信息 条码=6921168594054, 名称=12.9L桶装水, 规格=, 数量=5.0, 单位=, 单价=16.0
+2025-05-03 12:55:06,822 - app.core.excel.processor - INFO - 从数量提取单位: 5桶 -> 桶
+2025-05-03 12:55:06,824 - app.core.excel.processor - INFO - 从商品名称推断规格: 12.9L桶装水 -> 12.9L*1, 包装数量=1
+2025-05-03 12:55:06,824 - app.core.excel.processor - INFO - 从商品名称推断规格: 12.9L桶装水 -> 12.9L*1, 包装数量=1
+2025-05-03 12:55:10,474 - app.core.excel.processor - INFO - 第13行: 提取商品信息 条码=6921168594054, 名称=12.9L桶装水, 规格=, 数量=1.0, 单位=, 单价=0.0
+2025-05-03 12:55:10,475 - app.core.excel.processor - INFO - 从数量提取单位: 1桶 -> 桶
+2025-05-03 12:55:10,475 - app.core.excel.processor - INFO - 从商品名称推断规格: 12.9L桶装水 -> 12.9L*1, 包装数量=1
+2025-05-03 12:55:10,475 - app.core.excel.processor - INFO - 从商品名称推断规格: 12.9L桶装水 -> 12.9L*1, 包装数量=1
+2025-05-03 12:55:10,476 - app.core.excel.processor - INFO - 提取到 13 个商品信息
+2025-05-03 12:55:10,487 - app.core.excel.processor - INFO - 开始处理13 个产品信息
+2025-05-03 12:55:10,487 - app.core.excel.processor - INFO - 处理商品: 条码=6921168560509, 数量=72.0, 单价=0, 是否赠品=True
+2025-05-03 12:55:10,487 - app.core.excel.processor - INFO - 发现赠品：条码6921168560509, 数量=72.0
+2025-05-03 12:55:10,487 - app.core.excel.processor - INFO - 处理商品: 条码=6921168532001, 数量=15.0, 单价=0, 是否赠品=True
+2025-05-03 12:55:10,488 - app.core.excel.processor - INFO - 发现赠品：条码6921168532001, 数量=15.0
+2025-05-03 12:55:10,488 - app.core.excel.processor - INFO - 处理商品: 条码=6921168560189, 数量=30.0, 单价=3.7333333333333334, 是否赠品=False
+2025-05-03 12:55:10,488 - app.core.excel.processor - INFO - 发现正常商品：条码6921168560189, 数量=30.0, 单价=3.7333333333333334
+2025-05-03 12:55:10,488 - app.core.excel.processor - INFO - 处理商品: 条码=6921168500956, 数量=30.0, 单价=3.7333333333333334, 是否赠品=False
+2025-05-03 12:55:10,488 - app.core.excel.processor - INFO - 发现正常商品：条码6921168500956, 数量=30.0, 单价=3.7333333333333334
+2025-05-03 12:55:10,488 - app.core.excel.processor - INFO - 处理商品: 条码=6921168559244, 数量=45.0, 单价=3.7333333333333334, 是否赠品=False
+2025-05-03 12:55:10,488 - app.core.excel.processor - INFO - 发现正常商品：条码6921168559244, 数量=45.0, 单价=3.7333333333333334
+2025-05-03 12:55:10,488 - app.core.excel.processor - INFO - 处理商品: 条码=6921168500970, 数量=15.0, 单价=3.7333333333333334, 是否赠品=False
+2025-05-03 12:55:10,488 - app.core.excel.processor - INFO - 发现正常商品：条码6921168500970, 数量=15.0, 单价=3.7333333333333334
+2025-05-03 12:55:10,488 - app.core.excel.processor - INFO - 处理商品: 条码=6921168558049, 数量=45.0, 单价=3.6666666666666665, 是否赠品=False
+2025-05-03 12:55:10,489 - app.core.excel.processor - INFO - 发现正常商品：条码6921168558049, 数量=45.0, 单价=3.6666666666666665
+2025-05-03 12:55:10,489 - app.core.excel.processor - INFO - 处理商品: 条码=6921168558032, 数量=15.0, 单价=3.6666666666666665, 是否赠品=False
+2025-05-03 12:55:10,489 - app.core.excel.processor - INFO - 发现正常商品：条码6921168558032, 数量=15.0, 单价=3.6666666666666665
+2025-05-03 12:55:10,489 - app.core.excel.processor - INFO - 处理商品: 条码=6921168558018, 数量=30.0, 单价=3.6666666666666665, 是否赠品=False
+2025-05-03 12:55:10,489 - app.core.excel.processor - INFO - 发现正常商品：条码6921168558018, 数量=30.0, 单价=3.6666666666666665
+2025-05-03 12:55:10,489 - app.core.excel.processor - INFO - 处理商品: 条码=6921168598649, 数量=12.0, 单价=5.166666666666667, 是否赠品=False
+2025-05-03 12:55:10,489 - app.core.excel.processor - INFO - 发现正常商品：条码6921168598649, 数量=12.0, 单价=5.166666666666667
+2025-05-03 12:55:10,489 - app.core.excel.processor - INFO - 处理商品: 条码=6921168595006, 数量=15.0, 单价=2.8666666666666667, 是否赠品=False
+2025-05-03 12:55:10,489 - app.core.excel.processor - INFO - 发现正常商品：条码6921168595006, 数量=15.0, 单价=2.8666666666666667
+2025-05-03 12:55:14,444 - app.core.excel.processor - INFO - 处理商品: 条码=6921168594054, 数量=5.0, 单价=16.0, 是否赠品=False
+2025-05-03 12:55:14,444 - app.core.excel.processor - INFO - 发现正常商品：条码6921168594054, 数量=5.0, 单价=16.0
+2025-05-03 12:55:14,444 - app.core.excel.processor - INFO - 处理商品: 条码=6921168594054, 数量=1.0, 单价=0.0, 是否赠品=True
+2025-05-03 12:55:14,444 - app.core.excel.processor - INFO - 发现赠品：条码6921168594054, 数量=1.0
+2025-05-03 12:55:14,445 - app.core.excel.processor - INFO - 分组后共12 个不同条码的商品
+2025-05-03 12:55:14,445 - app.core.excel.processor - INFO - 条码 6921168560509 处理结果：只有赠品，数量=72.0
+2025-05-03 12:55:14,445 - app.core.excel.processor - INFO - 条码 6921168532001 处理结果：只有赠品，数量=15.0
+2025-05-03 12:55:14,445 - app.core.excel.processor - INFO - 条码 6921168560189 处理结果：正常商品数量30.0，单价3.7333333333333334，赠品数量0
+2025-05-03 12:55:14,445 - app.core.excel.processor - INFO - 条码 6921168500956 处理结果：正常商品数量30.0，单价3.7333333333333334，赠品数量0
+2025-05-03 12:55:14,445 - app.core.excel.processor - INFO - 条码 6921168559244 处理结果：正常商品数量45.0，单价3.7333333333333334，赠品数量0
+2025-05-03 12:55:14,445 - app.core.excel.processor - INFO - 条码 6921168500970 处理结果：正常商品数量15.0，单价3.7333333333333334，赠品数量0
+2025-05-03 12:55:14,445 - app.core.excel.processor - INFO - 条码 6921168558049 处理结果：正常商品数量45.0，单价3.6666666666666665，赠品数量0
+2025-05-03 12:55:14,445 - app.core.excel.processor - INFO - 条码 6921168558032 处理结果：正常商品数量15.0，单价3.6666666666666665，赠品数量0
+2025-05-03 12:55:14,445 - app.core.excel.processor - INFO - 条码 6921168558018 处理结果：正常商品数量30.0，单价3.6666666666666665，赠品数量0
+2025-05-03 12:55:14,445 - app.core.excel.processor - INFO - 条码 6921168598649 处理结果：正常商品数量12.0，单价5.166666666666667，赠品数量0
+2025-05-03 12:55:14,445 - app.core.excel.processor - INFO - 条码 6921168595006 处理结果：正常商品数量15.0，单价2.8666666666666667，赠品数量0
+2025-05-03 12:55:14,446 - app.core.excel.processor - INFO - 条码 6921168594054 处理结果：正常商品数量5.0，单价16.0，赠品数量1.0
+2025-05-03 12:55:14,446 - app.core.excel.processor - INFO - 条码 6921168560509 填充：仅有赠品，采购量=0，赠品数量=72.0
+2025-05-03 12:55:14,446 - app.core.excel.processor - INFO - 条码 6921168532001 填充：仅有赠品，采购量=0，赠品数量=15.0
+2025-05-03 12:55:14,446 - app.core.excel.processor - INFO - 条码 6921168594054 填充：采购量=5.0，赠品数量1.0
+2025-05-03 12:55:14,449 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250502214456.xls
+2025-05-03 12:55:14,450 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250502214456.xls
+2025-05-03 14:44:17,318 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-03 14:44:17,319 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-03 14:44:19,917 - app.core.excel.processor - INFO - 搜索目录 D:\My Documents\python\orc-order-v2\data\output 中的Excel文件
+2025-05-03 14:44:19,921 - app.core.excel.processor - INFO - 找到最新的Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250503144404.xlsx
+2025-05-03 14:44:19,923 - app.core.excel.processor - INFO - 开始处理Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250503144404.xlsx
+2025-05-03 14:44:20,690 - app.core.excel.processor - INFO - 成功读取Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250503144404.xlsx, 共 9 行
+2025-05-03 14:44:20,693 - app.core.excel.processor - INFO - 找到可能的表头行: 第1行，评分: 35
+2025-05-03 14:44:20,693 - app.core.excel.processor - INFO - 识别到表头在第 1 行
+2025-05-03 14:44:20,717 - app.core.excel.processor - INFO - 使用表头行重新读取数据，共 8 行有效数据
+2025-05-03 14:44:20,717 - app.core.excel.processor - INFO - 找到精确匹配的条码列: 条形码
+2025-05-03 14:44:20,717 - app.core.excel.processor - INFO - 使用条码列: 条形码
+2025-05-03 14:44:20,718 - app.core.excel.processor - INFO - 找到name列: 商品名称
+2025-05-03 14:44:20,718 - app.core.excel.processor - INFO - 找到quantity列: 订单数量
+2025-05-03 14:44:20,718 - app.core.excel.processor - INFO - 找到price列: 销售价
+2025-05-03 14:44:20,718 - app.core.excel.processor - INFO - 列名映射结果: {'barcode': '条形码', 'name': '商品名称', 'quantity': '订单数量', 'price': '销售价'}
+2025-05-03 14:44:20,721 - app.core.excel.processor - INFO - 是否存在规格列: False
+2025-05-03 14:44:20,722 - app.core.excel.processor - INFO - 第1行: 提取商品信息 条码=6921168509256, 名称=550水24白膜, 规格=, 数量=1.0, 单位=, 单价=0.0
+2025-05-03 14:44:20,725 - app.core.excel.processor - INFO - 从数量提取单位: 1箱 -> 箱
+2025-05-03 14:44:20,727 - app.core.excel.processor - INFO - 从商品名称推断规格: 550水24白膜 -> 1*24, 包装数量=24
+2025-05-03 14:44:20,727 - app.core.excel.processor - INFO - 从商品名称推断规格: 550水24白膜 -> 1*24, 包装数量=24
+2025-05-03 14:44:20,729 - app.core.excel.processor - INFO - 第2行: 提取商品信息 条码=6921168561445, 名称=1.5树叶茉莉花茶6入纸箱装, 规格=, 数量=2.0, 单位=, 单价=50.0
+2025-05-03 14:44:20,729 - app.core.excel.processor - INFO - 从数量提取单位: 2箱 -> 箱
+2025-05-03 14:44:20,729 - app.core.excel.processor - INFO - 从商品名称推断规格: 1.5树叶茉莉花茶6入纸箱装 -> 1*6, 包装数量=6
+2025-05-03 14:44:20,729 - app.core.excel.processor - INFO - 从商品名称推断规格: 1.5树叶茉莉花茶6入纸箱装 -> 1*6, 包装数量=6
+2025-05-03 14:44:20,730 - app.core.excel.processor - INFO - 第3行: 提取商品信息 条码=6921168561452, 名称=1.5树叶乌龙茶6入纸箱装, 规格=, 数量=1.0, 单位=, 单价=50.0
+2025-05-03 14:44:20,730 - app.core.excel.processor - INFO - 从数量提取单位: 1箱 -> 箱
+2025-05-03 14:44:20,731 - app.core.excel.processor - INFO - 从商品名称推断规格: 1.5树叶乌龙茶6入纸箱装 -> 1*6, 包装数量=6
+2025-05-03 14:44:20,731 - app.core.excel.processor - INFO - 从商品名称推断规格: 1.5树叶乌龙茶6入纸箱装 -> 1*6, 包装数量=6
+2025-05-03 14:44:20,938 - app.core.excel.processor - INFO - 第4行: 提取商品信息 条码=6921168561469, 名称=1.5树叶青柑普洱茶6入纸箱装, 规格=, 数量=1.0, 单位=, 单价=50.0
+2025-05-03 14:44:20,939 - app.core.excel.processor - INFO - 从数量提取单位: 1箱 -> 箱
+2025-05-03 14:44:20,939 - app.core.excel.processor - INFO - 从商品名称推断规格: 1.5树叶青柑普洱茶6入纸箱装 -> 1*6, 包装数量=6
+2025-05-03 14:44:20,939 - app.core.excel.processor - INFO - 从商品名称推断规格: 1.5树叶青柑普洱茶6入纸箱装 -> 1*6, 包装数量=6
+2025-05-03 14:44:20,940 - app.core.excel.processor - INFO - 第5行: 提取商品信息 条码=6921168562473, 名称=410-农夫山泉-原味1*15-纸箱装, 规格=, 数量=1.0, 单位=, 单价=43.0
+2025-05-03 14:44:20,940 - app.core.excel.processor - INFO - 从数量提取单位: 1箱 -> 箱
+2025-05-03 14:44:20,941 - app.core.excel.processor - INFO - 从商品名称推断规格: 410-农夫山泉-原味1*15-纸箱装 -> 1*15, 包装数量=15
+2025-05-03 14:44:20,941 - app.core.excel.processor - INFO - 从商品名称推断规格: 410-农夫山泉-原味1*15-纸箱装 -> 1*15, 包装数量=15
+2025-05-03 14:44:20,942 - app.core.excel.processor - INFO - 第6行: 提取商品信息 条码=6921168593545, 名称=5L水4入白膜, 规格=, 数量=5.0, 单位=, 单价=29.0
+2025-05-03 14:44:20,942 - app.core.excel.processor - INFO - 从数量提取单位: 5箱 -> 箱
+2025-05-03 14:44:20,942 - app.core.excel.processor - INFO - 从商品名称推断规格: 5L水4入白膜 -> 1*4, 包装数量=4
+2025-05-03 14:44:20,943 - app.core.excel.processor - INFO - 从商品名称推断规格: 5L水4入白膜 -> 1*4, 包装数量=4
+2025-05-03 14:44:20,943 - app.core.excel.processor - INFO - 第7行: 提取商品信息 条码=6921168593545, 名称=5L水4入白膜, 规格=, 数量=1.0, 单位=, 单价=0.0
+2025-05-03 14:44:20,944 - app.core.excel.processor - INFO - 从数量提取单位: 1箱 -> 箱
+2025-05-03 14:44:20,944 - app.core.excel.processor - INFO - 从商品名称推断规格: 5L水4入白膜 -> 1*4, 包装数量=4
+2025-05-03 14:44:20,944 - app.core.excel.processor - INFO - 从商品名称推断规格: 5L水4入白膜 -> 1*4, 包装数量=4
+2025-05-03 14:44:20,945 - app.core.excel.processor - INFO - 提取到 7 个商品信息
+2025-05-03 14:44:20,958 - app.core.excel.processor - INFO - 开始处理7 个产品信息
+2025-05-03 14:44:20,958 - app.core.excel.processor - INFO - 处理商品: 条码=6921168509256, 数量=24.0, 单价=0, 是否赠品=True
+2025-05-03 14:44:20,958 - app.core.excel.processor - INFO - 发现赠品：条码6921168509256, 数量=24.0
+2025-05-03 14:44:26,116 - app.core.excel.processor - INFO - 处理商品: 条码=6921168561445, 数量=12.0, 单价=8.333333333333334, 是否赠品=False
+2025-05-03 14:44:26,117 - app.core.excel.processor - INFO - 发现正常商品：条码6921168561445, 数量=12.0, 单价=8.333333333333334
+2025-05-03 14:44:26,117 - app.core.excel.processor - INFO - 处理商品: 条码=6921168561452, 数量=6.0, 单价=8.333333333333334, 是否赠品=False
+2025-05-03 14:44:26,117 - app.core.excel.processor - INFO - 发现正常商品：条码6921168561452, 数量=6.0, 单价=8.333333333333334
+2025-05-03 14:44:26,117 - app.core.excel.processor - INFO - 处理商品: 条码=6921168561469, 数量=6.0, 单价=8.333333333333334, 是否赠品=False
+2025-05-03 14:44:26,117 - app.core.excel.processor - INFO - 发现正常商品：条码6921168561469, 数量=6.0, 单价=8.333333333333334
+2025-05-03 14:44:26,117 - app.core.excel.processor - INFO - 处理商品: 条码=6921168562473, 数量=15.0, 单价=2.8666666666666667, 是否赠品=False
+2025-05-03 14:44:26,117 - app.core.excel.processor - INFO - 发现正常商品：条码6921168562473, 数量=15.0, 单价=2.8666666666666667
+2025-05-03 14:44:26,118 - app.core.excel.processor - INFO - 处理商品: 条码=6921168593545, 数量=20.0, 单价=7.25, 是否赠品=False
+2025-05-03 14:44:26,118 - app.core.excel.processor - INFO - 发现正常商品：条码6921168593545, 数量=20.0, 单价=7.25
+2025-05-03 14:44:26,118 - app.core.excel.processor - INFO - 处理商品: 条码=6921168593545, 数量=4.0, 单价=0, 是否赠品=True
+2025-05-03 14:44:26,118 - app.core.excel.processor - INFO - 发现赠品：条码6921168593545, 数量=4.0
+2025-05-03 14:44:26,118 - app.core.excel.processor - INFO - 分组后共6 个不同条码的商品
+2025-05-03 14:44:26,118 - app.core.excel.processor - INFO - 条码 6921168509256 处理结果：只有赠品，数量=24.0
+2025-05-03 14:44:26,118 - app.core.excel.processor - INFO - 条码 6921168561445 处理结果：正常商品数量12.0，单价8.333333333333334，赠品数量0
+2025-05-03 14:44:26,118 - app.core.excel.processor - INFO - 条码 6921168561452 处理结果：正常商品数量6.0，单价8.333333333333334，赠品数量0
+2025-05-03 14:44:26,118 - app.core.excel.processor - INFO - 条码 6921168561469 处理结果：正常商品数量6.0，单价8.333333333333334，赠品数量0
+2025-05-03 14:44:26,119 - app.core.excel.processor - INFO - 条码 6921168562473 处理结果：正常商品数量15.0，单价2.8666666666666667，赠品数量0
+2025-05-03 14:44:26,119 - app.core.excel.processor - INFO - 条码 6921168593545 处理结果：正常商品数量20.0，单价7.25，赠品数量4.0
+2025-05-03 14:44:26,119 - app.core.excel.processor - INFO - 条码 6921168509256 填充：仅有赠品，采购量=0，赠品数量=24.0
+2025-05-03 14:44:26,119 - app.core.excel.processor - INFO - 条码 6921168593545 填充：采购量=20.0，赠品数量4.0
+2025-05-03 14:44:26,122 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250503144404.xls
+2025-05-03 14:44:26,124 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250503144404.xls
+2025-05-03 14:45:44,520 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-03 14:45:44,521 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-03 14:45:58,807 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-03 14:45:58,808 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-03 14:45:58,809 - app.core.excel.processor - INFO - 开始处理Excel文件: D:/My Documents/python/orc-order-v2/data/output/微信图片_20250503144404.xlsx
+2025-05-03 14:45:59,464 - app.core.excel.processor - INFO - 成功读取Excel文件: D:/My Documents/python/orc-order-v2/data/output/微信图片_20250503144404.xlsx, 共 9 行
+2025-05-03 14:45:59,478 - app.core.excel.processor - INFO - 找到可能的表头行: 第1行，评分: 35
+2025-05-03 14:45:59,479 - app.core.excel.processor - INFO - 识别到表头在第 1 行
+2025-05-03 14:45:59,493 - app.core.excel.processor - INFO - 使用表头行重新读取数据，共 8 行有效数据
+2025-05-03 14:45:59,493 - app.core.excel.processor - INFO - 找到精确匹配的条码列: 条形码
+2025-05-03 14:45:59,494 - app.core.excel.processor - INFO - 使用条码列: 条形码
+2025-05-03 14:45:59,494 - app.core.excel.processor - INFO - 找到name列: 商品名称
+2025-05-03 14:45:59,494 - app.core.excel.processor - INFO - 找到quantity列: 订单数量
+2025-05-03 14:45:59,494 - app.core.excel.processor - INFO - 找到price列: 销售价
+2025-05-03 14:45:59,494 - app.core.excel.processor - INFO - 列名映射结果: {'barcode': '条形码', 'name': '商品名称', 'quantity': '订单数量', 'price': '销售价'}
+2025-05-03 14:45:59,494 - app.core.excel.processor - INFO - 是否存在规格列: False
+2025-05-03 14:45:59,495 - app.core.excel.processor - INFO - 第1行: 提取商品信息 条码=6921168509256, 名称=550水24白膜, 规格=, 数量=1.0, 单位=, 单价=0.0
+2025-05-03 14:45:59,496 - app.core.excel.processor - INFO - 从数量提取单位: 1箱 -> 箱
+2025-05-03 14:45:59,497 - app.core.excel.processor - INFO - 从商品名称推断规格: 550水24白膜 -> 1*24, 包装数量=24
+2025-05-03 14:45:59,497 - app.core.excel.processor - INFO - 从商品名称推断规格: 550水24白膜 -> 1*24, 包装数量=24
+2025-05-03 14:45:59,499 - app.core.excel.processor - INFO - 第2行: 提取商品信息 条码=6921168561445, 名称=1.5树叶茉莉花茶6入纸箱装, 规格=, 数量=2.0, 单位=, 单价=50.0
+2025-05-03 14:45:59,500 - app.core.excel.processor - INFO - 从数量提取单位: 2箱 -> 箱
+2025-05-03 14:45:59,500 - app.core.excel.processor - INFO - 从商品名称推断规格: 1.5树叶茉莉花茶6入纸箱装 -> 1*6, 包装数量=6
+2025-05-03 14:45:59,500 - app.core.excel.processor - INFO - 从商品名称推断规格: 1.5树叶茉莉花茶6入纸箱装 -> 1*6, 包装数量=6
+2025-05-03 14:45:59,500 - app.core.excel.processor - INFO - 第3行: 提取商品信息 条码=6921168561452, 名称=1.5树叶乌龙茶6入纸箱装, 规格=, 数量=1.0, 单位=, 单价=50.0
+2025-05-03 14:45:59,501 - app.core.excel.processor - INFO - 从数量提取单位: 1箱 -> 箱
+2025-05-03 14:45:59,502 - app.core.excel.processor - INFO - 从商品名称推断规格: 1.5树叶乌龙茶6入纸箱装 -> 1*6, 包装数量=6
+2025-05-03 14:45:59,502 - app.core.excel.processor - INFO - 从商品名称推断规格: 1.5树叶乌龙茶6入纸箱装 -> 1*6, 包装数量=6
+2025-05-03 14:45:59,535 - app.core.excel.processor - INFO - 第4行: 提取商品信息 条码=6921168561469, 名称=1.5树叶青柑普洱茶6入纸箱装, 规格=, 数量=1.0, 单位=, 单价=50.0
+2025-05-03 14:45:59,535 - app.core.excel.processor - INFO - 从数量提取单位: 1箱 -> 箱
+2025-05-03 14:45:59,535 - app.core.excel.processor - INFO - 从商品名称推断规格: 1.5树叶青柑普洱茶6入纸箱装 -> 1*6, 包装数量=6
+2025-05-03 14:45:59,535 - app.core.excel.processor - INFO - 从商品名称推断规格: 1.5树叶青柑普洱茶6入纸箱装 -> 1*6, 包装数量=6
+2025-05-03 14:45:59,536 - app.core.excel.processor - INFO - 第5行: 提取商品信息 条码=6921168562473, 名称=410-农夫山泉-原味1*15-纸箱装, 规格=, 数量=1.0, 单位=, 单价=43.0
+2025-05-03 14:45:59,536 - app.core.excel.processor - INFO - 从数量提取单位: 1箱 -> 箱
+2025-05-03 14:45:59,536 - app.core.excel.processor - INFO - 从商品名称推断规格: 410-农夫山泉-原味1*15-纸箱装 -> 1*15, 包装数量=15
+2025-05-03 14:45:59,536 - app.core.excel.processor - INFO - 从商品名称推断规格: 410-农夫山泉-原味1*15-纸箱装 -> 1*15, 包装数量=15
+2025-05-03 14:45:59,537 - app.core.excel.processor - INFO - 第6行: 提取商品信息 条码=6921168593545, 名称=5L水4入白膜, 规格=, 数量=5.0, 单位=, 单价=29.0
+2025-05-03 14:45:59,537 - app.core.excel.processor - INFO - 从数量提取单位: 5箱 -> 箱
+2025-05-03 14:45:59,537 - app.core.excel.processor - INFO - 从商品名称推断规格: 5L水4入白膜 -> 1*4, 包装数量=4
+2025-05-03 14:45:59,537 - app.core.excel.processor - INFO - 从商品名称推断规格: 5L水4入白膜 -> 1*4, 包装数量=4
+2025-05-03 14:45:59,537 - app.core.excel.processor - INFO - 第7行: 提取商品信息 条码=6921168593545, 名称=5L水4入白膜, 规格=, 数量=1.0, 单位=, 单价=0.0
+2025-05-03 14:45:59,537 - app.core.excel.processor - INFO - 从数量提取单位: 1箱 -> 箱
+2025-05-03 14:45:59,538 - app.core.excel.processor - INFO - 从商品名称推断规格: 5L水4入白膜 -> 1*4, 包装数量=4
+2025-05-03 14:45:59,538 - app.core.excel.processor - INFO - 从商品名称推断规格: 5L水4入白膜 -> 1*4, 包装数量=4
+2025-05-03 14:45:59,538 - app.core.excel.processor - INFO - 提取到 7 个商品信息
+2025-05-03 14:45:59,547 - app.core.excel.processor - INFO - 开始处理7 个产品信息
+2025-05-03 14:45:59,547 - app.core.excel.processor - INFO - 处理商品: 条码=6921168509256, 数量=24.0, 单价=0, 是否赠品=True
+2025-05-03 14:45:59,548 - app.core.excel.processor - INFO - 发现赠品：条码6921168509256, 数量=24.0
+2025-05-03 14:46:03,470 - app.core.excel.processor - INFO - 处理商品: 条码=6921168561445, 数量=12.0, 单价=8.333333333333334, 是否赠品=False
+2025-05-03 14:46:03,470 - app.core.excel.processor - INFO - 发现正常商品：条码6921168561445, 数量=12.0, 单价=8.333333333333334
+2025-05-03 14:46:03,470 - app.core.excel.processor - INFO - 处理商品: 条码=6921168561452, 数量=6.0, 单价=8.333333333333334, 是否赠品=False
+2025-05-03 14:46:03,470 - app.core.excel.processor - INFO - 发现正常商品：条码6921168561452, 数量=6.0, 单价=8.333333333333334
+2025-05-03 14:46:03,470 - app.core.excel.processor - INFO - 处理商品: 条码=6921168561469, 数量=6.0, 单价=8.333333333333334, 是否赠品=False
+2025-05-03 14:46:03,470 - app.core.excel.processor - INFO - 发现正常商品：条码6921168561469, 数量=6.0, 单价=8.333333333333334
+2025-05-03 14:46:03,470 - app.core.excel.processor - INFO - 处理商品: 条码=6921168562473, 数量=15.0, 单价=2.8666666666666667, 是否赠品=False
+2025-05-03 14:46:03,470 - app.core.excel.processor - INFO - 发现正常商品：条码6921168562473, 数量=15.0, 单价=2.8666666666666667
+2025-05-03 14:46:03,470 - app.core.excel.processor - INFO - 处理商品: 条码=6921168593545, 数量=20.0, 单价=7.25, 是否赠品=False
+2025-05-03 14:46:03,471 - app.core.excel.processor - INFO - 发现正常商品：条码6921168593545, 数量=20.0, 单价=7.25
+2025-05-03 14:46:03,471 - app.core.excel.processor - INFO - 处理商品: 条码=6921168593545, 数量=4.0, 单价=0, 是否赠品=True
+2025-05-03 14:46:03,471 - app.core.excel.processor - INFO - 发现赠品：条码6921168593545, 数量=4.0
+2025-05-03 14:46:03,471 - app.core.excel.processor - INFO - 分组后共6 个不同条码的商品
+2025-05-03 14:46:03,471 - app.core.excel.processor - INFO - 条码 6921168509256 处理结果：只有赠品，数量=24.0
+2025-05-03 14:46:03,471 - app.core.excel.processor - INFO - 条码 6921168561445 处理结果：正常商品数量12.0，单价8.333333333333334，赠品数量0
+2025-05-03 14:46:03,471 - app.core.excel.processor - INFO - 条码 6921168561452 处理结果：正常商品数量6.0，单价8.333333333333334，赠品数量0
+2025-05-03 14:46:03,471 - app.core.excel.processor - INFO - 条码 6921168561469 处理结果：正常商品数量6.0，单价8.333333333333334，赠品数量0
+2025-05-03 14:46:03,471 - app.core.excel.processor - INFO - 条码 6921168562473 处理结果：正常商品数量15.0，单价2.8666666666666667，赠品数量0
+2025-05-03 14:46:03,471 - app.core.excel.processor - INFO - 条码 6921168593545 处理结果：正常商品数量20.0，单价7.25，赠品数量4.0
+2025-05-03 14:46:03,471 - app.core.excel.processor - INFO - 条码 6921168509256 填充：仅有赠品，采购量=0，赠品数量=24.0
+2025-05-03 14:46:03,472 - app.core.excel.processor - INFO - 条码 6921168593545 填充：采购量=20.0，赠品数量4.0
+2025-05-03 14:46:03,475 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250503144404.xls
+2025-05-03 14:46:03,478 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250503144404.xls
+2025-05-03 14:53:52,351 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-03 14:53:52,352 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-03 14:53:54,304 - app.core.excel.processor - INFO - 搜索目录 D:\My Documents\python\orc-order-v2\data\output 中的Excel文件
+2025-05-03 14:53:54,305 - app.core.excel.processor - INFO - 找到最新的Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250503145328.xlsx
+2025-05-03 14:53:54,305 - app.core.excel.processor - INFO - 开始处理Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250503145328.xlsx
+2025-05-03 14:53:55,082 - app.core.excel.processor - INFO - 成功读取Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250503145328.xlsx, 共 6 行
+2025-05-03 14:53:55,083 - app.core.excel.processor - INFO - 找到可能的表头行: 第1行，评分: 40
+2025-05-03 14:53:55,084 - app.core.excel.processor - INFO - 识别到表头在第 1 行
+2025-05-03 14:53:55,093 - app.core.excel.processor - INFO - 使用表头行重新读取数据，共 5 行有效数据
+2025-05-03 14:53:55,096 - app.core.excel.processor - ERROR - 未找到条码列，无法处理
+2025-05-03 14:53:55,096 - app.core.excel.processor - INFO - 列名映射结果: {}
+2025-05-03 14:53:55,096 - app.core.excel.processor - INFO - 是否存在规格列: True
+2025-05-03 14:53:55,097 - app.core.excel.processor - INFO - 提取到 0 个商品信息
+2025-05-03 14:53:55,097 - app.core.excel.processor - WARNING - 未提取到有效商品信息
+2025-05-03 15:43:36,731 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-03 15:43:36,732 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-03 15:43:36,734 - app.core.excel.processor - INFO - 开始处理Excel文件: D:/My Documents/python/orc-order-v2/data/output/微信图片_20250503145328.xlsx
+2025-05-03 15:43:37,374 - app.core.excel.processor - INFO - 成功读取Excel文件: D:/My Documents/python/orc-order-v2/data/output/微信图片_20250503145328.xlsx, 共 6 行
+2025-05-03 15:43:37,376 - app.core.excel.processor - INFO - 找到可能的表头行: 第1行，评分: 45
+2025-05-03 15:43:37,376 - app.core.excel.processor - INFO - 识别到表头在第 1 行
+2025-05-03 15:43:37,410 - app.core.excel.processor - INFO - 使用表头行重新读取数据，共 5 行有效数据
+2025-05-03 15:43:37,413 - app.core.excel.processor - ERROR - 未找到条码列，无法处理
+2025-05-03 15:43:37,413 - app.core.excel.processor - INFO - 列名映射结果: {}
+2025-05-03 15:43:37,413 - app.core.excel.processor - INFO - 是否存在规格列: True
+2025-05-03 15:43:37,413 - app.core.excel.processor - INFO - 提取到 0 个商品信息
+2025-05-03 15:43:37,414 - app.core.excel.processor - WARNING - 未提取到有效商品信息
+2025-05-05 18:55:02,299 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-05 18:55:02,301 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-05 18:55:04,013 - app.core.excel.processor - INFO - 搜索目录 D:\My Documents\python\orc-order-v2\data\output 中的Excel文件
+2025-05-05 18:55:04,014 - app.core.excel.processor - INFO - 找到最新的Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250505185454.xlsx
+2025-05-05 18:55:04,016 - app.core.excel.processor - INFO - 开始处理Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250505185454.xlsx
+2025-05-05 18:55:05,256 - app.core.excel.processor - INFO - 成功读取Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250505185454.xlsx, 共 9 行
+2025-05-05 18:55:05,264 - app.core.excel.processor - INFO - 找到可能的表头行: 第1行，评分: 40
+2025-05-05 18:55:05,264 - app.core.excel.processor - INFO - 识别到表头在第 1 行
+2025-05-05 18:55:05,282 - app.core.excel.processor - INFO - 使用表头行重新读取数据，共 8 行有效数据
+2025-05-05 18:55:05,282 - app.core.excel.processor - INFO - 找到精确匹配的条码列: 条形码
+2025-05-05 18:55:05,282 - app.core.excel.processor - INFO - 使用条码列: 条形码
+2025-05-05 18:55:05,282 - app.core.excel.processor - INFO - 找到name列: 商品名称
+2025-05-05 18:55:05,283 - app.core.excel.processor - INFO - 找到quantity列: 数量
+2025-05-05 18:55:05,283 - app.core.excel.processor - INFO - 找到unit列: 单位
+2025-05-05 18:55:05,283 - app.core.excel.processor - INFO - 找到price列: 销售价
+2025-05-05 18:55:05,283 - app.core.excel.processor - INFO - 列名映射结果: {'barcode': '条形码', 'name': '商品名称', 'quantity': '数量', 'unit': '单位', 'price': '销售价'}
+2025-05-05 18:55:05,286 - app.core.excel.processor - INFO - 是否存在规格列: False
+2025-05-05 18:55:05,287 - app.core.excel.processor - INFO - 第1行: 提取商品信息 条码=6902083890636, 名称=娃哈哈大爽歪歪200g*24, 规格=, 数量=1.0, 单位=件, 单价=40.0
+2025-05-05 18:55:05,288 - app.core.excel.processor - INFO - 从商品名称提取重量/容量规格: 娃哈哈大爽歪歪200g*24 -> 1*24, 包装数量=24
+2025-05-05 18:55:05,290 - app.core.excel.processor - INFO - 第2行: 提取商品信息 条码=6902083922658, 名称=娃哈哈瓶装大AD450ml*15, 规格=, 数量=1.0, 单位=件, 单价=50.0
+2025-05-05 18:55:05,290 - app.core.excel.processor - INFO - 从商品名称提取重量/容量规格: 娃哈哈瓶装大AD450ml*15 -> 1*15, 包装数量=15
+2025-05-05 18:55:05,291 - app.core.excel.processor - INFO - 第3行: 提取商品信息 条码=6902083814052, 名称=娃哈哈瓶装大AD草莓味450ml*15, 规格=, 数量=1.0, 单位=件, 单价=50.0
+2025-05-05 18:55:05,291 - app.core.excel.processor - INFO - 从商品名称提取重量/容量规格: 娃哈哈瓶装大AD草莓味450ml*15 -> 1*15, 包装数量=15
+2025-05-05 18:55:05,292 - app.core.excel.processor - INFO - 第4行: 提取商品信息 条码=6902083814045, 名称=娃哈哈瓶装大AD水蜜桃450ml*15, 规格=, 数量=1.0, 单位=件, 单价=50.0
+2025-05-05 18:55:05,293 - app.core.excel.processor - INFO - 从商品名称提取重量/容量规格: 娃哈哈瓶装大AD水蜜桃450ml*15 -> 1*15, 包装数量=15
+2025-05-05 18:55:05,293 - app.core.excel.processor - INFO - 第5行: 提取商品信息 条码=6902083911027, 名称=娃哈哈大苏打水甜味500ml*15, 规格=, 数量=3.0, 单位=件, 单价=43.0
+2025-05-05 18:55:05,293 - app.core.excel.processor - INFO - 从商品名称提取重量/容量规格: 娃哈哈大苏打水甜味500ml*15 -> 1*15, 包装数量=15
+2025-05-05 18:55:05,294 - app.core.excel.processor - INFO - 第6行: 提取商品信息 条码=6902083881405, 名称=娃哈哈纯净水（红标）596ml*24, 规格=, 数量=5.0, 单位=件, 单价=22.0
+2025-05-05 18:55:05,501 - app.core.excel.processor - INFO - 从商品名称提取重量/容量规格: 娃哈哈纯净水（红标）596ml*24 -> 1*24, 包装数量=24
+2025-05-05 18:55:05,501 - app.core.excel.processor - INFO - 第7行: 提取商品信息 条码=6902083894443, 名称=娃哈哈苏打水甜味350ml*24, 规格=, 数量=3.0, 单位=件, 单价=43.0
+2025-05-05 18:55:05,502 - app.core.excel.processor - INFO - 从商品名称提取重量/容量规格: 娃哈哈苏打水甜味350ml*24 -> 1*24, 包装数量=24
+2025-05-05 18:55:05,503 - app.core.excel.processor - INFO - 提取到 7 个商品信息
+2025-05-05 18:55:05,515 - app.core.excel.processor - INFO - 开始处理7 个产品信息
+2025-05-05 18:55:05,516 - app.core.excel.processor - INFO - 处理商品: 条码=6902083890636, 数量=24.0, 单价=1.6666666666666667, 是否赠品=False
+2025-05-05 18:55:05,516 - app.core.excel.processor - INFO - 发现正常商品：条码6902083890636, 数量=24.0, 单价=1.6666666666666667
+2025-05-05 18:55:05,516 - app.core.excel.processor - INFO - 处理商品: 条码=6902083922658, 数量=15.0, 单价=3.3333333333333335, 是否赠品=False
+2025-05-05 18:55:05,516 - app.core.excel.processor - INFO - 发现正常商品：条码6902083922658, 数量=15.0, 单价=3.3333333333333335
+2025-05-05 18:55:05,516 - app.core.excel.processor - INFO - 处理商品: 条码=6902083814052, 数量=15.0, 单价=3.3333333333333335, 是否赠品=False
+2025-05-05 18:55:05,516 - app.core.excel.processor - INFO - 发现正常商品：条码6902083814052, 数量=15.0, 单价=3.3333333333333335
+2025-05-05 18:55:05,516 - app.core.excel.processor - INFO - 处理商品: 条码=6902083814045, 数量=15.0, 单价=3.3333333333333335, 是否赠品=False
+2025-05-05 18:55:05,516 - app.core.excel.processor - INFO - 发现正常商品：条码6902083814045, 数量=15.0, 单价=3.3333333333333335
+2025-05-05 18:55:05,516 - app.core.excel.processor - INFO - 处理商品: 条码=6902083911027, 数量=45.0, 单价=2.8666666666666667, 是否赠品=False
+2025-05-05 18:55:05,518 - app.core.excel.processor - INFO - 发现正常商品：条码6902083911027, 数量=45.0, 单价=2.8666666666666667
+2025-05-05 18:55:05,518 - app.core.excel.processor - INFO - 处理商品: 条码=6902083881405, 数量=120.0, 单价=0.9166666666666666, 是否赠品=False
+2025-05-05 18:55:05,518 - app.core.excel.processor - INFO - 发现正常商品：条码6902083881405, 数量=120.0, 单价=0.9166666666666666
+2025-05-05 18:55:05,518 - app.core.excel.processor - INFO - 处理商品: 条码=6902083894443, 数量=72.0, 单价=1.7916666666666667, 是否赠品=False
+2025-05-05 18:55:05,519 - app.core.excel.processor - INFO - 发现正常商品：条码6902083894443, 数量=72.0, 单价=1.7916666666666667
+2025-05-05 18:55:05,519 - app.core.excel.processor - INFO - 分组后共7 个不同条码的商品
+2025-05-05 18:55:05,519 - app.core.excel.processor - INFO - 条码 6902083890636 处理结果：正常商品数量24.0，单价1.6666666666666667，赠品数量0
+2025-05-05 18:55:05,519 - app.core.excel.processor - INFO - 条码 6902083922658 处理结果：正常商品数量15.0，单价3.3333333333333335，赠品数量0
+2025-05-05 18:55:05,519 - app.core.excel.processor - INFO - 条码 6902083814052 处理结果：正常商品数量15.0，单价3.3333333333333335，赠品数量0
+2025-05-05 18:55:05,519 - app.core.excel.processor - INFO - 条码 6902083814045 处理结果：正常商品数量15.0，单价3.3333333333333335，赠品数量0
+2025-05-05 18:55:05,519 - app.core.excel.processor - INFO - 条码 6902083911027 处理结果：正常商品数量45.0，单价2.8666666666666667，赠品数量0
+2025-05-05 18:55:05,519 - app.core.excel.processor - INFO - 条码 6902083881405 处理结果：正常商品数量120.0，单价0.9166666666666666，赠品数量0
+2025-05-05 18:55:05,519 - app.core.excel.processor - INFO - 条码 6902083894443 处理结果：正常商品数量72.0，单价1.7916666666666667，赠品数量0
+2025-05-05 18:55:05,533 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250505185454.xls
+2025-05-05 18:55:13,151 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250505185454.xls
+2025-05-05 18:59:17,851 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-05 18:59:17,851 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-05 19:00:26,073 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-05 19:00:26,074 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-05 19:00:26,076 - app.core.excel.processor - INFO - 开始处理Excel文件: D:/My Documents/python/orc-order-v2/data/output/微信图片_20250505185842.xlsx
+2025-05-05 19:00:26,671 - app.core.excel.processor - INFO - 成功读取Excel文件: D:/My Documents/python/orc-order-v2/data/output/微信图片_20250505185842.xlsx, 共 32 行
+2025-05-05 19:00:26,673 - app.core.excel.processor - INFO - 找到可能的表头行: 第1行，评分: 35
+2025-05-05 19:00:26,673 - app.core.excel.processor - INFO - 识别到表头在第 1 行
+2025-05-05 19:00:26,695 - app.core.excel.processor - INFO - 使用表头行重新读取数据，共 31 行有效数据
+2025-05-05 19:00:26,695 - app.core.excel.processor - INFO - 找到精确匹配的条码列: 条码
+2025-05-05 19:00:26,695 - app.core.excel.processor - INFO - 使用条码列: 条码
+2025-05-05 19:00:26,695 - app.core.excel.processor - INFO - 找到name列(部分匹配): 商品全名
+2025-05-05 19:00:26,696 - app.core.excel.processor - INFO - 找到specification列: 规格
+2025-05-05 19:00:26,696 - app.core.excel.processor - INFO - 找到quantity列: 数量
+2025-05-05 19:00:26,696 - app.core.excel.processor - INFO - 找到unit列: 单位
+2025-05-05 19:00:26,696 - app.core.excel.processor - INFO - 找到price列: 单价
+2025-05-05 19:00:26,696 - app.core.excel.processor - INFO - 列名映射结果: {'barcode': '条码', 'name': '商品全名', 'specification': '规格', 'quantity': '数量', 'unit': '单位', 'price': '单价'}
+2025-05-05 19:00:26,696 - app.core.excel.processor - INFO - 是否存在规格列: True
+2025-05-05 19:00:26,697 - app.core.excel.processor - INFO - 第1行: 提取商品信息 条码=6922868285266, 名称=心相印80片杀菌湿巾XCA080, 规格=, 数量=3.0, 单位=包, 单价=12.0
+2025-05-05 19:00:26,698 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:00:26,700 - app.core.excel.processor - INFO - 第2行: 提取商品信息 条码=6914068023359, 名称=洁柔30片湿巾纸, 规格=, 数量=3.0, 单位=包, 单价=5.0
+2025-05-05 19:00:26,704 - app.core.excel.processor - INFO - 解析规格: 1*24 -> 包装数量=24
+2025-05-05 19:00:26,705 - app.core.excel.processor - INFO - 第3行: 提取商品信息 条码=6922868284283, 名称=心相印10片湿巾纸杀菌, 规格=, 数量=12.0, 单位=包, 单价=2.4
+2025-05-05 19:00:26,705 - app.core.excel.processor - INFO - 解析规格: 1*96 -> 包装数量=96
+2025-05-05 19:00:26,705 - app.core.excel.processor - INFO - 第4行: 提取商品信息 条码=6914068012261, 名称=洁柔百花135软抽JR069, 规格=, 数量=6.0, 单位=提, 单价=8.5
+2025-05-05 19:00:26,706 - app.core.excel.processor - INFO - 解析规格: 1*16 -> 包装数量=16
+2025-05-05 19:00:26,706 - app.core.excel.processor - INFO - 第5行: 提取商品信息 条码=6914068012957, 名称=洁柔古龙150软抽JR060, 规格=, 数量=3.0, 单位=提, 单价=10.5
+2025-05-05 19:00:26,706 - app.core.excel.processor - INFO - 解析规格: 1*16 -> 包装数量=16
+2025-05-05 19:00:26,706 - app.core.excel.processor - INFO - 第6行: 提取商品信息 条码=6943836502161, 名称=千唯200欧典小软抽, 规格=, 数量=2.0, 单位=提, 单价=6.5
+2025-05-05 19:00:26,706 - app.core.excel.processor - INFO - 解析规格: 1*20 -> 包装数量=20
+2025-05-05 19:00:26,736 - app.core.excel.processor - INFO - 第7行: 提取商品信息 条码=6903244675208, 名称=DT15130心相印茶语6个装, 规格=, 数量=3.0, 单位=提, 单价=12.5
+2025-05-05 19:00:26,736 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:00:26,737 - app.core.excel.processor - INFO - 第8行: 提取商品信息 条码=6949288699398, 名称=9939家洁丝125*180六装抽纸, 规格=, 数量=3.0, 单位=提, 单价=8.5
+2025-05-05 19:00:26,737 - app.core.excel.processor - INFO - 解析规格: 1*18 -> 包装数量=18
+2025-05-05 19:00:26,738 - app.core.excel.processor - INFO - 第9行: 提取商品信息 条码=6949288677884, 名称=7884家洁丝三装抽纸, 规格=, 数量=2.0, 单位=提, 单价=8.5
+2025-05-05 19:00:26,738 - app.core.excel.processor - INFO - 解析规格: 1*20 -> 包装数量=20
+2025-05-05 19:00:26,738 - app.core.excel.processor - ERROR - 提取第11行商品信息时出错: could not convert string to float: '单价'
+Traceback (most recent call last):
+  File "D:\My Documents\python\orc-order-v2\app\core\excel\processor.py", line 258, in extract_product_info
+    'price': float(row[column_mapping['price']]) if column_mapping.get('price') and not pd.isna(row[column_mapping['price']]) else 0,
+ValueError: could not convert string to float: '单价'
+2025-05-05 19:00:26,742 - app.core.excel.processor - INFO - 第12行: 提取商品信息 条码=6926052512725, 名称=8704自由点430舒睡超薄夜棉, 规格=, 数量=3.0, 单位=包, 单价=6.2
+2025-05-05 19:00:26,742 - app.core.excel.processor - INFO - 解析规格: 1*48 -> 包装数量=48
+2025-05-05 19:00:26,743 - app.core.excel.processor - INFO - 第13行: 提取商品信息 条码=6926052515276, 名称=自由点益生菌8片日用卫生巾, 规格=, 数量=3.0, 单位=包, 单价=7.5
+2025-05-05 19:00:26,743 - app.core.excel.processor - INFO - 解析规格: 1*24 -> 包装数量=24
+2025-05-05 19:00:26,744 - app.core.excel.processor - INFO - 第14行: 提取商品信息 条码=6926052501620, 名称=自由点无感七口棉柔8片口用, 规格=, 数量=3.0, 单位=包, 单价=6.5
+2025-05-05 19:00:26,744 - app.core.excel.processor - INFO - 解析规格: 1*24 -> 包装数量=24
+2025-05-05 19:00:26,744 - app.core.excel.processor - INFO - 第15行: 提取商品信息 条码=6903244370776, 名称=8808七度空间8片丝柔夜用超长, 规格=, 数量=3.0, 单位=包, 单价=6.6
+2025-05-05 19:00:26,745 - app.core.excel.processor - INFO - 解析规格: 1*30 -> 包装数量=30
+2025-05-05 19:00:26,745 - app.core.excel.processor - INFO - 第16行: 提取商品信息 条码=6903244370967, 名称=6205七度空间5片夜用棉柔, 规格=, 数量=3.0, 单位=包, 单价=3.6
+2025-05-05 19:00:26,745 - app.core.excel.processor - INFO - 解析规格: 1*48 -> 包装数量=48
+2025-05-05 19:00:30,735 - app.core.excel.processor - INFO - 第17行: 提取商品信息 条码=6934660522258, 名称=苏菲10片弹力贴身日用棉柔, 规格=, 数量=3.0, 单位=包, 单价=5.0
+2025-05-05 19:00:30,735 - app.core.excel.processor - INFO - 解析规格: 1*24 -> 包装数量=24
+2025-05-05 19:00:30,736 - app.core.excel.processor - INFO - 第18行: 提取商品信息 条码=6934660528618, 名称=苏菲350超熟睡棉柔4片, 规格=, 数量=3.0, 单位=包, 单价=4.2
+2025-05-05 19:00:30,736 - app.core.excel.processor - INFO - 解析规格: 1*48 -> 包装数量=48
+2025-05-05 19:00:30,737 - app.core.excel.processor - INFO - 第19行: 提取商品信息 条码=6934660539157, 名称=苏菲9片小翅膀护垫, 规格=, 数量=3.0, 单位=包, 单价=2.8
+2025-05-05 19:00:30,737 - app.core.excel.processor - INFO - 解析规格: 1*36 -> 包装数量=36
+2025-05-05 19:00:30,738 - app.core.excel.processor - INFO - 第20行: 提取商品信息 条码=6922731882509, 名称=ABC亲柔立围8片夜用k82, 规格=, 数量=5.0, 单位=包, 单价=6.2
+2025-05-05 19:00:30,738 - app.core.excel.processor - INFO - 解析规格: 1*48 -> 包装数量=48
+2025-05-05 19:00:30,739 - app.core.excel.processor - ERROR - 提取第22行商品信息时出错: could not convert string to float: '单价'
+Traceback (most recent call last):
+  File "D:\My Documents\python\orc-order-v2\app\core\excel\processor.py", line 258, in extract_product_info
+    'price': float(row[column_mapping['price']]) if column_mapping.get('price') and not pd.isna(row[column_mapping['price']]) else 0,
+ValueError: could not convert string to float: '单价'
+2025-05-05 19:00:30,739 - app.core.excel.processor - INFO - 第23行: 提取商品信息 条码=6923589462400, 名称=62400高洁丝10片日棉, 规格=, 数量=3.0, 单位=包, 单价=6.0
+2025-05-05 19:00:30,739 - app.core.excel.processor - INFO - 解析规格: 1*24 -> 包装数量=24
+2025-05-05 19:00:30,741 - app.core.excel.processor - INFO - 第24行: 提取商品信息 条码=6923589469195, 名称=6919高洁丝10片迷你190日用, 规格=, 数量=5.0, 单位=包, 单价=2.3
+2025-05-05 19:00:30,741 - app.core.excel.processor - INFO - 解析规格: 1*60 -> 包装数量=60
+2025-05-05 19:00:30,741 - app.core.excel.processor - INFO - 第25行: 提取商品信息 条码=6923589467009, 名称=高洁丝迷你卫生巾臻选, 规格=, 数量=3.0, 单位=包, 单价=4.6
+2025-05-05 19:00:30,741 - app.core.excel.processor - INFO - 解析规格: 1*24 -> 包装数量=24
+2025-05-05 19:00:30,742 - app.core.excel.processor - INFO - 第26行: 提取商品信息 条码=6923589466156, 名称=6615高洁丝8片日用极薄棉柔, 规格=, 数量=5.0, 单位=包, 单价=6.2
+2025-05-05 19:00:30,742 - app.core.excel.processor - INFO - 解析规格: 1*16 -> 包装数量=16
+2025-05-05 19:00:34,623 - app.core.excel.processor - INFO - 第27行: 提取商品信息 条码=6934660521510, 名称=苏菲安心裤F码, 规格=, 数量=3.0, 单位=包, 单价=5.6
+2025-05-05 19:00:34,623 - app.core.excel.processor - INFO - 解析规格: 1*36 -> 包装数量=36
+2025-05-05 19:00:34,623 - app.core.excel.processor - INFO - 第28行: 提取商品信息 条码=6901404300854, 名称=85g上海硫磺皂, 规格=, 数量=3.0, 单位=个, 单价=1.2
+2025-05-05 19:00:34,623 - app.core.excel.processor - INFO - 解析规格: 1*72 -> 包装数量=72
+2025-05-05 19:00:34,624 - app.core.excel.processor - INFO - 第29行: 提取商品信息 条码=4897031010292, 名称=380g蔻斯汀花瓣沐浴露茉莉, 规格=, 数量=2.0, 单位=瓶, 单价=19.0
+2025-05-05 19:00:34,625 - app.core.excel.processor - INFO - 第30行: 提取商品信息 条码=6903148171813, 名称=200g潘婷洗发水烫染修护, 规格=, 数量=3.0, 单位=瓶, 单价=14.5
+2025-05-05 19:00:34,625 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:00:34,626 - app.core.excel.processor - INFO - 第31行: 提取商品信息 条码=6902088951875, 名称=175g清扬洗发水男士防脱发, 规格=, 数量=2.0, 单位=瓶, 单价=16.5
+2025-05-05 19:00:34,626 - app.core.excel.processor - INFO - 解析规格: 1*1 -> 包装数量=1
+2025-05-05 19:00:34,626 - app.core.excel.processor - INFO - 提取到 27 个商品信息
+2025-05-05 19:00:34,636 - app.core.excel.processor - INFO - 开始处理27 个产品信息
+2025-05-05 19:00:34,636 - app.core.excel.processor - INFO - 处理商品: 条码=6922868285266, 数量=3.0, 单价=12.0, 是否赠品=False
+2025-05-05 19:00:34,636 - app.core.excel.processor - INFO - 发现正常商品：条码6922868285266, 数量=3.0, 单价=12.0
+2025-05-05 19:00:34,636 - app.core.excel.processor - INFO - 处理商品: 条码=6914068023359, 数量=3.0, 单价=5.0, 是否赠品=False
+2025-05-05 19:00:34,636 - app.core.excel.processor - INFO - 发现正常商品：条码6914068023359, 数量=3.0, 单价=5.0
+2025-05-05 19:00:34,636 - app.core.excel.processor - INFO - 处理商品: 条码=6922868284283, 数量=12.0, 单价=2.4, 是否赠品=False
+2025-05-05 19:00:34,636 - app.core.excel.processor - INFO - 发现正常商品：条码6922868284283, 数量=12.0, 单价=2.4
+2025-05-05 19:00:34,636 - app.core.excel.processor - INFO - 处理商品: 条码=6914068012261, 数量=6.0, 单价=8.5, 是否赠品=False
+2025-05-05 19:00:34,636 - app.core.excel.processor - INFO - 发现正常商品：条码6914068012261, 数量=6.0, 单价=8.5
+2025-05-05 19:00:34,636 - app.core.excel.processor - INFO - 处理商品: 条码=6914068012957, 数量=3.0, 单价=10.5, 是否赠品=False
+2025-05-05 19:00:34,636 - app.core.excel.processor - INFO - 发现正常商品：条码6914068012957, 数量=3.0, 单价=10.5
+2025-05-05 19:00:34,637 - app.core.excel.processor - INFO - 处理商品: 条码=6943836502161, 数量=2.0, 单价=6.5, 是否赠品=False
+2025-05-05 19:00:34,637 - app.core.excel.processor - INFO - 发现正常商品：条码6943836502161, 数量=2.0, 单价=6.5
+2025-05-05 19:00:34,637 - app.core.excel.processor - INFO - 处理商品: 条码=6903244675208, 数量=3.0, 单价=12.5, 是否赠品=False
+2025-05-05 19:00:38,803 - app.core.excel.processor - INFO - 发现正常商品：条码6903244675208, 数量=3.0, 单价=12.5
+2025-05-05 19:00:38,803 - app.core.excel.processor - INFO - 处理商品: 条码=6949288699398, 数量=3.0, 单价=8.5, 是否赠品=False
+2025-05-05 19:00:38,803 - app.core.excel.processor - INFO - 发现正常商品：条码6949288699398, 数量=3.0, 单价=8.5
+2025-05-05 19:00:38,803 - app.core.excel.processor - INFO - 处理商品: 条码=6949288677884, 数量=2.0, 单价=8.5, 是否赠品=False
+2025-05-05 19:00:38,803 - app.core.excel.processor - INFO - 发现正常商品：条码6949288677884, 数量=2.0, 单价=8.5
+2025-05-05 19:00:38,803 - app.core.excel.processor - INFO - 处理商品: 条码=6926052512725, 数量=3.0, 单价=6.2, 是否赠品=False
+2025-05-05 19:00:38,803 - app.core.excel.processor - INFO - 发现正常商品：条码6926052512725, 数量=3.0, 单价=6.2
+2025-05-05 19:00:38,803 - app.core.excel.processor - INFO - 处理商品: 条码=6926052515276, 数量=3.0, 单价=7.5, 是否赠品=False
+2025-05-05 19:00:38,803 - app.core.excel.processor - INFO - 发现正常商品：条码6926052515276, 数量=3.0, 单价=7.5
+2025-05-05 19:00:38,803 - app.core.excel.processor - INFO - 处理商品: 条码=6926052501620, 数量=3.0, 单价=6.5, 是否赠品=False
+2025-05-05 19:00:38,803 - app.core.excel.processor - INFO - 发现正常商品：条码6926052501620, 数量=3.0, 单价=6.5
+2025-05-05 19:00:38,804 - app.core.excel.processor - INFO - 处理商品: 条码=6903244370776, 数量=3.0, 单价=6.6, 是否赠品=False
+2025-05-05 19:00:38,804 - app.core.excel.processor - INFO - 发现正常商品：条码6903244370776, 数量=3.0, 单价=6.6
+2025-05-05 19:00:38,804 - app.core.excel.processor - INFO - 处理商品: 条码=6903244370967, 数量=3.0, 单价=3.6, 是否赠品=False
+2025-05-05 19:00:38,804 - app.core.excel.processor - INFO - 发现正常商品：条码6903244370967, 数量=3.0, 单价=3.6
+2025-05-05 19:00:38,804 - app.core.excel.processor - INFO - 处理商品: 条码=6934660522258, 数量=3.0, 单价=5.0, 是否赠品=False
+2025-05-05 19:00:38,805 - app.core.excel.processor - INFO - 发现正常商品：条码6934660522258, 数量=3.0, 单价=5.0
+2025-05-05 19:00:38,805 - app.core.excel.processor - INFO - 处理商品: 条码=6934660528618, 数量=3.0, 单价=4.2, 是否赠品=False
+2025-05-05 19:00:38,805 - app.core.excel.processor - INFO - 发现正常商品：条码6934660528618, 数量=3.0, 单价=4.2
+2025-05-05 19:00:38,805 - app.core.excel.processor - INFO - 处理商品: 条码=6934660539157, 数量=3.0, 单价=2.8, 是否赠品=False
+2025-05-05 19:00:38,805 - app.core.excel.processor - INFO - 发现正常商品：条码6934660539157, 数量=3.0, 单价=2.8
+2025-05-05 19:00:38,805 - app.core.excel.processor - INFO - 处理商品: 条码=6922731882509, 数量=5.0, 单价=6.2, 是否赠品=False
+2025-05-05 19:00:38,805 - app.core.excel.processor - INFO - 发现正常商品：条码6922731882509, 数量=5.0, 单价=6.2
+2025-05-05 19:00:38,805 - app.core.excel.processor - INFO - 处理商品: 条码=6923589462400, 数量=3.0, 单价=6.0, 是否赠品=False
+2025-05-05 19:00:38,805 - app.core.excel.processor - INFO - 发现正常商品：条码6923589462400, 数量=3.0, 单价=6.0
+2025-05-05 19:00:38,805 - app.core.excel.processor - INFO - 处理商品: 条码=6923589469195, 数量=5.0, 单价=2.3, 是否赠品=False
+2025-05-05 19:00:38,805 - app.core.excel.processor - INFO - 发现正常商品：条码6923589469195, 数量=5.0, 单价=2.3
+2025-05-05 19:00:38,806 - app.core.excel.processor - INFO - 处理商品: 条码=6923589467009, 数量=3.0, 单价=4.6, 是否赠品=False
+2025-05-05 19:00:38,806 - app.core.excel.processor - INFO - 发现正常商品：条码6923589467009, 数量=3.0, 单价=4.6
+2025-05-05 19:00:38,806 - app.core.excel.processor - INFO - 处理商品: 条码=6923589466156, 数量=5.0, 单价=6.2, 是否赠品=False
+2025-05-05 19:00:38,806 - app.core.excel.processor - INFO - 发现正常商品：条码6923589466156, 数量=5.0, 单价=6.2
+2025-05-05 19:00:38,806 - app.core.excel.processor - INFO - 处理商品: 条码=6934660521510, 数量=3.0, 单价=5.6, 是否赠品=False
+2025-05-05 19:00:38,806 - app.core.excel.processor - INFO - 发现正常商品：条码6934660521510, 数量=3.0, 单价=5.6
+2025-05-05 19:00:38,806 - app.core.excel.processor - INFO - 处理商品: 条码=6901404300854, 数量=3.0, 单价=1.2, 是否赠品=False
+2025-05-05 19:00:38,806 - app.core.excel.processor - INFO - 发现正常商品：条码6901404300854, 数量=3.0, 单价=1.2
+2025-05-05 19:00:42,487 - app.core.excel.processor - INFO - 处理商品: 条码=4897031010292, 数量=2.0, 单价=19.0, 是否赠品=False
+2025-05-05 19:00:42,488 - app.core.excel.processor - INFO - 发现正常商品：条码4897031010292, 数量=2.0, 单价=19.0
+2025-05-05 19:00:42,488 - app.core.excel.processor - INFO - 处理商品: 条码=6903148171813, 数量=3.0, 单价=14.5, 是否赠品=False
+2025-05-05 19:00:42,488 - app.core.excel.processor - INFO - 发现正常商品：条码6903148171813, 数量=3.0, 单价=14.5
+2025-05-05 19:00:42,488 - app.core.excel.processor - INFO - 处理商品: 条码=6902088951875, 数量=2.0, 单价=16.5, 是否赠品=False
+2025-05-05 19:00:42,488 - app.core.excel.processor - INFO - 发现正常商品：条码6902088951875, 数量=2.0, 单价=16.5
+2025-05-05 19:00:42,488 - app.core.excel.processor - INFO - 分组后共27 个不同条码的商品
+2025-05-05 19:00:42,488 - app.core.excel.processor - INFO - 条码 6922868285266 处理结果：正常商品数量3.0，单价12.0，赠品数量0
+2025-05-05 19:00:42,488 - app.core.excel.processor - INFO - 条码 6914068023359 处理结果：正常商品数量3.0，单价5.0，赠品数量0
+2025-05-05 19:00:42,488 - app.core.excel.processor - INFO - 条码 6922868284283 处理结果：正常商品数量12.0，单价2.4，赠品数量0
+2025-05-05 19:00:42,489 - app.core.excel.processor - INFO - 条码 6914068012261 处理结果：正常商品数量6.0，单价8.5，赠品数量0
+2025-05-05 19:00:42,489 - app.core.excel.processor - INFO - 条码 6914068012957 处理结果：正常商品数量3.0，单价10.5，赠品数量0
+2025-05-05 19:00:42,489 - app.core.excel.processor - INFO - 条码 6943836502161 处理结果：正常商品数量2.0，单价6.5，赠品数量0
+2025-05-05 19:00:42,489 - app.core.excel.processor - INFO - 条码 6903244675208 处理结果：正常商品数量3.0，单价12.5，赠品数量0
+2025-05-05 19:00:42,489 - app.core.excel.processor - INFO - 条码 6949288699398 处理结果：正常商品数量3.0，单价8.5，赠品数量0
+2025-05-05 19:00:42,489 - app.core.excel.processor - INFO - 条码 6949288677884 处理结果：正常商品数量2.0，单价8.5，赠品数量0
+2025-05-05 19:00:42,489 - app.core.excel.processor - INFO - 条码 6926052512725 处理结果：正常商品数量3.0，单价6.2，赠品数量0
+2025-05-05 19:00:42,489 - app.core.excel.processor - INFO - 条码 6926052515276 处理结果：正常商品数量3.0，单价7.5，赠品数量0
+2025-05-05 19:00:42,489 - app.core.excel.processor - INFO - 条码 6926052501620 处理结果：正常商品数量3.0，单价6.5，赠品数量0
+2025-05-05 19:00:42,489 - app.core.excel.processor - INFO - 条码 6903244370776 处理结果：正常商品数量3.0，单价6.6，赠品数量0
+2025-05-05 19:00:42,489 - app.core.excel.processor - INFO - 条码 6903244370967 处理结果：正常商品数量3.0，单价3.6，赠品数量0
+2025-05-05 19:00:42,489 - app.core.excel.processor - INFO - 条码 6934660522258 处理结果：正常商品数量3.0，单价5.0，赠品数量0
+2025-05-05 19:00:42,489 - app.core.excel.processor - INFO - 条码 6934660528618 处理结果：正常商品数量3.0，单价4.2，赠品数量0
+2025-05-05 19:00:42,489 - app.core.excel.processor - INFO - 条码 6934660539157 处理结果：正常商品数量3.0，单价2.8，赠品数量0
+2025-05-05 19:00:42,489 - app.core.excel.processor - INFO - 条码 6922731882509 处理结果：正常商品数量5.0，单价6.2，赠品数量0
+2025-05-05 19:00:42,489 - app.core.excel.processor - INFO - 条码 6923589462400 处理结果：正常商品数量3.0，单价6.0，赠品数量0
+2025-05-05 19:00:42,490 - app.core.excel.processor - INFO - 条码 6923589469195 处理结果：正常商品数量5.0，单价2.3，赠品数量0
+2025-05-05 19:00:42,490 - app.core.excel.processor - INFO - 条码 6923589467009 处理结果：正常商品数量3.0，单价4.6，赠品数量0
+2025-05-05 19:00:42,490 - app.core.excel.processor - INFO - 条码 6923589466156 处理结果：正常商品数量5.0，单价6.2，赠品数量0
+2025-05-05 19:00:42,490 - app.core.excel.processor - INFO - 条码 6934660521510 处理结果：正常商品数量3.0，单价5.6，赠品数量0
+2025-05-05 19:00:42,490 - app.core.excel.processor - INFO - 条码 6901404300854 处理结果：正常商品数量3.0，单价1.2，赠品数量0
+2025-05-05 19:00:42,490 - app.core.excel.processor - INFO - 条码 4897031010292 处理结果：正常商品数量2.0，单价19.0，赠品数量0
+2025-05-05 19:00:42,490 - app.core.excel.processor - INFO - 条码 6903148171813 处理结果：正常商品数量3.0，单价14.5，赠品数量0
+2025-05-05 19:00:42,490 - app.core.excel.processor - INFO - 条码 6902088951875 处理结果：正常商品数量2.0，单价16.5，赠品数量0
+2025-05-05 19:00:44,017 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250505185842.xls
+2025-05-05 19:00:44,019 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250505185842.xls
+2025-05-05 19:02:32,165 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-05 19:02:32,167 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-05 19:02:32,169 - app.core.excel.processor - INFO - 开始处理Excel文件: D:/My Documents/python/orc-order-v2/data/output/微信图片_20250505185908.xlsx
+2025-05-05 19:02:32,845 - app.core.excel.processor - INFO - 成功读取Excel文件: D:/My Documents/python/orc-order-v2/data/output/微信图片_20250505185908.xlsx, 共 26 行
+2025-05-05 19:02:32,847 - app.core.excel.processor - INFO - 找到可能的表头行: 第1行，评分: 35
+2025-05-05 19:02:32,847 - app.core.excel.processor - INFO - 识别到表头在第 1 行
+2025-05-05 19:02:32,862 - app.core.excel.processor - INFO - 使用表头行重新读取数据，共 25 行有效数据
+2025-05-05 19:02:32,862 - app.core.excel.processor - INFO - 找到精确匹配的条码列: 条码
+2025-05-05 19:02:32,862 - app.core.excel.processor - INFO - 使用条码列: 条码
+2025-05-05 19:02:32,862 - app.core.excel.processor - INFO - 找到name列(部分匹配): 商品全名
+2025-05-05 19:02:32,862 - app.core.excel.processor - INFO - 找到specification列: 规格
+2025-05-05 19:02:32,862 - app.core.excel.processor - INFO - 找到quantity列: 数量
+2025-05-05 19:02:32,863 - app.core.excel.processor - INFO - 找到unit列: 单位
+2025-05-05 19:02:32,863 - app.core.excel.processor - INFO - 找到price列: 单价
+2025-05-05 19:02:32,863 - app.core.excel.processor - INFO - 列名映射结果: {'barcode': '条码', 'name': '商品全名', 'specification': '规格', 'quantity': '数量', 'unit': '单位', 'price': '单价'}
+2025-05-05 19:02:32,863 - app.core.excel.processor - INFO - 是否存在规格列: True
+2025-05-05 19:02:32,864 - app.core.excel.processor - INFO - 第1行: 提取商品信息 条码=6902088127225, 名称=720g力士沐浴露樱花柔润, 规格=, 数量=2.0, 单位=瓶, 单价=24.0
+2025-05-05 19:02:32,864 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:02:32,865 - app.core.excel.processor - INFO - 第2行: 提取商品信息 条码=6902088310801, 名称=720g力士沐浴露幽莲魅肤, 规格=, 数量=2.0, 单位=瓶, 单价=24.0
+2025-05-05 19:02:32,865 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:02:32,866 - app.core.excel.processor - INFO - 第3行: 提取商品信息 条码=6902088421200, 名称=400g多芬沐浴露樱花甜香, 规格=, 数量=2.0, 单位=瓶, 单价=19.0
+2025-05-05 19:02:32,866 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:02:32,866 - app.core.excel.processor - INFO - 第4行: 提取商品信息 条码=6902022135316, 名称=3kg蓝刀亮深层洁净自然清香, 规格=, 数量=2.0, 单位=瓶, 单价=32.5
+2025-05-05 19:02:32,866 - app.core.excel.processor - INFO - 解析规格: 1*4 -> 包装数量=4
+2025-05-05 19:02:32,867 - app.core.excel.processor - INFO - 第5行: 提取商品信息 条码=6902022138256, 名称=1kg袋装蓝月亮深洁清香, 规格=, 数量=2.0, 单位=袋, 单价=12.5
+2025-05-05 19:02:32,867 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:02:32,867 - app.core.excel.processor - INFO - 第6行: 提取商品信息 条码=6970731334498, 名称=L号倍丝柔女士一次性内裤4条装, 规格=, 数量=2.0, 单位=盒, 单价=14.0
+2025-05-05 19:02:32,867 - app.core.excel.processor - INFO - 解析规格: 1*100 -> 包装数量=100
+2025-05-05 19:02:32,926 - app.core.excel.processor - INFO - 第7行: 提取商品信息 条码=6970731334504, 名称=x1倍丝柔女士一次性内裤4条装, 规格=, 数量=2.0, 单位=盒, 单价=14.0
+2025-05-05 19:02:32,926 - app.core.excel.processor - INFO - 解析规格: 1*100 -> 包装数量=100
+2025-05-05 19:02:32,927 - app.core.excel.processor - INFO - 第8行: 提取商品信息 条码=6934925983107, 名称=3706洁丽雅女士新款隐形袜, 规格=, 数量=12.0, 单位=双, 单价=6.0
+2025-05-05 19:02:32,927 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:02:32,927 - app.core.excel.processor - INFO - 第9行: 提取商品信息 条码=6942203405654, 名称=3040洁丽雅男士新款隐形袜, 规格=, 数量=12.0, 单位=双, 单价=6.0
+2025-05-05 19:02:32,931 - app.core.excel.processor - WARNING - 无法从商品名'3040洁丽雅男士新款隐形袜' 推断规格
+2025-05-05 19:02:32,933 - app.core.excel.processor - ERROR - 提取第11行商品信息时出错: could not convert string to float: '单价'
+Traceback (most recent call last):
+  File "D:\My Documents\python\orc-order-v2\app\core\excel\processor.py", line 258, in extract_product_info
+    'price': float(row[column_mapping['price']]) if column_mapping.get('price') and not pd.isna(row[column_mapping['price']]) else 0,
+ValueError: could not convert string to float: '单价'
+2025-05-05 19:02:32,934 - app.core.excel.processor - INFO - 第12行: 提取商品信息 条码=6901294179592, 名称=80ML六神驱蚊喷雾花露水, 规格=, 数量=5.0, 单位=瓶, 单价=11.5
+2025-05-05 19:02:32,934 - app.core.excel.processor - INFO - 解析规格: 1*48 -> 包装数量=48
+2025-05-05 19:02:32,934 - app.core.excel.processor - INFO - 第13行: 提取商品信息 条码=6901294175341, 名称=80ml六神止痒花露水, 规格=, 数量=3.0, 单位=瓶, 单价=11.5
+2025-05-05 19:02:32,934 - app.core.excel.processor - INFO - 解析规格: 1*48 -> 包装数量=48
+2025-05-05 19:02:32,935 - app.core.excel.processor - INFO - 第14行: 提取商品信息 条码=6907861191417, 名称=5155彩虹蚊香液1+1器无味, 规格=, 数量=5.0, 单位=套, 单价=15.18
+2025-05-05 19:02:32,935 - app.core.excel.processor - INFO - 解析规格: 1*40 -> 包装数量=40
+2025-05-05 19:02:32,935 - app.core.excel.processor - INFO - 第15行: 提取商品信息 条码=6907861191127, 名称=5113彩虹双瓶乖乖无味蚊香液, 规格=, 数量=5.0, 单位=套, 单价=22.1
+2025-05-05 19:02:32,935 - app.core.excel.processor - INFO - 解析规格: 1*20 -> 包装数量=20
+2025-05-05 19:02:32,936 - app.core.excel.processor - INFO - 第16行: 提取商品信息 条码=6907861050196, 名称=彩虹单瓶Q5105蚊香液无味36ml, 规格=, 数量=5.0, 单位=瓶, 单价=10.37
+2025-05-05 19:02:32,936 - app.core.excel.processor - INFO - 解析规格: 1*80 -> 包装数量=80
+2025-05-05 19:02:36,892 - app.core.excel.processor - ERROR - 提取第17行商品信息时出错: could not convert string to float: '2\n96'
+Traceback (most recent call last):
+  File "D:\My Documents\python\orc-order-v2\app\core\excel\processor.py", line 258, in extract_product_info
+    'price': float(row[column_mapping['price']]) if column_mapping.get('price') and not pd.isna(row[column_mapping['price']]) else 0,
+ValueError: could not convert string to float: '2\n96'
+2025-05-05 19:02:36,893 - app.core.excel.processor - INFO - 第18行: 提取商品信息 条码=6901826888138, 名称=南孚5号电池两粒装, 规格=, 数量=1.0, 单位=盒, 单价=112.0
+2025-05-05 19:02:36,893 - app.core.excel.processor - INFO - 解析规格: 1*60 -> 包装数量=60
+2025-05-05 19:02:36,893 - app.core.excel.processor - INFO - 第19行: 提取商品信息 条码=6923146100370, 名称=杜蕾斯玻尿酸避孕套3只装, 规格=, 数量=3.0, 单位=盒, 单价=15.5
+2025-05-05 19:02:36,893 - app.core.excel.processor - INFO - 解析规格: 1*96 -> 包装数量=96
+2025-05-05 19:02:36,894 - app.core.excel.processor - INFO - 第20行: 提取商品信息 条码=6973043880493, 名称=南孚纽扣电池CR2032, 规格=, 数量=1.0, 单位=板, 单价=10.0
+2025-05-05 19:02:36,894 - app.core.excel.processor - INFO - 解析规格: 1*5 -> 包装数量=5
+2025-05-05 19:02:36,894 - app.core.excel.processor - INFO - 第23行: 提取商品信息 条码=6972118660114, 名称=家丽欣6011一次性胶杯, 规格=, 数量=3.0, 单位=个, 单价=4.5
+2025-05-05 19:02:36,895 - app.core.excel.processor - INFO - 解析规格: 1*48 -> 包装数量=48
+2025-05-05 19:02:36,895 - app.core.excel.processor - INFO - 第24行: 提取商品信息 条码=6956934838605, 名称=83860云蕾双排纸杯50只, 规格=, 数量=3.0, 单位=个, 单价=3.6
+2025-05-05 19:02:36,896 - app.core.excel.processor - INFO - 解析规格: 1×40 -> 包装数量=40
+2025-05-05 19:02:36,896 - app.core.excel.processor - INFO - 提取到 19 个商品信息
+2025-05-05 19:02:36,904 - app.core.excel.processor - INFO - 开始处理19 个产品信息
+2025-05-05 19:02:36,904 - app.core.excel.processor - INFO - 处理商品: 条码=6902088127225, 数量=2.0, 单价=24.0, 是否赠品=False
+2025-05-05 19:02:36,904 - app.core.excel.processor - INFO - 发现正常商品：条码6902088127225, 数量=2.0, 单价=24.0
+2025-05-05 19:02:36,904 - app.core.excel.processor - INFO - 处理商品: 条码=6902088310801, 数量=2.0, 单价=24.0, 是否赠品=False
+2025-05-05 19:02:36,905 - app.core.excel.processor - INFO - 发现正常商品：条码6902088310801, 数量=2.0, 单价=24.0
+2025-05-05 19:02:36,905 - app.core.excel.processor - INFO - 处理商品: 条码=6902088421200, 数量=2.0, 单价=19.0, 是否赠品=False
+2025-05-05 19:02:36,905 - app.core.excel.processor - INFO - 发现正常商品：条码6902088421200, 数量=2.0, 单价=19.0
+2025-05-05 19:02:36,905 - app.core.excel.processor - INFO - 处理商品: 条码=6902022135316, 数量=2.0, 单价=32.5, 是否赠品=False
+2025-05-05 19:02:36,905 - app.core.excel.processor - INFO - 发现正常商品：条码6902022135316, 数量=2.0, 单价=32.5
+2025-05-05 19:02:36,905 - app.core.excel.processor - INFO - 处理商品: 条码=6902022138256, 数量=2.0, 单价=12.5, 是否赠品=False
+2025-05-05 19:02:40,770 - app.core.excel.processor - INFO - 发现正常商品：条码6902022138256, 数量=2.0, 单价=12.5
+2025-05-05 19:02:40,770 - app.core.excel.processor - INFO - 处理商品: 条码=6970731334498, 数量=2.0, 单价=14.0, 是否赠品=False
+2025-05-05 19:02:40,770 - app.core.excel.processor - INFO - 发现正常商品：条码6970731334498, 数量=2.0, 单价=14.0
+2025-05-05 19:02:40,770 - app.core.excel.processor - INFO - 处理商品: 条码=6970731334504, 数量=2.0, 单价=14.0, 是否赠品=False
+2025-05-05 19:02:40,770 - app.core.excel.processor - INFO - 发现正常商品：条码6970731334504, 数量=2.0, 单价=14.0
+2025-05-05 19:02:40,770 - app.core.excel.processor - INFO - 处理商品: 条码=6934925983107, 数量=12.0, 单价=6.0, 是否赠品=False
+2025-05-05 19:02:40,770 - app.core.excel.processor - INFO - 发现正常商品：条码6934925983107, 数量=12.0, 单价=6.0
+2025-05-05 19:02:40,770 - app.core.excel.processor - INFO - 处理商品: 条码=6942203405654, 数量=12.0, 单价=6.0, 是否赠品=False
+2025-05-05 19:02:40,771 - app.core.excel.processor - INFO - 发现正常商品：条码6942203405654, 数量=12.0, 单价=6.0
+2025-05-05 19:02:40,771 - app.core.excel.processor - INFO - 处理商品: 条码=6901294179592, 数量=5.0, 单价=11.5, 是否赠品=False
+2025-05-05 19:02:40,771 - app.core.excel.processor - INFO - 发现正常商品：条码6901294179592, 数量=5.0, 单价=11.5
+2025-05-05 19:02:40,771 - app.core.excel.processor - INFO - 处理商品: 条码=6901294175341, 数量=3.0, 单价=11.5, 是否赠品=False
+2025-05-05 19:02:40,771 - app.core.excel.processor - INFO - 发现正常商品：条码6901294175341, 数量=3.0, 单价=11.5
+2025-05-05 19:02:40,771 - app.core.excel.processor - INFO - 处理商品: 条码=6907861191417, 数量=5.0, 单价=15.18, 是否赠品=False
+2025-05-05 19:02:40,772 - app.core.excel.processor - INFO - 发现正常商品：条码6907861191417, 数量=5.0, 单价=15.18
+2025-05-05 19:02:40,772 - app.core.excel.processor - INFO - 处理商品: 条码=6907861191127, 数量=5.0, 单价=22.1, 是否赠品=False
+2025-05-05 19:02:40,772 - app.core.excel.processor - INFO - 发现正常商品：条码6907861191127, 数量=5.0, 单价=22.1
+2025-05-05 19:02:40,772 - app.core.excel.processor - INFO - 处理商品: 条码=6907861050196, 数量=5.0, 单价=10.37, 是否赠品=False
+2025-05-05 19:02:40,772 - app.core.excel.processor - INFO - 发现正常商品：条码6907861050196, 数量=5.0, 单价=10.37
+2025-05-05 19:02:40,772 - app.core.excel.processor - INFO - 处理商品: 条码=6901826888138, 数量=1.0, 单价=112.0, 是否赠品=False
+2025-05-05 19:02:40,772 - app.core.excel.processor - INFO - 发现正常商品：条码6901826888138, 数量=1.0, 单价=112.0
+2025-05-05 19:02:40,772 - app.core.excel.processor - INFO - 处理商品: 条码=6923146100370, 数量=3.0, 单价=15.5, 是否赠品=False
+2025-05-05 19:02:40,772 - app.core.excel.processor - INFO - 发现正常商品：条码6923146100370, 数量=3.0, 单价=15.5
+2025-05-05 19:02:40,772 - app.core.excel.processor - INFO - 处理商品: 条码=6973043880493, 数量=1.0, 单价=10.0, 是否赠品=False
+2025-05-05 19:02:40,772 - app.core.excel.processor - INFO - 发现正常商品：条码6973043880493, 数量=1.0, 单价=10.0
+2025-05-05 19:02:40,774 - app.core.excel.processor - INFO - 处理商品: 条码=6972118660114, 数量=3.0, 单价=4.5, 是否赠品=False
+2025-05-05 19:02:40,774 - app.core.excel.processor - INFO - 发现正常商品：条码6972118660114, 数量=3.0, 单价=4.5
+2025-05-05 19:02:40,774 - app.core.excel.processor - INFO - 处理商品: 条码=6956934838605, 数量=3.0, 单价=3.6, 是否赠品=False
+2025-05-05 19:02:40,774 - app.core.excel.processor - INFO - 发现正常商品：条码6956934838605, 数量=3.0, 单价=3.6
+2025-05-05 19:02:40,774 - app.core.excel.processor - INFO - 分组后共19 个不同条码的商品
+2025-05-05 19:02:40,774 - app.core.excel.processor - INFO - 条码 6902088127225 处理结果：正常商品数量2.0，单价24.0，赠品数量0
+2025-05-05 19:02:40,774 - app.core.excel.processor - INFO - 条码 6902088310801 处理结果：正常商品数量2.0，单价24.0，赠品数量0
+2025-05-05 19:02:40,774 - app.core.excel.processor - INFO - 条码 6902088421200 处理结果：正常商品数量2.0，单价19.0，赠品数量0
+2025-05-05 19:02:40,774 - app.core.excel.processor - INFO - 条码 6902022135316 处理结果：正常商品数量2.0，单价32.5，赠品数量0
+2025-05-05 19:02:40,774 - app.core.excel.processor - INFO - 条码 6902022138256 处理结果：正常商品数量2.0，单价12.5，赠品数量0
+2025-05-05 19:02:44,925 - app.core.excel.processor - INFO - 条码 6970731334498 处理结果：正常商品数量2.0，单价14.0，赠品数量0
+2025-05-05 19:02:44,925 - app.core.excel.processor - INFO - 条码 6970731334504 处理结果：正常商品数量2.0，单价14.0，赠品数量0
+2025-05-05 19:02:44,925 - app.core.excel.processor - INFO - 条码 6934925983107 处理结果：正常商品数量12.0，单价6.0，赠品数量0
+2025-05-05 19:02:44,925 - app.core.excel.processor - INFO - 条码 6942203405654 处理结果：正常商品数量12.0，单价6.0，赠品数量0
+2025-05-05 19:02:44,925 - app.core.excel.processor - INFO - 条码 6901294179592 处理结果：正常商品数量5.0，单价11.5，赠品数量0
+2025-05-05 19:02:44,925 - app.core.excel.processor - INFO - 条码 6901294175341 处理结果：正常商品数量3.0，单价11.5，赠品数量0
+2025-05-05 19:02:44,925 - app.core.excel.processor - INFO - 条码 6907861191417 处理结果：正常商品数量5.0，单价15.18，赠品数量0
+2025-05-05 19:02:44,925 - app.core.excel.processor - INFO - 条码 6907861191127 处理结果：正常商品数量5.0，单价22.1，赠品数量0
+2025-05-05 19:02:44,925 - app.core.excel.processor - INFO - 条码 6907861050196 处理结果：正常商品数量5.0，单价10.37，赠品数量0
+2025-05-05 19:02:44,925 - app.core.excel.processor - INFO - 条码 6901826888138 处理结果：正常商品数量1.0，单价112.0，赠品数量0
+2025-05-05 19:02:44,925 - app.core.excel.processor - INFO - 条码 6923146100370 处理结果：正常商品数量3.0，单价15.5，赠品数量0
+2025-05-05 19:02:44,926 - app.core.excel.processor - INFO - 条码 6973043880493 处理结果：正常商品数量1.0，单价10.0，赠品数量0
+2025-05-05 19:02:44,926 - app.core.excel.processor - INFO - 条码 6972118660114 处理结果：正常商品数量3.0，单价4.5，赠品数量0
+2025-05-05 19:02:44,926 - app.core.excel.processor - INFO - 条码 6956934838605 处理结果：正常商品数量3.0，单价3.6，赠品数量0
+2025-05-05 19:02:44,929 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250505185908.xls
+2025-05-05 19:02:44,931 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250505185908.xls
+2025-05-05 19:02:54,872 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-05 19:02:54,873 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-05 19:15:12,553 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-05 19:15:12,553 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-05 19:15:12,554 - app.core.excel.processor - INFO - 开始处理Excel文件: D:/My Documents/python/orc-order-v2/data/output/微信图片_20250505185908.xlsx
+2025-05-05 19:15:13,196 - app.core.excel.processor - INFO - 成功读取Excel文件: D:/My Documents/python/orc-order-v2/data/output/微信图片_20250505185908.xlsx, 共 26 行
+2025-05-05 19:15:13,202 - app.core.excel.processor - INFO - 找到可能的表头行: 第1行，评分: 35
+2025-05-05 19:15:13,202 - app.core.excel.processor - INFO - 识别到表头在第 1 行
+2025-05-05 19:15:13,220 - app.core.excel.processor - INFO - 使用表头行重新读取数据，共 25 行有效数据
+2025-05-05 19:15:13,220 - app.core.excel.processor - INFO - 找到精确匹配的条码列: 条码
+2025-05-05 19:15:13,220 - app.core.excel.processor - INFO - 使用条码列: 条码
+2025-05-05 19:15:13,220 - app.core.excel.processor - INFO - 找到name列(部分匹配): 商品全名
+2025-05-05 19:15:13,220 - app.core.excel.processor - INFO - 找到specification列: 规格
+2025-05-05 19:15:13,220 - app.core.excel.processor - INFO - 找到quantity列: 数量
+2025-05-05 19:15:13,220 - app.core.excel.processor - INFO - 找到unit列: 单位
+2025-05-05 19:15:13,221 - app.core.excel.processor - INFO - 找到price列: 单价
+2025-05-05 19:15:13,221 - app.core.excel.processor - INFO - 列名映射结果: {'barcode': '条码', 'name': '商品全名', 'specification': '规格', 'quantity': '数量', 'unit': '单位', 'price': '单价'}
+2025-05-05 19:15:13,222 - app.core.excel.processor - INFO - 是否存在规格列: True
+2025-05-05 19:15:13,223 - app.core.excel.processor - INFO - 第1行: 提取商品信息 条码=6902088127225, 名称=720g力士沐浴露樱花柔润, 规格=, 数量=2.0, 单位=瓶, 单价=24.0
+2025-05-05 19:15:13,224 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:15:13,225 - app.core.excel.processor - INFO - 第2行: 提取商品信息 条码=6902088310801, 名称=720g力士沐浴露幽莲魅肤, 规格=, 数量=2.0, 单位=瓶, 单价=24.0
+2025-05-05 19:15:13,225 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:15:13,226 - app.core.excel.processor - INFO - 第3行: 提取商品信息 条码=6902088421200, 名称=400g多芬沐浴露樱花甜香, 规格=, 数量=2.0, 单位=瓶, 单价=19.0
+2025-05-05 19:15:13,226 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:15:13,228 - app.core.excel.processor - INFO - 第4行: 提取商品信息 条码=6902022135316, 名称=3kg蓝刀亮深层洁净自然清香, 规格=, 数量=2.0, 单位=瓶, 单价=32.5
+2025-05-05 19:15:13,229 - app.core.excel.processor - INFO - 解析规格: 1*4 -> 包装数量=4
+2025-05-05 19:15:13,229 - app.core.excel.processor - INFO - 第5行: 提取商品信息 条码=6902022138256, 名称=1kg袋装蓝月亮深洁清香, 规格=, 数量=2.0, 单位=袋, 单价=12.5
+2025-05-05 19:15:13,229 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:15:13,231 - app.core.excel.processor - INFO - 第6行: 提取商品信息 条码=6970731334498, 名称=L号倍丝柔女士一次性内裤4条装, 规格=, 数量=2.0, 单位=盒, 单价=14.0
+2025-05-05 19:15:13,232 - app.core.excel.processor - INFO - 解析规格: 1*100 -> 包装数量=100
+2025-05-05 19:15:13,233 - app.core.excel.processor - INFO - 第7行: 提取商品信息 条码=6970731334504, 名称=x1倍丝柔女士一次性内裤4条装, 规格=, 数量=2.0, 单位=盒, 单价=14.0
+2025-05-05 19:15:13,233 - app.core.excel.processor - INFO - 解析规格: 1*100 -> 包装数量=100
+2025-05-05 19:15:13,234 - app.core.excel.processor - INFO - 第8行: 提取商品信息 条码=6934925983107, 名称=3706洁丽雅女士新款隐形袜, 规格=, 数量=12.0, 单位=双, 单价=6.0
+2025-05-05 19:15:13,234 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:15:13,235 - app.core.excel.processor - INFO - 第9行: 提取商品信息 条码=6942203405654, 名称=3040洁丽雅男士新款隐形袜, 规格=, 数量=12.0, 单位=双, 单价=6.0
+2025-05-05 19:15:13,239 - app.core.excel.processor - WARNING - 无法从商品名'3040洁丽雅男士新款隐形袜' 推断规格
+2025-05-05 19:15:13,239 - app.core.excel.processor - ERROR - 提取第11行商品信息时出错: could not convert string to float: '单价'
+Traceback (most recent call last):
+  File "D:\My Documents\python\orc-order-v2\app\core\excel\processor.py", line 258, in extract_product_info
+    'price': float(row[column_mapping['price']]) if column_mapping.get('price') and not pd.isna(row[column_mapping['price']]) else 0,
+ValueError: could not convert string to float: '单价'
+2025-05-05 19:15:13,241 - app.core.excel.processor - INFO - 第12行: 提取商品信息 条码=6901294179592, 名称=80ML六神驱蚊喷雾花露水, 规格=, 数量=5.0, 单位=瓶, 单价=11.5
+2025-05-05 19:15:13,242 - app.core.excel.processor - INFO - 解析规格: 1*48 -> 包装数量=48
+2025-05-05 19:15:13,243 - app.core.excel.processor - INFO - 第13行: 提取商品信息 条码=6901294175341, 名称=80ml六神止痒花露水, 规格=, 数量=3.0, 单位=瓶, 单价=11.5
+2025-05-05 19:15:13,243 - app.core.excel.processor - INFO - 解析规格: 1*48 -> 包装数量=48
+2025-05-05 19:15:13,243 - app.core.excel.processor - INFO - 第14行: 提取商品信息 条码=6907861191417, 名称=5155彩虹蚊香液1+1器无味, 规格=, 数量=5.0, 单位=套, 单价=15.18
+2025-05-05 19:15:13,244 - app.core.excel.processor - INFO - 解析规格: 1*40 -> 包装数量=40
+2025-05-05 19:15:13,245 - app.core.excel.processor - INFO - 第15行: 提取商品信息 条码=6907861191127, 名称=5113彩虹双瓶乖乖无味蚊香液, 规格=, 数量=5.0, 单位=套, 单价=22.1
+2025-05-05 19:15:13,245 - app.core.excel.processor - INFO - 解析规格: 1*20 -> 包装数量=20
+2025-05-05 19:15:13,247 - app.core.excel.processor - INFO - 第16行: 提取商品信息 条码=6907861050196, 名称=彩虹单瓶Q5105蚊香液无味36ml, 规格=, 数量=5.0, 单位=瓶, 单价=10.37
+2025-05-05 19:15:13,247 - app.core.excel.processor - INFO - 解析规格: 1*80 -> 包装数量=80
+2025-05-05 19:15:16,011 - app.core.excel.processor - ERROR - 提取第17行商品信息时出错: could not convert string to float: '2\n96'
+Traceback (most recent call last):
+  File "D:\My Documents\python\orc-order-v2\app\core\excel\processor.py", line 258, in extract_product_info
+    'price': float(row[column_mapping['price']]) if column_mapping.get('price') and not pd.isna(row[column_mapping['price']]) else 0,
+ValueError: could not convert string to float: '2\n96'
+2025-05-05 19:15:16,013 - app.core.excel.processor - INFO - 第18行: 提取商品信息 条码=6901826888138, 名称=南孚5号电池两粒装, 规格=, 数量=1.0, 单位=盒, 单价=112.0
+2025-05-05 19:15:16,013 - app.core.excel.processor - INFO - 解析规格: 1*60 -> 包装数量=60
+2025-05-05 19:15:16,014 - app.core.excel.processor - INFO - 第19行: 提取商品信息 条码=6923146100370, 名称=杜蕾斯玻尿酸避孕套3只装, 规格=, 数量=3.0, 单位=盒, 单价=15.5
+2025-05-05 19:15:16,014 - app.core.excel.processor - INFO - 解析规格: 1*96 -> 包装数量=96
+2025-05-05 19:15:16,014 - app.core.excel.processor - INFO - 第20行: 提取商品信息 条码=6973043880493, 名称=南孚纽扣电池CR2032, 规格=, 数量=1.0, 单位=板, 单价=10.0
+2025-05-05 19:15:16,014 - app.core.excel.processor - INFO - 解析规格: 1*5 -> 包装数量=5
+2025-05-05 19:15:16,015 - app.core.excel.processor - INFO - 第23行: 提取商品信息 条码=6972118660114, 名称=家丽欣6011一次性胶杯, 规格=, 数量=3.0, 单位=个, 单价=4.5
+2025-05-05 19:15:16,015 - app.core.excel.processor - INFO - 解析规格: 1*48 -> 包装数量=48
+2025-05-05 19:15:16,016 - app.core.excel.processor - INFO - 第24行: 提取商品信息 条码=6956934838605, 名称=83860云蕾双排纸杯50只, 规格=, 数量=3.0, 单位=个, 单价=3.6
+2025-05-05 19:15:16,016 - app.core.excel.processor - INFO - 解析规格: 1×40 -> 包装数量=40
+2025-05-05 19:15:16,016 - app.core.excel.processor - INFO - 提取到 19 个商品信息
+2025-05-05 19:15:16,023 - app.core.excel.processor - INFO - 开始处理19 个产品信息
+2025-05-05 19:15:16,023 - app.core.excel.processor - INFO - 处理商品: 条码=6902088127225, 数量=2.0, 单价=24.0, 是否赠品=False
+2025-05-05 19:15:16,023 - app.core.excel.processor - INFO - 发现正常商品：条码6902088127225, 数量=2.0, 单价=24.0
+2025-05-05 19:15:16,023 - app.core.excel.processor - INFO - 处理商品: 条码=6902088310801, 数量=2.0, 单价=24.0, 是否赠品=False
+2025-05-05 19:15:16,023 - app.core.excel.processor - INFO - 发现正常商品：条码6902088310801, 数量=2.0, 单价=24.0
+2025-05-05 19:15:16,024 - app.core.excel.processor - INFO - 处理商品: 条码=6902088421200, 数量=2.0, 单价=19.0, 是否赠品=False
+2025-05-05 19:15:16,024 - app.core.excel.processor - INFO - 发现正常商品：条码6902088421200, 数量=2.0, 单价=19.0
+2025-05-05 19:15:19,149 - app.core.excel.processor - INFO - 处理商品: 条码=6902022135316, 数量=2.0, 单价=32.5, 是否赠品=False
+2025-05-05 19:15:19,150 - app.core.excel.processor - INFO - 发现正常商品：条码6902022135316, 数量=2.0, 单价=32.5
+2025-05-05 19:15:19,150 - app.core.excel.processor - INFO - 处理商品: 条码=6902022138256, 数量=2.0, 单价=12.5, 是否赠品=False
+2025-05-05 19:15:19,150 - app.core.excel.processor - INFO - 发现正常商品：条码6902022138256, 数量=2.0, 单价=12.5
+2025-05-05 19:15:19,150 - app.core.excel.processor - INFO - 处理商品: 条码=6970731334498, 数量=2.0, 单价=14.0, 是否赠品=False
+2025-05-05 19:15:19,151 - app.core.excel.processor - INFO - 发现正常商品：条码6970731334498, 数量=2.0, 单价=14.0
+2025-05-05 19:15:19,151 - app.core.excel.processor - INFO - 处理商品: 条码=6970731334504, 数量=2.0, 单价=14.0, 是否赠品=False
+2025-05-05 19:15:19,151 - app.core.excel.processor - INFO - 发现正常商品：条码6970731334504, 数量=2.0, 单价=14.0
+2025-05-05 19:15:19,151 - app.core.excel.processor - INFO - 处理商品: 条码=6934925983107, 数量=12.0, 单价=6.0, 是否赠品=False
+2025-05-05 19:15:19,151 - app.core.excel.processor - INFO - 发现正常商品：条码6934925983107, 数量=12.0, 单价=6.0
+2025-05-05 19:15:19,151 - app.core.excel.processor - INFO - 处理商品: 条码=6942203405654, 数量=12.0, 单价=6.0, 是否赠品=False
+2025-05-05 19:15:19,151 - app.core.excel.processor - INFO - 发现正常商品：条码6942203405654, 数量=12.0, 单价=6.0
+2025-05-05 19:15:19,151 - app.core.excel.processor - INFO - 处理商品: 条码=6901294179592, 数量=5.0, 单价=11.5, 是否赠品=False
+2025-05-05 19:15:19,151 - app.core.excel.processor - INFO - 发现正常商品：条码6901294179592, 数量=5.0, 单价=11.5
+2025-05-05 19:15:19,151 - app.core.excel.processor - INFO - 处理商品: 条码=6901294175341, 数量=3.0, 单价=11.5, 是否赠品=False
+2025-05-05 19:15:19,152 - app.core.excel.processor - INFO - 发现正常商品：条码6901294175341, 数量=3.0, 单价=11.5
+2025-05-05 19:15:19,152 - app.core.excel.processor - INFO - 处理商品: 条码=6907861191417, 数量=5.0, 单价=15.18, 是否赠品=False
+2025-05-05 19:15:19,152 - app.core.excel.processor - INFO - 发现正常商品：条码6907861191417, 数量=5.0, 单价=15.18
+2025-05-05 19:15:19,152 - app.core.excel.processor - INFO - 处理商品: 条码=6907861191127, 数量=5.0, 单价=22.1, 是否赠品=False
+2025-05-05 19:15:19,152 - app.core.excel.processor - INFO - 发现正常商品：条码6907861191127, 数量=5.0, 单价=22.1
+2025-05-05 19:15:19,152 - app.core.excel.processor - INFO - 处理商品: 条码=6907861050196, 数量=5.0, 单价=10.37, 是否赠品=False
+2025-05-05 19:15:19,152 - app.core.excel.processor - INFO - 发现正常商品：条码6907861050196, 数量=5.0, 单价=10.37
+2025-05-05 19:15:19,153 - app.core.excel.processor - INFO - 处理商品: 条码=6901826888138, 数量=30.0, 单价=3.7333333333333334, 是否赠品=False
+2025-05-05 19:15:19,153 - app.core.excel.processor - INFO - 发现正常商品：条码6901826888138, 数量=30.0, 单价=3.7333333333333334
+2025-05-05 19:15:19,153 - app.core.excel.processor - INFO - 处理商品: 条码=6923146100370, 数量=3.0, 单价=15.5, 是否赠品=False
+2025-05-05 19:15:19,153 - app.core.excel.processor - INFO - 发现正常商品：条码6923146100370, 数量=3.0, 单价=15.5
+2025-05-05 19:15:19,153 - app.core.excel.processor - INFO - 处理商品: 条码=6973043880493, 数量=1.0, 单价=10.0, 是否赠品=False
+2025-05-05 19:15:19,153 - app.core.excel.processor - INFO - 发现正常商品：条码6973043880493, 数量=1.0, 单价=10.0
+2025-05-05 19:15:19,153 - app.core.excel.processor - INFO - 处理商品: 条码=6972118660114, 数量=3.0, 单价=4.5, 是否赠品=False
+2025-05-05 19:15:19,154 - app.core.excel.processor - INFO - 发现正常商品：条码6972118660114, 数量=3.0, 单价=4.5
+2025-05-05 19:15:19,154 - app.core.excel.processor - INFO - 处理商品: 条码=6956934838605, 数量=3.0, 单价=3.6, 是否赠品=False
+2025-05-05 19:15:19,154 - app.core.excel.processor - INFO - 发现正常商品：条码6956934838605, 数量=3.0, 单价=3.6
+2025-05-05 19:15:19,154 - app.core.excel.processor - INFO - 分组后共19 个不同条码的商品
+2025-05-05 19:15:19,154 - app.core.excel.processor - INFO - 条码 6902088127225 处理结果：正常商品数量2.0，单价24.0，赠品数量0
+2025-05-05 19:15:22,295 - app.core.excel.processor - INFO - 条码 6902088310801 处理结果：正常商品数量2.0，单价24.0，赠品数量0
+2025-05-05 19:15:22,296 - app.core.excel.processor - INFO - 条码 6902088421200 处理结果：正常商品数量2.0，单价19.0，赠品数量0
+2025-05-05 19:15:22,296 - app.core.excel.processor - INFO - 条码 6902022135316 处理结果：正常商品数量2.0，单价32.5，赠品数量0
+2025-05-05 19:15:22,296 - app.core.excel.processor - INFO - 条码 6902022138256 处理结果：正常商品数量2.0，单价12.5，赠品数量0
+2025-05-05 19:15:22,296 - app.core.excel.processor - INFO - 条码 6970731334498 处理结果：正常商品数量2.0，单价14.0，赠品数量0
+2025-05-05 19:15:22,296 - app.core.excel.processor - INFO - 条码 6970731334504 处理结果：正常商品数量2.0，单价14.0，赠品数量0
+2025-05-05 19:15:22,296 - app.core.excel.processor - INFO - 条码 6934925983107 处理结果：正常商品数量12.0，单价6.0，赠品数量0
+2025-05-05 19:15:22,296 - app.core.excel.processor - INFO - 条码 6942203405654 处理结果：正常商品数量12.0，单价6.0，赠品数量0
+2025-05-05 19:15:22,296 - app.core.excel.processor - INFO - 条码 6901294179592 处理结果：正常商品数量5.0，单价11.5，赠品数量0
+2025-05-05 19:15:22,296 - app.core.excel.processor - INFO - 条码 6901294175341 处理结果：正常商品数量3.0，单价11.5，赠品数量0
+2025-05-05 19:15:22,297 - app.core.excel.processor - INFO - 条码 6907861191417 处理结果：正常商品数量5.0，单价15.18，赠品数量0
+2025-05-05 19:15:22,297 - app.core.excel.processor - INFO - 条码 6907861191127 处理结果：正常商品数量5.0，单价22.1，赠品数量0
+2025-05-05 19:15:22,297 - app.core.excel.processor - INFO - 条码 6907861050196 处理结果：正常商品数量5.0，单价10.37，赠品数量0
+2025-05-05 19:15:22,297 - app.core.excel.processor - INFO - 条码 6901826888138 处理结果：正常商品数量30.0，单价3.7333333333333334，赠品数量0
+2025-05-05 19:15:22,297 - app.core.excel.processor - INFO - 条码 6923146100370 处理结果：正常商品数量3.0，单价15.5，赠品数量0
+2025-05-05 19:15:22,297 - app.core.excel.processor - INFO - 条码 6973043880493 处理结果：正常商品数量1.0，单价10.0，赠品数量0
+2025-05-05 19:15:22,297 - app.core.excel.processor - INFO - 条码 6972118660114 处理结果：正常商品数量3.0，单价4.5，赠品数量0
+2025-05-05 19:15:22,298 - app.core.excel.processor - INFO - 条码 6956934838605 处理结果：正常商品数量3.0，单价3.6，赠品数量0
+2025-05-05 19:15:22,301 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250505185908.xls
+2025-05-05 19:15:22,303 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250505185908.xls
+2025-05-05 19:18:54,502 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-05 19:18:54,507 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-05 19:19:59,313 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-05 19:19:59,313 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-05 19:19:59,315 - app.core.excel.processor - INFO - 开始处理Excel文件: D:/My Documents/python/orc-order-v2/data/output/微信图片_20250505185908.xlsx
+2025-05-05 19:19:59,995 - app.core.excel.processor - INFO - 成功读取Excel文件: D:/My Documents/python/orc-order-v2/data/output/微信图片_20250505185908.xlsx, 共 26 行
+2025-05-05 19:20:00,006 - app.core.excel.processor - INFO - 找到可能的表头行: 第1行，评分: 35
+2025-05-05 19:20:00,007 - app.core.excel.processor - INFO - 识别到表头在第 1 行
+2025-05-05 19:20:00,068 - app.core.excel.processor - INFO - 使用表头行重新读取数据，共 25 行有效数据
+2025-05-05 19:20:00,068 - app.core.excel.processor - INFO - 找到精确匹配的条码列: 条码
+2025-05-05 19:20:00,069 - app.core.excel.processor - INFO - 使用条码列: 条码
+2025-05-05 19:20:00,069 - app.core.excel.processor - INFO - 找到name列(部分匹配): 商品全名
+2025-05-05 19:20:00,076 - app.core.excel.processor - INFO - 找到specification列: 规格
+2025-05-05 19:20:00,077 - app.core.excel.processor - INFO - 找到quantity列: 数量
+2025-05-05 19:20:00,077 - app.core.excel.processor - INFO - 找到unit列: 单位
+2025-05-05 19:20:00,077 - app.core.excel.processor - INFO - 找到price列: 单价
+2025-05-05 19:20:00,077 - app.core.excel.processor - INFO - 列名映射结果: {'barcode': '条码', 'name': '商品全名', 'specification': '规格', 'quantity': '数量', 'unit': '单位', 'price': '单价'}
+2025-05-05 19:20:00,077 - app.core.excel.processor - INFO - 是否存在规格列: True
+2025-05-05 19:20:00,078 - app.core.excel.processor - INFO - 第1行: 提取商品信息 条码=6902088127225, 名称=720g力士沐浴露樱花柔润, 规格=, 数量=2.0, 单位=瓶, 单价=24.0
+2025-05-05 19:20:00,079 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:20:00,081 - app.core.excel.processor - INFO - 第2行: 提取商品信息 条码=6902088310801, 名称=720g力士沐浴露幽莲魅肤, 规格=, 数量=2.0, 单位=瓶, 单价=24.0
+2025-05-05 19:20:00,081 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:20:00,082 - app.core.excel.processor - INFO - 第3行: 提取商品信息 条码=6902088421200, 名称=400g多芬沐浴露樱花甜香, 规格=, 数量=2.0, 单位=瓶, 单价=19.0
+2025-05-05 19:20:00,082 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:20:00,117 - app.core.excel.processor - INFO - 第4行: 提取商品信息 条码=6902022135316, 名称=3kg蓝刀亮深层洁净自然清香, 规格=, 数量=2.0, 单位=瓶, 单价=32.5
+2025-05-05 19:20:00,118 - app.core.excel.processor - INFO - 解析规格: 1*4 -> 包装数量=4
+2025-05-05 19:20:00,118 - app.core.excel.processor - INFO - 第5行: 提取商品信息 条码=6902022138256, 名称=1kg袋装蓝月亮深洁清香, 规格=, 数量=2.0, 单位=袋, 单价=12.5
+2025-05-05 19:20:00,119 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:20:00,119 - app.core.excel.processor - INFO - 第6行: 提取商品信息 条码=6970731334498, 名称=L号倍丝柔女士一次性内裤4条装, 规格=, 数量=2.0, 单位=盒, 单价=14.0
+2025-05-05 19:20:00,119 - app.core.excel.processor - INFO - 解析规格: 1*100 -> 包装数量=100
+2025-05-05 19:20:00,121 - app.core.excel.processor - INFO - 第7行: 提取商品信息 条码=6970731334504, 名称=x1倍丝柔女士一次性内裤4条装, 规格=, 数量=2.0, 单位=盒, 单价=14.0
+2025-05-05 19:20:00,121 - app.core.excel.processor - INFO - 解析规格: 1*100 -> 包装数量=100
+2025-05-05 19:20:00,122 - app.core.excel.processor - INFO - 第8行: 提取商品信息 条码=6934925983107, 名称=3706洁丽雅女士新款隐形袜, 规格=, 数量=12.0, 单位=双, 单价=6.0
+2025-05-05 19:20:00,123 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:20:00,124 - app.core.excel.processor - INFO - 第9行: 提取商品信息 条码=6942203405654, 名称=3040洁丽雅男士新款隐形袜, 规格=, 数量=12.0, 单位=双, 单价=6.0
+2025-05-05 19:20:00,135 - app.core.excel.processor - WARNING - 无法从商品名'3040洁丽雅男士新款隐形袜' 推断规格
+2025-05-05 19:20:00,136 - app.core.excel.processor - WARNING - 价格转换失败，原始值: '单价'，使用默认值0
+2025-05-05 19:20:00,137 - app.core.excel.processor - INFO - 第11行: 提取商品信息 条码=条码, 名称=商品全名, 规格=, 数量=0, 单位=单位, 单价=0
+2025-05-05 19:20:00,139 - app.core.excel.processor - INFO - 第12行: 提取商品信息 条码=6901294179592, 名称=80ML六神驱蚊喷雾花露水, 规格=, 数量=5.0, 单位=瓶, 单价=11.5
+2025-05-05 19:20:00,139 - app.core.excel.processor - INFO - 解析规格: 1*48 -> 包装数量=48
+2025-05-05 19:20:00,141 - app.core.excel.processor - INFO - 第13行: 提取商品信息 条码=6901294175341, 名称=80ml六神止痒花露水, 规格=, 数量=3.0, 单位=瓶, 单价=11.5
+2025-05-05 19:20:00,141 - app.core.excel.processor - INFO - 解析规格: 1*48 -> 包装数量=48
+2025-05-05 19:20:00,141 - app.core.excel.processor - INFO - 第14行: 提取商品信息 条码=6907861191417, 名称=5155彩虹蚊香液1+1器无味, 规格=, 数量=5.0, 单位=套, 单价=15.18
+2025-05-05 19:20:01,511 - app.core.excel.processor - INFO - 解析规格: 1*40 -> 包装数量=40
+2025-05-05 19:20:01,512 - app.core.excel.processor - INFO - 第15行: 提取商品信息 条码=6907861191127, 名称=5113彩虹双瓶乖乖无味蚊香液, 规格=, 数量=5.0, 单位=套, 单价=22.1
+2025-05-05 19:20:01,513 - app.core.excel.processor - INFO - 解析规格: 1*20 -> 包装数量=20
+2025-05-05 19:20:01,513 - app.core.excel.processor - INFO - 第16行: 提取商品信息 条码=6907861050196, 名称=彩虹单瓶Q5105蚊香液无味36ml, 规格=, 数量=5.0, 单位=瓶, 单价=10.37
+2025-05-05 19:20:01,513 - app.core.excel.processor - INFO - 解析规格: 1*80 -> 包装数量=80
+2025-05-05 19:20:01,514 - app.core.excel.processor - INFO - 第17行: 提取商品信息 条码=6901826817237, 名称=南孚电池5号5粒装, 规格=, 数量=1.0, 单位=盒, 单价=296.0
+2025-05-05 19:20:01,514 - app.core.excel.processor - INFO - 解析规格: 1*10 -> 包装数量=10
+2025-05-05 19:20:01,515 - app.core.excel.processor - INFO - 第18行: 提取商品信息 条码=6901826888138, 名称=南孚5号电池两粒装, 规格=, 数量=1.0, 单位=盒, 单价=112.0
+2025-05-05 19:20:01,515 - app.core.excel.processor - INFO - 解析规格: 1*60 -> 包装数量=60
+2025-05-05 19:20:01,516 - app.core.excel.processor - INFO - 第19行: 提取商品信息 条码=6923146100370, 名称=杜蕾斯玻尿酸避孕套3只装, 规格=, 数量=3.0, 单位=盒, 单价=15.5
+2025-05-05 19:20:01,516 - app.core.excel.processor - INFO - 解析规格: 1*96 -> 包装数量=96
+2025-05-05 19:20:01,517 - app.core.excel.processor - INFO - 第20行: 提取商品信息 条码=6973043880493, 名称=南孚纽扣电池CR2032, 规格=, 数量=1.0, 单位=板, 单价=10.0
+2025-05-05 19:20:01,517 - app.core.excel.processor - INFO - 解析规格: 1*5 -> 包装数量=5
+2025-05-05 19:20:01,518 - app.core.excel.processor - INFO - 第23行: 提取商品信息 条码=6972118660114, 名称=家丽欣6011一次性胶杯, 规格=, 数量=3.0, 单位=个, 单价=4.5
+2025-05-05 19:20:01,518 - app.core.excel.processor - INFO - 解析规格: 1*48 -> 包装数量=48
+2025-05-05 19:20:01,519 - app.core.excel.processor - INFO - 第24行: 提取商品信息 条码=6956934838605, 名称=83860云蕾双排纸杯50只, 规格=, 数量=3.0, 单位=个, 单价=3.6
+2025-05-05 19:20:01,519 - app.core.excel.processor - INFO - 解析规格: 1×40 -> 包装数量=40
+2025-05-05 19:20:04,680 - app.core.excel.processor - INFO - 提取到 21 个商品信息
+2025-05-05 19:20:04,689 - app.core.excel.processor - INFO - 开始处理21 个产品信息
+2025-05-05 19:20:04,690 - app.core.excel.processor - INFO - 处理商品: 条码=6902088127225, 数量=2.0, 单价=24.0, 是否赠品=False
+2025-05-05 19:20:04,690 - app.core.excel.processor - INFO - 发现正常商品：条码6902088127225, 数量=2.0, 单价=24.0
+2025-05-05 19:20:04,690 - app.core.excel.processor - INFO - 处理商品: 条码=6902088310801, 数量=2.0, 单价=24.0, 是否赠品=False
+2025-05-05 19:20:04,690 - app.core.excel.processor - INFO - 发现正常商品：条码6902088310801, 数量=2.0, 单价=24.0
+2025-05-05 19:20:04,690 - app.core.excel.processor - INFO - 处理商品: 条码=6902088421200, 数量=2.0, 单价=19.0, 是否赠品=False
+2025-05-05 19:20:04,690 - app.core.excel.processor - INFO - 发现正常商品：条码6902088421200, 数量=2.0, 单价=19.0
+2025-05-05 19:20:04,690 - app.core.excel.processor - INFO - 处理商品: 条码=6902022135316, 数量=2.0, 单价=32.5, 是否赠品=False
+2025-05-05 19:20:04,690 - app.core.excel.processor - INFO - 发现正常商品：条码6902022135316, 数量=2.0, 单价=32.5
+2025-05-05 19:20:04,691 - app.core.excel.processor - INFO - 处理商品: 条码=6902022138256, 数量=2.0, 单价=12.5, 是否赠品=False
+2025-05-05 19:20:04,691 - app.core.excel.processor - INFO - 发现正常商品：条码6902022138256, 数量=2.0, 单价=12.5
+2025-05-05 19:20:04,691 - app.core.excel.processor - INFO - 处理商品: 条码=6970731334498, 数量=2.0, 单价=14.0, 是否赠品=False
+2025-05-05 19:20:04,691 - app.core.excel.processor - INFO - 发现正常商品：条码6970731334498, 数量=2.0, 单价=14.0
+2025-05-05 19:20:04,691 - app.core.excel.processor - INFO - 处理商品: 条码=6970731334504, 数量=2.0, 单价=14.0, 是否赠品=False
+2025-05-05 19:20:04,691 - app.core.excel.processor - INFO - 发现正常商品：条码6970731334504, 数量=2.0, 单价=14.0
+2025-05-05 19:20:04,691 - app.core.excel.processor - INFO - 处理商品: 条码=6934925983107, 数量=12.0, 单价=6.0, 是否赠品=False
+2025-05-05 19:20:04,691 - app.core.excel.processor - INFO - 发现正常商品：条码6934925983107, 数量=12.0, 单价=6.0
+2025-05-05 19:20:04,691 - app.core.excel.processor - INFO - 处理商品: 条码=6942203405654, 数量=12.0, 单价=6.0, 是否赠品=False
+2025-05-05 19:20:04,692 - app.core.excel.processor - INFO - 发现正常商品：条码6942203405654, 数量=12.0, 单价=6.0
+2025-05-05 19:20:04,692 - app.core.excel.processor - INFO - 处理商品: 条码=条码, 数量=0, 单价=0, 是否赠品=True
+2025-05-05 19:20:04,692 - app.core.excel.processor - INFO - 发现赠品：条码条码, 数量=0
+2025-05-05 19:20:04,692 - app.core.excel.processor - INFO - 处理商品: 条码=6901294179592, 数量=5.0, 单价=11.5, 是否赠品=False
+2025-05-05 19:20:04,692 - app.core.excel.processor - INFO - 发现正常商品：条码6901294179592, 数量=5.0, 单价=11.5
+2025-05-05 19:20:04,692 - app.core.excel.processor - INFO - 处理商品: 条码=6901294175341, 数量=3.0, 单价=11.5, 是否赠品=False
+2025-05-05 19:20:04,692 - app.core.excel.processor - INFO - 发现正常商品：条码6901294175341, 数量=3.0, 单价=11.5
+2025-05-05 19:20:04,692 - app.core.excel.processor - INFO - 处理商品: 条码=6907861191417, 数量=5.0, 单价=15.18, 是否赠品=False
+2025-05-05 19:20:04,692 - app.core.excel.processor - INFO - 发现正常商品：条码6907861191417, 数量=5.0, 单价=15.18
+2025-05-05 19:20:04,692 - app.core.excel.processor - INFO - 处理商品: 条码=6907861191127, 数量=5.0, 单价=22.1, 是否赠品=False
+2025-05-05 19:20:04,692 - app.core.excel.processor - INFO - 发现正常商品：条码6907861191127, 数量=5.0, 单价=22.1
+2025-05-05 19:20:04,693 - app.core.excel.processor - INFO - 处理商品: 条码=6907861050196, 数量=5.0, 单价=10.37, 是否赠品=False
+2025-05-05 19:20:04,693 - app.core.excel.processor - INFO - 发现正常商品：条码6907861050196, 数量=5.0, 单价=10.37
+2025-05-05 19:20:04,693 - app.core.excel.processor - INFO - 处理商品: 条码=6901826817237, 数量=1.0, 单价=296.0, 是否赠品=False
+2025-05-05 19:20:04,693 - app.core.excel.processor - INFO - 发现正常商品：条码6901826817237, 数量=1.0, 单价=296.0
+2025-05-05 19:20:08,081 - app.core.excel.processor - INFO - 处理商品: 条码=6901826888138, 数量=30.0, 单价=3.7333333333333334, 是否赠品=False
+2025-05-05 19:20:08,081 - app.core.excel.processor - INFO - 发现正常商品：条码6901826888138, 数量=30.0, 单价=3.7333333333333334
+2025-05-05 19:20:08,081 - app.core.excel.processor - INFO - 处理商品: 条码=6923146100370, 数量=3.0, 单价=15.5, 是否赠品=False
+2025-05-05 19:20:08,083 - app.core.excel.processor - INFO - 发现正常商品：条码6923146100370, 数量=3.0, 单价=15.5
+2025-05-05 19:20:08,083 - app.core.excel.processor - INFO - 处理商品: 条码=6973043880493, 数量=1.0, 单价=10.0, 是否赠品=False
+2025-05-05 19:20:08,083 - app.core.excel.processor - INFO - 发现正常商品：条码6973043880493, 数量=1.0, 单价=10.0
+2025-05-05 19:20:08,083 - app.core.excel.processor - INFO - 处理商品: 条码=6972118660114, 数量=3.0, 单价=4.5, 是否赠品=False
+2025-05-05 19:20:08,083 - app.core.excel.processor - INFO - 发现正常商品：条码6972118660114, 数量=3.0, 单价=4.5
+2025-05-05 19:20:08,083 - app.core.excel.processor - INFO - 处理商品: 条码=6956934838605, 数量=3.0, 单价=3.6, 是否赠品=False
+2025-05-05 19:20:08,083 - app.core.excel.processor - INFO - 发现正常商品：条码6956934838605, 数量=3.0, 单价=3.6
+2025-05-05 19:20:08,083 - app.core.excel.processor - INFO - 分组后共21 个不同条码的商品
+2025-05-05 19:20:08,083 - app.core.excel.processor - INFO - 条码 6902088127225 处理结果：正常商品数量2.0，单价24.0，赠品数量0
+2025-05-05 19:20:08,083 - app.core.excel.processor - INFO - 条码 6902088310801 处理结果：正常商品数量2.0，单价24.0，赠品数量0
+2025-05-05 19:20:08,083 - app.core.excel.processor - INFO - 条码 6902088421200 处理结果：正常商品数量2.0，单价19.0，赠品数量0
+2025-05-05 19:20:08,083 - app.core.excel.processor - INFO - 条码 6902022135316 处理结果：正常商品数量2.0，单价32.5，赠品数量0
+2025-05-05 19:20:08,083 - app.core.excel.processor - INFO - 条码 6902022138256 处理结果：正常商品数量2.0，单价12.5，赠品数量0
+2025-05-05 19:20:08,083 - app.core.excel.processor - INFO - 条码 6970731334498 处理结果：正常商品数量2.0，单价14.0，赠品数量0
+2025-05-05 19:20:08,083 - app.core.excel.processor - INFO - 条码 6970731334504 处理结果：正常商品数量2.0，单价14.0，赠品数量0
+2025-05-05 19:20:08,084 - app.core.excel.processor - INFO - 条码 6934925983107 处理结果：正常商品数量12.0，单价6.0，赠品数量0
+2025-05-05 19:20:08,084 - app.core.excel.processor - INFO - 条码 6942203405654 处理结果：正常商品数量12.0，单价6.0，赠品数量0
+2025-05-05 19:20:08,084 - app.core.excel.processor - INFO - 条码 条码 处理结果：只有赠品，数量=0
+2025-05-05 19:20:08,084 - app.core.excel.processor - INFO - 条码 6901294179592 处理结果：正常商品数量5.0，单价11.5，赠品数量0
+2025-05-05 19:20:08,084 - app.core.excel.processor - INFO - 条码 6901294175341 处理结果：正常商品数量3.0，单价11.5，赠品数量0
+2025-05-05 19:20:08,084 - app.core.excel.processor - INFO - 条码 6907861191417 处理结果：正常商品数量5.0，单价15.18，赠品数量0
+2025-05-05 19:20:08,084 - app.core.excel.processor - INFO - 条码 6907861191127 处理结果：正常商品数量5.0，单价22.1，赠品数量0
+2025-05-05 19:20:08,084 - app.core.excel.processor - INFO - 条码 6907861050196 处理结果：正常商品数量5.0，单价10.37，赠品数量0
+2025-05-05 19:20:08,084 - app.core.excel.processor - INFO - 条码 6901826817237 处理结果：正常商品数量1.0，单价296.0，赠品数量0
+2025-05-05 19:20:08,084 - app.core.excel.processor - INFO - 条码 6901826888138 处理结果：正常商品数量30.0，单价3.7333333333333334，赠品数量0
+2025-05-05 19:20:08,084 - app.core.excel.processor - INFO - 条码 6923146100370 处理结果：正常商品数量3.0，单价15.5，赠品数量0
+2025-05-05 19:20:08,084 - app.core.excel.processor - INFO - 条码 6973043880493 处理结果：正常商品数量1.0，单价10.0，赠品数量0
+2025-05-05 19:20:08,084 - app.core.excel.processor - INFO - 条码 6972118660114 处理结果：正常商品数量3.0，单价4.5，赠品数量0
+2025-05-05 19:20:08,084 - app.core.excel.processor - INFO - 条码 6956934838605 处理结果：正常商品数量3.0，单价3.6，赠品数量0
+2025-05-05 19:20:08,085 - app.core.excel.processor - INFO - 条码 条码 填充：仅有赠品，采购量=0，赠品数量=0
+2025-05-05 19:20:08,088 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250505185908.xls
+2025-05-05 19:20:09,861 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250505185908.xls
+2025-05-05 19:22:18,526 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-05 19:22:18,527 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-05 19:22:18,533 - app.core.excel.processor - INFO - 开始处理Excel文件: D:/My Documents/python/orc-order-v2/data/output/微信图片_20250505185908.xlsx
+2025-05-05 19:22:19,563 - app.core.excel.processor - INFO - 成功读取Excel文件: D:/My Documents/python/orc-order-v2/data/output/微信图片_20250505185908.xlsx, 共 22 行
+2025-05-05 19:22:19,575 - app.core.excel.processor - INFO - 找到可能的表头行: 第1行，评分: 35
+2025-05-05 19:22:19,575 - app.core.excel.processor - INFO - 识别到表头在第 1 行
+2025-05-05 19:22:19,749 - app.core.excel.processor - INFO - 使用表头行重新读取数据，共 21 行有效数据
+2025-05-05 19:22:19,749 - app.core.excel.processor - INFO - 找到精确匹配的条码列: 条码
+2025-05-05 19:22:19,749 - app.core.excel.processor - INFO - 使用条码列: 条码
+2025-05-05 19:22:19,749 - app.core.excel.processor - INFO - 找到name列(部分匹配): 商品全名
+2025-05-05 19:22:19,749 - app.core.excel.processor - INFO - 找到specification列: 规格
+2025-05-05 19:22:19,750 - app.core.excel.processor - INFO - 找到quantity列: 数量
+2025-05-05 19:22:19,750 - app.core.excel.processor - INFO - 找到unit列: 单位
+2025-05-05 19:22:19,750 - app.core.excel.processor - INFO - 找到price列: 单价
+2025-05-05 19:22:19,750 - app.core.excel.processor - INFO - 列名映射结果: {'barcode': '条码', 'name': '商品全名', 'specification': '规格', 'quantity': '数量', 'unit': '单位', 'price': '单价'}
+2025-05-05 19:22:19,750 - app.core.excel.processor - INFO - 是否存在规格列: True
+2025-05-05 19:22:19,753 - app.core.excel.processor - INFO - 第1行: 提取商品信息 条码=6902088127225, 名称=720g力士沐浴露樱花柔润, 规格=, 数量=2.0, 单位=瓶, 单价=24.0
+2025-05-05 19:22:19,755 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:22:19,765 - app.core.excel.processor - INFO - 第2行: 提取商品信息 条码=6902088310801, 名称=720g力士沐浴露幽莲魅肤, 规格=, 数量=2.0, 单位=瓶, 单价=24.0
+2025-05-05 19:22:19,765 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:22:19,766 - app.core.excel.processor - INFO - 第3行: 提取商品信息 条码=6902088421200, 名称=400g多芬沐浴露樱花甜香, 规格=, 数量=2.0, 单位=瓶, 单价=19.0
+2025-05-05 19:22:19,769 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:22:19,772 - app.core.excel.processor - INFO - 第4行: 提取商品信息 条码=6902022135316, 名称=3kg蓝刀亮深层洁净自然清香, 规格=, 数量=2.0, 单位=瓶, 单价=32.5
+2025-05-05 19:22:19,772 - app.core.excel.processor - INFO - 解析规格: 1*4 -> 包装数量=4
+2025-05-05 19:22:19,773 - app.core.excel.processor - INFO - 第5行: 提取商品信息 条码=6902022138256, 名称=1kg袋装蓝月亮深洁清香, 规格=, 数量=2.0, 单位=袋, 单价=12.5
+2025-05-05 19:22:19,773 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:22:19,774 - app.core.excel.processor - INFO - 第6行: 提取商品信息 条码=6970731334498, 名称=L号倍丝柔女士一次性内裤4条装, 规格=, 数量=2.0, 单位=盒, 单价=14.0
+2025-05-05 19:22:19,774 - app.core.excel.processor - INFO - 解析规格: 1*100 -> 包装数量=100
+2025-05-05 19:22:19,777 - app.core.excel.processor - INFO - 第7行: 提取商品信息 条码=6970731334504, 名称=x1倍丝柔女士一次性内裤4条装, 规格=, 数量=2.0, 单位=盒, 单价=14.0
+2025-05-05 19:22:19,777 - app.core.excel.processor - INFO - 解析规格: 1*100 -> 包装数量=100
+2025-05-05 19:22:19,822 - app.core.excel.processor - INFO - 第8行: 提取商品信息 条码=6934925983107, 名称=3706洁丽雅女士新款隐形袜, 规格=, 数量=12.0, 单位=双, 单价=6.0
+2025-05-05 19:22:19,823 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:22:19,823 - app.core.excel.processor - INFO - 第9行: 提取商品信息 条码=6942203405654, 名称=3040洁丽雅男士新款隐形袜, 规格=, 数量=12.0, 单位=双, 单价=6.0
+2025-05-05 19:22:19,824 - app.core.excel.processor - INFO - 解析规格: 1*12 -> 包装数量=12
+2025-05-05 19:22:19,824 - app.core.excel.processor - INFO - 第10行: 提取商品信息 条码=6901294179592, 名称=80ML六神驱蚊喷雾花露水, 规格=, 数量=5.0, 单位=瓶, 单价=11.5
+2025-05-05 19:22:19,824 - app.core.excel.processor - INFO - 解析规格: 1*48 -> 包装数量=48
+2025-05-05 19:22:19,825 - app.core.excel.processor - INFO - 第11行: 提取商品信息 条码=6901294175341, 名称=80ml六神止痒花露水, 规格=, 数量=3.0, 单位=瓶, 单价=11.5
+2025-05-05 19:22:19,825 - app.core.excel.processor - INFO - 解析规格: 1*48 -> 包装数量=48
+2025-05-05 19:22:19,827 - app.core.excel.processor - INFO - 第12行: 提取商品信息 条码=6907861191417, 名称=5155彩虹蚊香液1+1器无味, 规格=, 数量=5.0, 单位=套, 单价=15.18
+2025-05-05 19:22:19,827 - app.core.excel.processor - INFO - 解析规格: 1*40 -> 包装数量=40
+2025-05-05 19:22:19,828 - app.core.excel.processor - INFO - 第13行: 提取商品信息 条码=6907861191127, 名称=5113彩虹双瓶乖乖无味蚊香液, 规格=, 数量=5.0, 单位=套, 单价=22.1
+2025-05-05 19:22:19,828 - app.core.excel.processor - INFO - 解析规格: 1*20 -> 包装数量=20
+2025-05-05 19:22:19,830 - app.core.excel.processor - INFO - 第14行: 提取商品信息 条码=6907861050196, 名称=彩虹单瓶Q5105蚊香液无味36ml, 规格=, 数量=5.0, 单位=瓶, 单价=10.37
+2025-05-05 19:22:19,830 - app.core.excel.processor - INFO - 解析规格: 1*80 -> 包装数量=80
+2025-05-05 19:22:19,831 - app.core.excel.processor - INFO - 第15行: 提取商品信息 条码=6901826817237, 名称=南孚电池5号5粒装, 规格=, 数量=1.0, 单位=盒, 单价=296.0
+2025-05-05 19:22:19,831 - app.core.excel.processor - INFO - 解析规格: 1*10 -> 包装数量=10
+2025-05-05 19:22:19,832 - app.core.excel.processor - INFO - 第16行: 提取商品信息 条码=6901826888138, 名称=南孚5号电池两粒装, 规格=, 数量=1.0, 单位=盒, 单价=112.0
+2025-05-05 19:22:19,833 - app.core.excel.processor - INFO - 解析规格: 1*60 -> 包装数量=60
+2025-05-05 19:22:22,721 - app.core.excel.processor - INFO - 第17行: 提取商品信息 条码=6923146100370, 名称=杜蕾斯玻尿酸避孕套3只装, 规格=, 数量=3.0, 单位=盒, 单价=15.5
+2025-05-05 19:22:22,721 - app.core.excel.processor - INFO - 解析规格: 1*96 -> 包装数量=96
+2025-05-05 19:22:22,723 - app.core.excel.processor - INFO - 第18行: 提取商品信息 条码=6973043880493, 名称=南孚纽扣电池CR2032, 规格=, 数量=1.0, 单位=板, 单价=10.0
+2025-05-05 19:22:22,723 - app.core.excel.processor - INFO - 解析规格: 1*5 -> 包装数量=5
+2025-05-05 19:22:22,723 - app.core.excel.processor - INFO - 第19行: 提取商品信息 条码=6972118660114, 名称=家丽欣6011一次性胶杯, 规格=, 数量=3.0, 单位=个, 单价=4.5
+2025-05-05 19:22:22,723 - app.core.excel.processor - INFO - 解析规格: 1*48 -> 包装数量=48
+2025-05-05 19:22:22,724 - app.core.excel.processor - INFO - 第20行: 提取商品信息 条码=6956934838605, 名称=83860云蕾双排纸杯50只, 规格=, 数量=3.0, 单位=个, 单价=3.6
+2025-05-05 19:22:22,724 - app.core.excel.processor - INFO - 解析规格: 1×40 -> 包装数量=40
+2025-05-05 19:22:22,724 - app.core.excel.processor - INFO - 提取到 20 个商品信息
+2025-05-05 19:22:22,734 - app.core.excel.processor - INFO - 开始处理20 个产品信息
+2025-05-05 19:22:22,735 - app.core.excel.processor - INFO - 处理商品: 条码=6902088127225, 数量=2.0, 单价=24.0, 是否赠品=False
+2025-05-05 19:22:22,735 - app.core.excel.processor - INFO - 发现正常商品：条码6902088127225, 数量=2.0, 单价=24.0
+2025-05-05 19:22:22,735 - app.core.excel.processor - INFO - 处理商品: 条码=6902088310801, 数量=2.0, 单价=24.0, 是否赠品=False
+2025-05-05 19:22:22,735 - app.core.excel.processor - INFO - 发现正常商品：条码6902088310801, 数量=2.0, 单价=24.0
+2025-05-05 19:22:22,735 - app.core.excel.processor - INFO - 处理商品: 条码=6902088421200, 数量=2.0, 单价=19.0, 是否赠品=False
+2025-05-05 19:22:22,735 - app.core.excel.processor - INFO - 发现正常商品：条码6902088421200, 数量=2.0, 单价=19.0
+2025-05-05 19:22:22,735 - app.core.excel.processor - INFO - 处理商品: 条码=6902022135316, 数量=2.0, 单价=32.5, 是否赠品=False
+2025-05-05 19:22:22,735 - app.core.excel.processor - INFO - 发现正常商品：条码6902022135316, 数量=2.0, 单价=32.5
+2025-05-05 19:22:22,735 - app.core.excel.processor - INFO - 处理商品: 条码=6902022138256, 数量=2.0, 单价=12.5, 是否赠品=False
+2025-05-05 19:22:22,735 - app.core.excel.processor - INFO - 发现正常商品：条码6902022138256, 数量=2.0, 单价=12.5
+2025-05-05 19:22:22,735 - app.core.excel.processor - INFO - 处理商品: 条码=6970731334498, 数量=2.0, 单价=14.0, 是否赠品=False
+2025-05-05 19:22:22,735 - app.core.excel.processor - INFO - 发现正常商品：条码6970731334498, 数量=2.0, 单价=14.0
+2025-05-05 19:22:22,735 - app.core.excel.processor - INFO - 处理商品: 条码=6970731334504, 数量=2.0, 单价=14.0, 是否赠品=False
+2025-05-05 19:22:22,735 - app.core.excel.processor - INFO - 发现正常商品：条码6970731334504, 数量=2.0, 单价=14.0
+2025-05-05 19:22:22,735 - app.core.excel.processor - INFO - 处理商品: 条码=6934925983107, 数量=12.0, 单价=6.0, 是否赠品=False
+2025-05-05 19:22:25,771 - app.core.excel.processor - INFO - 发现正常商品：条码6934925983107, 数量=12.0, 单价=6.0
+2025-05-05 19:22:25,772 - app.core.excel.processor - INFO - 处理商品: 条码=6942203405654, 数量=12.0, 单价=6.0, 是否赠品=False
+2025-05-05 19:22:25,772 - app.core.excel.processor - INFO - 发现正常商品：条码6942203405654, 数量=12.0, 单价=6.0
+2025-05-05 19:22:25,772 - app.core.excel.processor - INFO - 处理商品: 条码=6901294179592, 数量=5.0, 单价=11.5, 是否赠品=False
+2025-05-05 19:22:25,772 - app.core.excel.processor - INFO - 发现正常商品：条码6901294179592, 数量=5.0, 单价=11.5
+2025-05-05 19:22:25,772 - app.core.excel.processor - INFO - 处理商品: 条码=6901294175341, 数量=3.0, 单价=11.5, 是否赠品=False
+2025-05-05 19:22:25,772 - app.core.excel.processor - INFO - 发现正常商品：条码6901294175341, 数量=3.0, 单价=11.5
+2025-05-05 19:22:25,772 - app.core.excel.processor - INFO - 处理商品: 条码=6907861191417, 数量=5.0, 单价=15.18, 是否赠品=False
+2025-05-05 19:22:25,772 - app.core.excel.processor - INFO - 发现正常商品：条码6907861191417, 数量=5.0, 单价=15.18
+2025-05-05 19:22:25,773 - app.core.excel.processor - INFO - 处理商品: 条码=6907861191127, 数量=5.0, 单价=22.1, 是否赠品=False
+2025-05-05 19:22:25,773 - app.core.excel.processor - INFO - 发现正常商品：条码6907861191127, 数量=5.0, 单价=22.1
+2025-05-05 19:22:25,773 - app.core.excel.processor - INFO - 处理商品: 条码=6907861050196, 数量=5.0, 单价=10.37, 是否赠品=False
+2025-05-05 19:22:25,773 - app.core.excel.processor - INFO - 发现正常商品：条码6907861050196, 数量=5.0, 单价=10.37
+2025-05-05 19:22:25,773 - app.core.excel.processor - INFO - 处理商品: 条码=6901826817237, 数量=1.0, 单价=296.0, 是否赠品=False
+2025-05-05 19:22:25,773 - app.core.excel.processor - INFO - 发现正常商品：条码6901826817237, 数量=1.0, 单价=296.0
+2025-05-05 19:22:25,773 - app.core.excel.processor - INFO - 处理商品: 条码=6901826888138, 数量=30.0, 单价=3.7333333333333334, 是否赠品=False
+2025-05-05 19:22:25,773 - app.core.excel.processor - INFO - 发现正常商品：条码6901826888138, 数量=30.0, 单价=3.7333333333333334
+2025-05-05 19:22:25,773 - app.core.excel.processor - INFO - 处理商品: 条码=6923146100370, 数量=3.0, 单价=15.5, 是否赠品=False
+2025-05-05 19:22:25,773 - app.core.excel.processor - INFO - 发现正常商品：条码6923146100370, 数量=3.0, 单价=15.5
+2025-05-05 19:22:25,774 - app.core.excel.processor - INFO - 处理商品: 条码=6973043880493, 数量=1.0, 单价=10.0, 是否赠品=False
+2025-05-05 19:22:25,774 - app.core.excel.processor - INFO - 发现正常商品：条码6973043880493, 数量=1.0, 单价=10.0
+2025-05-05 19:22:25,774 - app.core.excel.processor - INFO - 处理商品: 条码=6972118660114, 数量=3.0, 单价=4.5, 是否赠品=False
+2025-05-05 19:22:25,774 - app.core.excel.processor - INFO - 发现正常商品：条码6972118660114, 数量=3.0, 单价=4.5
+2025-05-05 19:22:25,774 - app.core.excel.processor - INFO - 处理商品: 条码=6956934838605, 数量=3.0, 单价=3.6, 是否赠品=False
+2025-05-05 19:22:25,774 - app.core.excel.processor - INFO - 发现正常商品：条码6956934838605, 数量=3.0, 单价=3.6
+2025-05-05 19:22:25,774 - app.core.excel.processor - INFO - 分组后共20 个不同条码的商品
+2025-05-05 19:22:25,774 - app.core.excel.processor - INFO - 条码 6902088127225 处理结果：正常商品数量2.0，单价24.0，赠品数量0
+2025-05-05 19:22:25,774 - app.core.excel.processor - INFO - 条码 6902088310801 处理结果：正常商品数量2.0，单价24.0，赠品数量0
+2025-05-05 19:22:25,775 - app.core.excel.processor - INFO - 条码 6902088421200 处理结果：正常商品数量2.0，单价19.0，赠品数量0
+2025-05-05 19:22:25,775 - app.core.excel.processor - INFO - 条码 6902022135316 处理结果：正常商品数量2.0，单价32.5，赠品数量0
+2025-05-05 19:22:25,775 - app.core.excel.processor - INFO - 条码 6902022138256 处理结果：正常商品数量2.0，单价12.5，赠品数量0
+2025-05-05 19:22:25,775 - app.core.excel.processor - INFO - 条码 6970731334498 处理结果：正常商品数量2.0，单价14.0，赠品数量0
+2025-05-05 19:22:25,775 - app.core.excel.processor - INFO - 条码 6970731334504 处理结果：正常商品数量2.0，单价14.0，赠品数量0
+2025-05-05 19:22:25,775 - app.core.excel.processor - INFO - 条码 6934925983107 处理结果：正常商品数量12.0，单价6.0，赠品数量0
+2025-05-05 19:22:28,604 - app.core.excel.processor - INFO - 条码 6942203405654 处理结果：正常商品数量12.0，单价6.0，赠品数量0
+2025-05-05 19:22:28,604 - app.core.excel.processor - INFO - 条码 6901294179592 处理结果：正常商品数量5.0，单价11.5，赠品数量0
+2025-05-05 19:22:28,604 - app.core.excel.processor - INFO - 条码 6901294175341 处理结果：正常商品数量3.0，单价11.5，赠品数量0
+2025-05-05 19:22:28,604 - app.core.excel.processor - INFO - 条码 6907861191417 处理结果：正常商品数量5.0，单价15.18，赠品数量0
+2025-05-05 19:22:28,604 - app.core.excel.processor - INFO - 条码 6907861191127 处理结果：正常商品数量5.0，单价22.1，赠品数量0
+2025-05-05 19:22:28,604 - app.core.excel.processor - INFO - 条码 6907861050196 处理结果：正常商品数量5.0，单价10.37，赠品数量0
+2025-05-05 19:22:28,604 - app.core.excel.processor - INFO - 条码 6901826817237 处理结果：正常商品数量1.0，单价296.0，赠品数量0
+2025-05-05 19:22:28,604 - app.core.excel.processor - INFO - 条码 6901826888138 处理结果：正常商品数量30.0，单价3.7333333333333334，赠品数量0
+2025-05-05 19:22:28,604 - app.core.excel.processor - INFO - 条码 6923146100370 处理结果：正常商品数量3.0，单价15.5，赠品数量0
+2025-05-05 19:22:28,604 - app.core.excel.processor - INFO - 条码 6973043880493 处理结果：正常商品数量1.0，单价10.0，赠品数量0
+2025-05-05 19:22:28,604 - app.core.excel.processor - INFO - 条码 6972118660114 处理结果：正常商品数量3.0，单价4.5，赠品数量0
+2025-05-05 19:22:28,605 - app.core.excel.processor - INFO - 条码 6956934838605 处理结果：正常商品数量3.0，单价3.6，赠品数量0
+2025-05-05 19:22:28,609 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250505185908.xls
+2025-05-05 19:22:28,611 - app.core.excel.processor - INFO - 采购单已保存到: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250505185908.xls
+2025-05-05 19:22:37,218 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-05 19:22:37,219 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-05 19:28:36,765 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-05 19:28:36,766 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-05 19:29:16,906 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-05 19:29:16,908 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-05 19:30:06,153 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-05 19:30:06,154 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-05 19:30:28,306 - app.core.excel.processor - INFO - 初始化ExcelProcessor
+2025-05-05 19:30:28,307 - app.core.excel.processor - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls

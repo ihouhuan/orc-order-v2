@@ -125,20 +125,23 @@ class PurchaseOrderMerger:
             # 打印列名，用于调试
             logger.debug(f"Excel文件的列名: {df.columns.tolist()}")
             
-            # 检查是否有特殊表头结构（如在第3行）
-            special_header = False
-            if len(df) > 3:  # 确保有足够的行
-                row3 = df.iloc[3].astype(str)
-                header_keywords = ['行号', '条形码', '条码', '商品名称', '规格', '单价', '数量', '金额', '单位']
-                # 计算匹配的关键词数量
-                matches = sum(1 for keyword in header_keywords if any(keyword in str(val) for val in row3.values))
-                # 如果匹配了至少3个关键词，认为第3行是表头
-                if matches >= 3:
-                    logger.info(f"检测到特殊表头结构，使用第3行作为列名")
-                    # 创建新的数据帧，使用第3行作为列名，数据从第4行开始
-                    header_row = df.iloc[3]
-                    data_rows = df.iloc[4:].reset_index(drop=True)
-                    # 为每一列分配一个名称（避免重复的列名）
+            # 处理特殊情况：检查是否需要读取指定行作为标题行
+            for header_row_idx in range(5):  # 检查前5行
+                if len(df) <= header_row_idx:
+                    continue
+                
+                potential_header = df.iloc[header_row_idx].astype(str)
+                header_keywords = ['条码', '条形码', '商品条码', '商品名称', '规格', '单价', '数量', '金额', '单位', '必填']
+                matches = sum(1 for keyword in header_keywords if any(keyword in str(val) for val in potential_header.values))
+                
+                if matches >= 3:  # 如果至少匹配3个关键词，认为是表头
+                    logger.info(f"检测到表头在第 {header_row_idx+1} 行")
+                    
+                    # 使用此行作为列名，数据从下一行开始
+                    header_row = potential_header
+                    data_rows = df.iloc[header_row_idx+1:].reset_index(drop=True)
+                    
+                    # 为每一列分配名称（避免重复的列名）
                     new_columns = []
                     for i, col in enumerate(header_row):
                         col_str = str(col)
@@ -146,45 +149,77 @@ class PurchaseOrderMerger:
                             new_columns.append(f"Col_{i}")
                         else:
                             new_columns.append(col_str)
+                    
                     # 使用新列名创建新的DataFrame
                     data_rows.columns = new_columns
                     df = data_rows
-                    special_header = True
                     logger.debug(f"重新构建的数据帧列名: {df.columns.tolist()}")
+                    break
             
             # 定义可能的列名映射
             column_mapping = {
                 '条码': ['条码', '条形码', '商品条码', 'barcode', '商品条形码', '条形码', '商品条码', '商品编码', '商品编号', '条形码', '条码（必填）'],
-                '采购量': ['数量', '采购数量', '购买数量', '采购数量', '订单数量', '采购数量', '采购量（必填）'],
-                '采购单价': ['单价', '价格', '采购单价', '销售价', '采购单价（必填）'],
+                '采购量': ['数量', '采购数量', '购买数量', '采购数量', '订单数量', '采购数量', '采购量（必填）', '采购量', '数量（必填）'],
+                '采购单价': ['单价', '价格', '采购单价', '销售价', '采购单价（必填）', '单价（必填）', '价格（必填）'],
                 '赠送量': ['赠送量', '赠品数量', '赠送数量', '赠品']
             }
+            
+            # 显示所有列名，用于调试
+            all_columns = df.columns.tolist()
+            logger.info(f"列名: {all_columns}")
             
             # 映射实际的列名
             mapped_columns = {}
             for target_col, possible_names in column_mapping.items():
-                for col in df.columns:
-                    # 移除列名中的空白字符和括号内容以进行比较
-                    clean_col = re.sub(r'\s+', '', str(col))
-                    clean_col = re.sub(r'（.*?）', '', clean_col)  # 移除括号内容
+                for col in all_columns:
+                    # 清理列名以进行匹配
+                    col_str = str(col).strip()
+                    
+                    # 直接匹配整个列名
+                    if col_str in possible_names:
+                        mapped_columns[target_col] = col
+                        logger.info(f"直接匹配列名: {col_str} -> {target_col}")
+                        break
+                        
+                    # 移除列名中的空白字符进行比较
+                    clean_col = re.sub(r'\s+', '', col_str)
                     for name in possible_names:
                         clean_name = re.sub(r'\s+', '', name)
-                        clean_name = re.sub(r'（.*?）', '', clean_name)  # 移除括号内容
+                        # 完全匹配
                         if clean_col == clean_name:
                             mapped_columns[target_col] = col
+                            logger.info(f"清理后匹配列名: {col_str} -> {target_col}")
                             break
+                        # 部分匹配（列名包含关键词）
+                        elif clean_name in clean_col:
+                            mapped_columns[target_col] = col
+                            logger.info(f"部分匹配列名: {col_str} -> {target_col}")
+                            break
+                
                     if target_col in mapped_columns:
                         break
+                        
+                # 如果没有找到匹配，尝试模糊匹配
+                if target_col not in mapped_columns:
+                    for col in all_columns:
+                        col_str = str(col).strip().lower()
+                        for name in possible_names:
+                            name_lower = name.lower()
+                            if name_lower in col_str:
+                                mapped_columns[target_col] = col
+                                logger.info(f"模糊匹配列名: {col} -> {target_col}")
+                                break
+                        if target_col in mapped_columns:
+                            break
             
             # 如果找到了必要的列，重命名列
             if mapped_columns:
-                # 如果没有找到条码列，无法继续处理
-                if '条码' not in mapped_columns:
-                    logger.error(f"未找到条码列: {file_path}")
-                    return None
-                    
-                df = df.rename(columns=mapped_columns)
-                logger.info(f"列名映射结果: {mapped_columns}")
+                rename_dict = {mapped_columns[key]: key for key in mapped_columns}
+                logger.info(f"列名重命名映射: {rename_dict}")
+                df = df.rename(columns=rename_dict)
+                logger.info(f"重命名后的列名: {df.columns.tolist()}")
+            else:
+                logger.warning(f"未找到可映射的列名: {file_path}")
             
             return df
             
@@ -233,21 +268,31 @@ class PurchaseOrderMerger:
             
             # 处理赠送量列不存在的情况
             if '赠送量' not in df.columns:
-                df['赠送量'] = pd.NA
+                df['赠送量'] = 0
             
-            # 选择需要的列
-            selected_df = df[['条码', '采购量', '采购单价', '赠送量']].copy()
+            # 选择并清理需要的列
+            cleaned_df = pd.DataFrame()
             
-            # 清理和转换数据
-            selected_df['条码'] = selected_df['条码'].apply(lambda x: format_barcode(x) if pd.notna(x) else x)
-            selected_df['采购量'] = pd.to_numeric(selected_df['采购量'], errors='coerce')
-            selected_df['采购单价'] = pd.to_numeric(selected_df['采购单价'], errors='coerce')
-            selected_df['赠送量'] = pd.to_numeric(selected_df['赠送量'], errors='coerce')
+            # 清理条码 - 确保是字符串且无小数点
+            cleaned_df['条码'] = df['条码'].apply(lambda x: format_barcode(x) if pd.notna(x) else '')
             
-            # 过滤无效行
-            valid_df = selected_df.dropna(subset=['条码', '采购量'])
+            # 清理采购量 - 确保是数字
+            cleaned_df['采购量'] = pd.to_numeric(df['采购量'], errors='coerce').fillna(0)
             
-            processed_dfs.append(valid_df)
+            # 清理单价 - 确保是数字并保留4位小数
+            cleaned_df['采购单价'] = pd.to_numeric(df['采购单价'], errors='coerce').fillna(0).round(4)
+            
+            # 清理赠送量 - 确保是数字
+            cleaned_df['赠送量'] = pd.to_numeric(df['赠送量'], errors='coerce').fillna(0)
+            
+            # 过滤无效行 - 条码为空或采购量为0的行跳过
+            valid_df = cleaned_df[(cleaned_df['条码'] != '') & (cleaned_df['采购量'] > 0)]
+            
+            if len(valid_df) > 0:
+                processed_dfs.append(valid_df)
+                logger.info(f"处理文件 {i+1}: 有效记录 {len(valid_df)} 行")
+            else:
+                logger.warning(f"处理文件 {i+1}: 没有有效记录")
         
         if not processed_dfs:
             logger.warning("没有有效的数据帧用于合并")
@@ -257,26 +302,27 @@ class PurchaseOrderMerger:
         merged_df = pd.concat(processed_dfs, ignore_index=True)
         
         # 按条码和单价分组，合并相同商品
-        merged_df['采购单价'] = merged_df['采购单价'].round(4)  # 四舍五入到4位小数，避免浮点误差
+        # 四舍五入到4位小数，避免浮点误差导致相同价格被当作不同价格
+        merged_df['采购单价'] = merged_df['采购单价'].round(4)  
         
         # 对于同一条码和单价的商品，合并数量和赠送量
-        grouped = merged_df.groupby(['条码', '采购单价'], as_index=False).agg({
+        result = merged_df.groupby(['条码', '采购单价'], as_index=False).agg({
             '采购量': 'sum',
-            '赠送量': lambda x: sum(x.dropna()) if len(x.dropna()) > 0 else pd.NA
+            '赠送量': 'sum'
         })
         
-        # 计算其他信息
-        grouped['采购金额'] = grouped['采购量'] * grouped['采购单价']
-        
         # 排序，按条码升序
-        result = grouped.sort_values('条码').reset_index(drop=True)
+        result = result.sort_values('条码').reset_index(drop=True)
+        
+        # 设置为0的赠送量设为空
+        result.loc[result['赠送量'] == 0, '赠送量'] = pd.NA
         
         logger.info(f"合并完成，共 {len(result)} 条商品记录")
         return result
     
     def create_merged_purchase_order(self, df: pd.DataFrame) -> Optional[str]:
         """
-        创建合并的采购单文件
+        创建合并的采购单文件，完全按照银豹格式要求
         
         Args:
             df: 合并后的数据帧
@@ -289,39 +335,55 @@ class PurchaseOrderMerger:
             template_workbook = xlrd.open_workbook(self.template_path, formatting_info=True)
             template_sheet = template_workbook.sheet_by_index(0)
             
+            # 首先分析模板结构，确定关键列的位置
+            logger.info(f"分析模板结构")
+            for i in range(min(5, template_sheet.nrows)):
+                row_values = [str(cell.value).strip() for cell in template_sheet.row(i)]
+                logger.debug(f"模板第{i+1}行: {row_values}")
+            
+            # 银豹模板的标准列位置：
+            # 条码列(商品条码): B列(索引1)
+            barcode_col = 1
+            # 采购量列: C列(索引2)
+            quantity_col = 2 
+            # 赠送量列: D列(索引3)
+            gift_col = 3
+            # 采购单价列: E列(索引4)
+            price_col = 4
+            
+            # 找到数据开始行 - 通常是第二行(索引1)
+            data_start_row = 1
+            
             # 创建可写的副本
             output_workbook = xlcopy(template_workbook)
             output_sheet = output_workbook.get_sheet(0)
             
-            # 填充商品信息
-            start_row = 4  # 从第5行开始填充数据（索引从0开始）
+            # 设置单价的格式样式（保留4位小数）
+            price_style = xlwt.XFStyle()
+            price_style.num_format_str = '0.0000'
             
+            # 数量格式
+            quantity_style = xlwt.XFStyle()
+            quantity_style.num_format_str = '0'
+            
+            # 遍历数据并填充到Excel
             for i, (_, row) in enumerate(df.iterrows()):
-                r = start_row + i
+                r = data_start_row + i
                 
-                # 序号
-                output_sheet.write(r, 0, i + 1)
-                # 商品编码（条码）
-                output_sheet.write(r, 1, row['条码'])
-                # 商品名称（合并单没有名称信息，留空）
-                output_sheet.write(r, 2, "")
-                # 规格（合并单没有规格信息，留空）
-                output_sheet.write(r, 3, "")
-                # 单位（合并单没有单位信息，留空）
-                output_sheet.write(r, 4, "")
-                # 单价
-                output_sheet.write(r, 5, row['采购单价'])
-                # 采购数量
-                output_sheet.write(r, 6, row['采购量'])
-                # 采购金额
-                output_sheet.write(r, 7, row['采购金额'])
-                # 税率
-                output_sheet.write(r, 8, 0)
-                # 赠送量
-                if pd.notna(row['赠送量']):
-                    output_sheet.write(r, 9, row['赠送量'])
-                else:
-                    output_sheet.write(r, 9, "")
+                # 只填充银豹采购单格式要求的4个列：条码、采购量、赠送量、采购单价
+                
+                # 条码（必填）- B列(1)
+                output_sheet.write(r, barcode_col, row['条码'])
+                
+                # 采购量（必填）- C列(2)
+                output_sheet.write(r, quantity_col, float(row['采购量']), quantity_style)
+                
+                # 赠送量 - D列(3)
+                if pd.notna(row['赠送量']) and float(row['赠送量']) > 0:
+                    output_sheet.write(r, gift_col, float(row['赠送量']), quantity_style)
+                
+                # 采购单价（必填）- E列(4)
+                output_sheet.write(r, price_col, float(row['采购单价']), price_style)
             
             # 生成输出文件名
             timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
@@ -329,7 +391,7 @@ class PurchaseOrderMerger:
             
             # 保存文件
             output_workbook.save(output_file)
-            logger.info(f"合并采购单已保存到: {output_file}")
+            logger.info(f"合并采购单已保存到: {output_file}，共{len(df)}条记录")
             return output_file
             
         except Exception as e:
