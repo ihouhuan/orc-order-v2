@@ -60,3 +60,4 @@
 2025-05-05 22:22:22,618 - app.core.ocr.baidu_ocr - ERROR - 百度OCR API错误: recognize error
 2025-05-06 20:39:59,192 - app.core.ocr.baidu_ocr - INFO - 成功获取访问令牌
 2025-05-07 18:01:37,558 - app.core.ocr.baidu_ocr - INFO - 成功获取访问令牌
+2025-05-07 19:17:08,701 - app.core.ocr.baidu_ocr - INFO - 成功获取访问令牌

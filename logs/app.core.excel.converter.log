@@ -1351,3 +1351,45 @@
 2025-05-07 18:47:17,303 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 3.0, 单价: 0.0, 单位: 瓶
 2025-05-07 18:47:17,303 - app.core.excel.converter - INFO - 解析容量(L)规格: 500L*12 -> 1*12
 2025-05-07 18:47:17,303 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 1.0, 单价: 0.0, 单位: 听
+2025-05-07 19:21:57,610 - app.core.excel.converter - INFO - 解析二级规格: 1*12 -> 1*12
+2025-05-07 19:21:57,610 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 5.0, 单价: 4.5, 单位: 袋
+2025-05-07 19:21:57,611 - app.core.excel.converter - INFO - 解析二级规格: 1*30 -> 1*30
+2025-05-07 19:21:57,611 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 5.0, 单价: 3.75, 单位: 袋
+2025-05-07 19:21:57,612 - app.core.excel.converter - INFO - 解析二级规格: 1*30 -> 1*30
+2025-05-07 19:21:57,614 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 7.0, 单价: 3.75, 单位: 袋
+2025-05-07 19:21:57,615 - app.core.excel.converter - INFO - 解析二级规格: 1*30 -> 1*30
+2025-05-07 19:21:57,618 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 4.0, 单价: 2.8, 单位: 袋
+2025-05-07 19:21:57,619 - app.core.excel.converter - INFO - 解析二级规格: 1*36 -> 1*36
+2025-05-07 19:21:57,619 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 3.0, 单价: 1.9, 单位: 袋
+2025-05-07 19:21:57,620 - app.core.excel.converter - INFO - 解析二级规格: 1*28 -> 1*28
+2025-05-07 19:21:57,620 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 4.0, 单价: 4.4, 单位: 袋
+2025-05-07 19:21:57,662 - app.core.excel.converter - INFO - 解析二级规格: 1*24 -> 1*24
+2025-05-07 19:21:57,663 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 3.0, 单价: 2.7, 单位: 袋
+2025-05-07 19:21:57,667 - app.core.excel.converter - INFO - 提取规格: 麦满天下100g毛毛虫面包（短保） -> 100*None
+2025-05-07 19:21:57,668 - app.core.excel.converter - INFO - 从名称推断规格(通用模式): 麦满天下100g毛毛虫面包（短保） -> 100*None
+2025-05-07 19:21:57,670 - app.core.excel.converter - WARNING - 无法解析规格: 100*None，使用默认值1*1
+2025-05-07 19:21:57,670 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 2.0, 单价: 3.8, 单位: 袋
+2025-05-07 19:21:57,671 - app.core.excel.converter - INFO - 提取规格: 麦满天下100g肉松卷面包（短保） -> 100*None
+2025-05-07 19:21:57,671 - app.core.excel.converter - INFO - 从名称推断规格(通用模式): 麦满天下100g肉松卷面包（短保） -> 100*None
+2025-05-07 19:21:57,672 - app.core.excel.converter - WARNING - 无法解析规格: 100*None，使用默认值1*1
+2025-05-07 19:21:57,672 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 2.0, 单价: 3.8, 单位: 袋
+2025-05-07 19:21:57,672 - app.core.excel.converter - INFO - 提取规格: 麦满天下120g黄金蛋皮面包（短保） -> 120*None
+2025-05-07 19:21:57,672 - app.core.excel.converter - INFO - 从名称推断规格(通用模式): 麦满天下120g黄金蛋皮面包（短保） -> 120*None
+2025-05-07 19:21:57,673 - app.core.excel.converter - WARNING - 无法解析规格: 120*None，使用默认值1*1
+2025-05-07 19:21:57,673 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 2.0, 单价: 3.8, 单位: 袋
+2025-05-07 19:21:57,673 - app.core.excel.converter - INFO - 提取规格: 麦满天下110g脆脆肠面包（短保） -> 110*None
+2025-05-07 19:21:57,673 - app.core.excel.converter - INFO - 从名称推断规格(通用模式): 麦满天下110g脆脆肠面包（短保） -> 110*None
+2025-05-07 19:21:57,674 - app.core.excel.converter - WARNING - 无法解析规格: 110*None，使用默认值1*1
+2025-05-07 19:21:57,674 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 2.0, 单价: 3.8, 单位: 袋
+2025-05-07 19:21:57,674 - app.core.excel.converter - INFO - 解析二级规格: 1*32 -> 1*32
+2025-05-07 19:21:57,674 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 4.0, 单价: 3.8, 单位: 袋
+2025-05-07 19:22:00,734 - app.core.excel.converter - INFO - 解析二级规格: 1*24 -> 1*24
+2025-05-07 19:22:00,734 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 4.0, 单价: 3.0, 单位: 袋
+2025-05-07 19:22:00,734 - app.core.excel.converter - INFO - 解析二级规格: 1*24 -> 1*24
+2025-05-07 19:22:00,734 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 5.0, 单价: 3.0, 单位: 袋
+2025-05-07 19:22:00,735 - app.core.excel.converter - INFO - 解析二级规格: 1*24 -> 1*24
+2025-05-07 19:22:00,735 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 3.0, 单价: 3.0, 单位: 袋
+2025-05-07 19:22:00,735 - app.core.excel.converter - INFO - 提取规格: 阿尔卑斯(33g21条)12牛奶软条糖（酸奶） -> 33*21
+2025-05-07 19:22:00,735 - app.core.excel.converter - INFO - 从名称推断规格(通用模式): 阿尔卑斯(33g21条)12牛奶软条糖（酸奶） -> 33*21
+2025-05-07 19:22:00,736 - app.core.excel.converter - INFO - 解析二级规格: 33*21 -> 33*21
+2025-05-07 19:22:00,736 - app.core.excel.converter - INFO - 其他单位处理: 保持原样 数量: 21.0, 单价: 1.88, 单位: 条

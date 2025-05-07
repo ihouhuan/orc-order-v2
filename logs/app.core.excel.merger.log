@@ -441,3 +441,7 @@
 2025-05-07 18:46:29,609 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
 2025-05-07 18:47:16,624 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
 2025-05-07 18:47:16,624 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-07 19:17:08,291 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-07 19:17:08,292 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls
+2025-05-07 19:21:56,952 - app.core.excel.merger - INFO - 初始化PurchaseOrderMerger
+2025-05-07 19:21:56,952 - app.core.excel.merger - INFO - 初始化完成，模板文件: templates\银豹-采购单模板.xls

@@ -220,3 +220,8 @@
 2025-05-07 18:46:29,607 - app.services.ocr_service - INFO - OCRService初始化完成
 2025-05-07 18:47:16,621 - app.services.ocr_service - INFO - 初始化OCRService
 2025-05-07 18:47:16,623 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-07 19:17:08,288 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-07 19:17:08,290 - app.services.ocr_service - INFO - OCRService初始化完成
+2025-05-07 19:17:08,293 - app.services.ocr_service - INFO - OCRService开始批量处理图片, batch_size=None, max_workers=None
+2025-05-07 19:21:56,948 - app.services.ocr_service - INFO - 初始化OCRService
+2025-05-07 19:21:56,950 - app.services.ocr_service - INFO - OCRService初始化完成

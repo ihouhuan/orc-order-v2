@@ -535,3 +535,17 @@
 2025-05-07 18:47:16,622 - app.core.ocr.table_ocr - INFO - 使用输出目录: D:\My Documents\python\orc-order-v2\data\output
 2025-05-07 18:47:16,622 - app.core.ocr.table_ocr - INFO - 使用临时目录: D:\My Documents\python\orc-order-v2\data\temp
 2025-05-07 18:47:16,623 - app.core.ocr.table_ocr - INFO - OCR处理器初始化完成，输入目录: D:\My Documents\python\orc-order-v2\data\input, 输出目录: D:\My Documents\python\orc-order-v2\data\output
+2025-05-07 19:17:08,290 - app.core.ocr.table_ocr - INFO - 使用输入目录: D:\My Documents\python\orc-order-v2\data\input
+2025-05-07 19:17:08,290 - app.core.ocr.table_ocr - INFO - 使用输出目录: D:\My Documents\python\orc-order-v2\data\output
+2025-05-07 19:17:08,290 - app.core.ocr.table_ocr - INFO - 使用临时目录: D:\My Documents\python\orc-order-v2\data\temp
+2025-05-07 19:17:08,290 - app.core.ocr.table_ocr - INFO - OCR处理器初始化完成，输入目录: D:\My Documents\python\orc-order-v2\data\input, 输出目录: D:\My Documents\python\orc-order-v2\data\output
+2025-05-07 19:17:08,293 - app.core.ocr.table_ocr - INFO - 找到 1 个图片文件，其中 1 个未处理
+2025-05-07 19:17:08,293 - app.core.ocr.table_ocr - INFO - 处理批次 1/1, 大小: 1
+2025-05-07 19:17:08,296 - app.core.ocr.table_ocr - INFO - 开始处理图片: D:\My Documents\python\orc-order-v2\data\input\微信图片_20250507191231.jpg
+2025-05-07 19:17:09,733 - app.core.ocr.table_ocr - INFO - 图片处理成功: D:\My Documents\python\orc-order-v2\data\input\微信图片_20250507191231.jpg, 输出文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250507191231.xlsx
+2025-05-07 19:17:09,736 - app.core.ocr.table_ocr - INFO - 批次处理完成, 成功: 1/1
+2025-05-07 19:17:09,736 - app.core.ocr.table_ocr - INFO - 所有图片处理完成, 总计: 1, 成功: 1
+2025-05-07 19:21:56,949 - app.core.ocr.table_ocr - INFO - 使用输入目录: D:\My Documents\python\orc-order-v2\data\input
+2025-05-07 19:21:56,949 - app.core.ocr.table_ocr - INFO - 使用输出目录: D:\My Documents\python\orc-order-v2\data\output
+2025-05-07 19:21:56,949 - app.core.ocr.table_ocr - INFO - 使用临时目录: D:\My Documents\python\orc-order-v2\data\temp
+2025-05-07 19:21:56,950 - app.core.ocr.table_ocr - INFO - OCR处理器初始化完成，输入目录: D:\My Documents\python\orc-order-v2\data\input, 输出目录: D:\My Documents\python\orc-order-v2\data\output

@@ -311,3 +311,11 @@
 2025-05-07 18:46:29,610 - __main__ - WARNING - 未找到可处理的Excel文件
 2025-05-07 18:47:16,625 - __main__ - INFO - 处理Excel文件: D:/My Documents/python/orc-order-v2/data/output/微信图片_20250507180130.xlsx
 2025-05-07 18:47:23,859 - __main__ - INFO - Excel处理成功，输出文件: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250507180130.xls
+2025-05-07 19:17:08,292 - __main__ - INFO - === 流程步骤 1: OCR识别 ===
+2025-05-07 19:17:08,293 - __main__ - INFO - 批量处理所有图片
+2025-05-07 19:17:09,737 - __main__ - INFO - OCR处理完成，总计: 1，成功: 1
+2025-05-07 19:17:09,737 - __main__ - INFO - === 流程步骤 2: Excel处理 ===
+2025-05-07 19:17:09,738 - __main__ - INFO - 处理最新的Excel文件: D:\My Documents\python\orc-order-v2\data\output\微信图片_20250507191231.xlsx
+2025-05-07 19:17:10,515 - __main__ - ERROR - Excel处理失败
+2025-05-07 19:21:56,953 - __main__ - INFO - 处理Excel文件: D:/My Documents/python/orc-order-v2/data/output/微信图片_20250507191231.xlsx
+2025-05-07 19:22:08,043 - __main__ - INFO - Excel处理成功，输出文件: D:\My Documents\python\orc-order-v2\data\output\采购单_微信图片_20250507191231.xls
