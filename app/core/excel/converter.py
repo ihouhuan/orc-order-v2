@@ -39,8 +39,41 @@ class UnitConverter:
                 'fixed_price': 112/30,  # 固定单价为112/30
                 'specification': '1*30',  # 固定规格
                 'description': '特殊处理: 规格1*30，数量*30，单价=112/30'
+            },
+            # 条码映射转换配置
+            '6920584471055': {
+                'map_to': '6920584471017',  # 映射到新条码
+                'description': '条码映射：6920584471055 -> 6920584471017'
+            },
+            '6925861571159': {
+                'map_to': '69021824',  # 映射到新条码
+                'description': '条码映射：6925861571159 -> 69021824'
+            },
+            '6923644268923': {
+                'map_to': '6923644268480',  # 映射到新条码
+                'description': '条码映射：6923644268923 -> 6923644268480'
+            },
+            '6907992501819': {
+                'map_to': '6907992500133',  # 映射到新条码
+                'description': '条码映射：6907992501819 -> 6907992500133'
+            },
+            '6923644268916': {
+                'map_to': '6923644268503',  # 映射到新条码
+                'description': '条码映射：6923644268916 -> 6923644268503'
+            },
+            '6923644283582': {
+                'map_to': '6923644283575',  # 映射到新条码
+                'description': '条码映射：6923644283582 -> 6923644283575'
+            },
+            '6923644268930': {
+                'map_to': '6923644268497',  # 映射到新条码
+                'description': '条码映射：6923644268930 -> 6923644268497'
+            },
+            '6923644210151': {
+                'map_to': '6923644223458',  # 映射到新条码
+                'description': '条码映射：6923644210151 -> 6923644223458'
             }
-            # 可以添加更多特殊条码的配置
+            # 可以添加更多特殊条码的配置	
         }
         
         # 规格推断的正则表达式模式
@@ -335,14 +368,9 @@ class UnitConverter:
             logger.error(f"解析规格时出错: {e}")
             return 1, 1, None
         
-    def process_unit_conversion(self, product: Dict) -> Dict:
+    def _process_standard_unit_conversion(self, product: Dict) -> Dict:
         """
-        处理单位转换，按照以下规则：
-        1. 特殊条码: 优先处理特殊条码
-        2. "件"单位: 数量×包装数量, 单价÷包装数量, 单位转为"瓶"
-        3. "箱"单位: 数量×包装数量, 单价÷包装数量, 单位转为"瓶"
-        4. "提"和"盒"单位: 如果是三级规格, 按件处理; 如果是二级规格, 保持不变
-        5. 其他单位: 保持不变
+        处理标准单位转换（件、箱、提、盒等单位）
         
         Args:
             product: 商品信息字典
@@ -353,50 +381,12 @@ class UnitConverter:
         # 复制原始数据，避免修改原始字典
         result = product.copy()
         
-        barcode = result.get('barcode', '')
         unit = result.get('unit', '')
         quantity = result.get('quantity', 0)
         price = result.get('price', 0)
         specification = result.get('specification', '')
         
         # 跳过无效数据
-        if not barcode or not quantity:
-            return result
-        
-        # 特殊条码处理
-        if barcode in self.special_barcodes:
-            special_config = self.special_barcodes[barcode]
-            multiplier = special_config.get('multiplier', 1)
-            target_unit = special_config.get('target_unit', '瓶')
-            
-            # 数量乘以倍数
-            new_quantity = quantity * multiplier
-            
-            # 如果有单价，单价除以倍数
-            new_price = price / multiplier if price else 0
-            
-            # 如果有固定单价，优先使用
-            if 'fixed_price' in special_config:
-                new_price = special_config['fixed_price']
-                logger.info(f"特殊条码({barcode})使用固定单价: {new_price}")
-            
-            # 如果有固定规格，设置规格
-            if 'specification' in special_config:
-                result['specification'] = special_config['specification']
-                # 解析规格以获取包装数量
-                package_quantity = self.parse_specification(special_config['specification'])
-                if package_quantity:
-                    result['package_quantity'] = package_quantity
-                logger.info(f"特殊条码({barcode})使用固定规格: {special_config['specification']}, 包装数量={package_quantity}")
-            
-            logger.info(f"特殊条码处理: {barcode}, 数量: {quantity} -> {new_quantity}, 单价: {price} -> {new_price}, 单位: {unit} -> {target_unit}")
-            
-            result['quantity'] = new_quantity
-            result['price'] = new_price
-            result['unit'] = target_unit
-            return result
-        
-        # 没有规格信息，无法进行单位转换
         if not specification:
             return result
             
@@ -465,4 +455,79 @@ class UnitConverter:
         
         # 其他单位保持不变
         logger.info(f"其他单位处理: 保持原样 数量: {quantity}, 单价: {price}, 单位: {unit}")
-        return result 
+        return result
+        
+    def process_unit_conversion(self, product: Dict) -> Dict:
+        """
+        处理单位转换，按照以下规则：
+        1. 特殊条码: 优先处理特殊条码
+        2. "件"单位: 数量×包装数量, 单价÷包装数量, 单位转为"瓶"
+        3. "箱"单位: 数量×包装数量, 单价÷包装数量, 单位转为"瓶"
+        4. "提"和"盒"单位: 如果是三级规格, 按件处理; 如果是二级规格, 保持不变
+        5. 其他单位: 保持不变
+        
+        Args:
+            product: 商品信息字典
+            
+        Returns:
+            处理后的商品信息字典
+        """
+        # 复制原始数据，避免修改原始字典
+        result = product.copy()
+        
+        barcode = result.get('barcode', '')
+        unit = result.get('unit', '')
+        quantity = result.get('quantity', 0)
+        price = result.get('price', 0)
+        specification = result.get('specification', '')
+        
+        # 跳过无效数据
+        if not barcode or not quantity:
+            return result
+        
+        # 特殊条码处理
+        if barcode in self.special_barcodes:
+            special_config = self.special_barcodes[barcode]
+            
+            # 处理条码映射情况
+            if 'map_to' in special_config:
+                new_barcode = special_config['map_to']
+                logger.info(f"条码映射: {barcode} -> {new_barcode}")
+                result['barcode'] = new_barcode
+                # 如果只是条码映射且没有其他特殊处理，继续执行标准单位处理
+                if len(special_config) == 2:  # 只有map_to和description两个字段
+                    # 继续标准处理流程，不提前返回
+                    return self._process_standard_unit_conversion(result)
+            
+            multiplier = special_config.get('multiplier', 1)
+            target_unit = special_config.get('target_unit', '瓶')
+            
+            # 数量乘以倍数
+            new_quantity = quantity * multiplier
+            
+            # 如果有单价，单价除以倍数
+            new_price = price / multiplier if price else 0
+            
+            # 如果有固定单价，优先使用
+            if 'fixed_price' in special_config:
+                new_price = special_config['fixed_price']
+                logger.info(f"特殊条码({barcode})使用固定单价: {new_price}")
+            
+            # 如果有固定规格，设置规格
+            if 'specification' in special_config:
+                result['specification'] = special_config['specification']
+                # 解析规格以获取包装数量
+                package_quantity = self.parse_specification(special_config['specification'])
+                if package_quantity:
+                    result['package_quantity'] = package_quantity
+                logger.info(f"特殊条码({barcode})使用固定规格: {special_config['specification']}, 包装数量={package_quantity}")
+            
+            logger.info(f"特殊条码处理: {barcode}, 数量: {quantity} -> {new_quantity}, 单价: {price} -> {new_price}, 单位: {unit} -> {target_unit}")
+            
+            result['quantity'] = new_quantity
+            result['price'] = new_price
+            result['unit'] = target_unit
+            return result
+        
+        # 没有特殊条码，使用标准单位处理
+        return self._process_standard_unit_conversion(result) 
