@@ -52,3 +52,11 @@
 2025-05-05 18:55:02,724 - app.core.ocr.baidu_ocr - INFO - 成功获取访问令牌
 2025-05-05 18:59:18,198 - app.core.ocr.baidu_ocr - INFO - 成功获取访问令牌
 2025-05-05 18:59:18,237 - app.core.ocr.baidu_ocr - INFO - 成功获取访问令牌
+2025-05-05 22:04:11,112 - app.core.ocr.baidu_ocr - INFO - 成功获取访问令牌
+2025-05-05 22:04:17,489 - app.core.ocr.baidu_ocr - ERROR - 百度OCR API错误: recognize error
+2025-05-05 22:08:08,043 - app.core.ocr.baidu_ocr - INFO - 成功获取访问令牌
+2025-05-05 22:08:09,952 - app.core.ocr.baidu_ocr - ERROR - 百度OCR API错误: recognize error
+2025-05-05 22:22:21,700 - app.core.ocr.baidu_ocr - INFO - 成功获取访问令牌
+2025-05-05 22:22:22,618 - app.core.ocr.baidu_ocr - ERROR - 百度OCR API错误: recognize error
+2025-05-06 20:39:59,192 - app.core.ocr.baidu_ocr - INFO - 成功获取访问令牌
+2025-05-07 18:01:37,558 - app.core.ocr.baidu_ocr - INFO - 成功获取访问令牌

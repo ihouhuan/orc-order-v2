@@ -298,22 +298,62 @@ class ExcelProcessor:
                 else:
                     # 逻辑1: 如果规格为空，尝试从商品名称推断规格
                     if product['name']:
-                        # 特殊处理："营养快线原味450g*15"或"娃哈哈瓶装大AD水蜜桃450ml*15"等形式的名称
-                        weight_volume_pattern = r'.*?\d+(?:g|ml|毫升|克)[*xX×](\d+)'
-                        match = re.search(weight_volume_pattern, product['name'])
+                        # 特殊处理：优先检查名称中是否包含"容量*数量"格式
+                        container_pattern = r'.*?(\d+(?:\.\d+)?)\s*(?:ml|[mM][lL]|[lL]|升|毫升)[*×xX](\d+).*'
+                        match = re.search(container_pattern, product['name'])
                         if match:
-                            inferred_spec = f"1*{match.group(1)}"
-                            inferred_qty = int(match.group(1))
+                            # 容量单位*数量格式，如"1.8L*8瓶"，取数量部分作为包装数量
+                            volume = match.group(1)
+                            count = match.group(2)
+                            inferred_spec = f"{volume}L*{count}"
+                            inferred_qty = int(count)
                             product['specification'] = inferred_spec
                             product['package_quantity'] = inferred_qty
-                            logger.info(f"从商品名称提取重量/容量规格: {product['name']} -> {inferred_spec}, 包装数量={inferred_qty}")
+                            logger.info(f"从商品名称提取容量*数量格式: {product['name']} -> {inferred_spec}, 包装数量={inferred_qty}")
+                        # 原来的重量/容量*数字格式处理逻辑
                         else:
-                            # 一般情况的规格推断
-                            inferred_spec, inferred_qty = self.infer_specification_from_name(product['name'])
-                            if inferred_spec:
+                            weight_volume_pattern = r'.*?\d+(?:g|ml|毫升|克)[*xX×](\d+)'
+                            match = re.search(weight_volume_pattern, product['name'])
+                            if match:
+                                inferred_spec = f"1*{match.group(1)}"
+                                inferred_qty = int(match.group(1))
                                 product['specification'] = inferred_spec
                                 product['package_quantity'] = inferred_qty
-                                logger.info(f"从商品名称推断规格: {product['name']} -> {inferred_spec}, 包装数量={inferred_qty}")
+                                logger.info(f"从商品名称提取重量/容量规格: {product['name']} -> {inferred_spec}, 包装数量={inferred_qty}")
+                            else:
+                                # 一般情况的规格推断
+                                inferred_spec = self.unit_converter.infer_specification_from_name(product['name'])
+                                if inferred_spec:
+                                    product['specification'] = inferred_spec
+                                    package_quantity = self.parse_specification(inferred_spec)
+                                    if package_quantity:
+                                        product['package_quantity'] = package_quantity
+                                    logger.info(f"从商品名称推断规格: {product['name']} -> {inferred_spec}, 包装数量={package_quantity}")
+                
+                # 检查已设置的规格但未设置包装数量的情况
+                if product.get('specification') and not product.get('package_quantity'):
+                    package_quantity = self.parse_specification(product['specification'])
+                    if package_quantity:
+                        product['package_quantity'] = package_quantity
+                        logger.info(f"解析已设置的规格: {product['specification']} -> 包装数量={package_quantity}")
+                
+                # 新增逻辑：根据规格推断单位为"件"
+                if not product['unit'] and product.get('barcode') and product.get('specification') and product.get('quantity') and product.get('price') is not None:
+                    # 检查规格是否符合容量*数量格式
+                    volume_pattern = r'(\d+(?:\.\d+)?)\s*(?:ml|[mL]L|l|L|升|毫升)[*×xX](\d+)'
+                    match = re.search(volume_pattern, product['specification'])
+                    
+                    # 判断是否需要推断单位为"件"
+                    if match:
+                        product['unit'] = '件'
+                        logger.info(f"根据规格推断单位: {product['specification']} -> 单位=件")
+                    else:
+                        # 检查简单的数量*数量格式
+                        simple_pattern = r'(\d+)[*×xX](\d+)'
+                        match = re.search(simple_pattern, product['specification'])
+                        if match:
+                            product['unit'] = '件'
+                            logger.info(f"根据规格推断单位: {product['specification']} -> 单位=件")
                 
                 # 应用单位转换规则
                 product = self.unit_converter.process_unit_conversion(product)

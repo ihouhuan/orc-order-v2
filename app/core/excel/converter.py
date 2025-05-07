@@ -226,12 +226,22 @@ class UnitConverter:
             logger.info(f"从名称推断规格(白膜): {original_name} -> {inferred_spec}")
             return inferred_spec
         
-        # 特殊模式5: 容量单位如"12.9L桶装水" -> "12.9L*1"
-        pattern5 = r'.*?([\d\.]+)L.*'
-        match = re.search(pattern5, name)
+        # 特殊模式5: 容量单位带数量格式 "1.8L*8瓶" -> "1.8L*8"
+        volume_count_pattern = r'.*?([\d\.]+)[Ll升][*×xX](\d+).*'
+        match = re.search(volume_count_pattern, name)
+        if match:
+            volume = match.group(1)
+            count = match.group(2)
+            inferred_spec = f"{volume}L*{count}"
+            logger.info(f"从名称推断规格(容量*数量): {original_name} -> {inferred_spec}")
+            return inferred_spec
+            
+        # 特殊模式6: 简单容量单位如"12.9L桶装水" -> "12.9L*1"
+        simple_volume_pattern = r'.*?([\d\.]+)[Ll升].*'
+        match = re.search(simple_volume_pattern, name)
         if match:
             inferred_spec = f"{match.group(1)}L*1"
-            logger.info(f"从名称推断规格(容量): {original_name} -> {inferred_spec}")
+            logger.info(f"从名称推断规格(简单容量): {original_name} -> {inferred_spec}")
             return inferred_spec
         
         # 尝试通用模式匹配
@@ -273,7 +283,29 @@ class UnitConverter:
                     return level1, level2, level3
                 except ValueError:
                     pass
-                    
+            
+            # 处理带容量单位的规格，如500ml*15, 1L*12等
+            ml_match = re.match(r'(\d+)(?:ml|毫升)[*](\d+)', spec, re.IGNORECASE)
+            if ml_match:
+                try:
+                    # 对于ml单位，使用1作为一级包装，后面的数字作为二级包装
+                    level2 = int(ml_match.group(2))
+                    logger.info(f"解析容量(ml)规格: {spec} -> 1*{level2}")
+                    return 1, level2, None
+                except ValueError:
+                    pass
+            
+            # 处理带L单位的规格，如1L*12等
+            l_match = re.match(r'(\d+(?:\.\d+)?)[Ll升][*](\d+)', spec)
+            if l_match:
+                try:
+                    # 对于L单位，正确提取第二部分作为包装数量
+                    level2 = int(l_match.group(2))
+                    logger.info(f"解析容量(L)规格: {spec} -> 1*{level2}")
+                    return 1, level2, None
+                except ValueError:
+                    pass
+            
             # 处理二级包装，如1*12
             two_level_match = re.match(r'(\d+)[*](\d+)', spec)
             if two_level_match:
